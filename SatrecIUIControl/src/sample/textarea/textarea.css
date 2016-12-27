@@ -1,0 +1,38 @@
+.textarea{
+    -fx-background-color: #ffffff;
+    -fx-min-width: 10;
+    -fx-min-height: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 2px;
+    -fx-border-color: #B3B9BF;
+}
+.textarea:focused{
+    -fx-background-color:transparent;
+}
+.textarea:error{
+    -fx-border-color:#F5B7B8;
+}
+.textarea:focused{
+    -fx-border-color:#2196F3;;
+}
+.textarea:disabled{
+    -fx-opacity : 0.6;
+}
+.textarea .scroll-bar:vertical{
+        -fx-background-color:transparent;
+}
+.textarea .scroll-bar:vertical .decrement-arrow{
+        -fx-background-color:transparent;
+}
+.textarea .scroll-bar:vertical .increment-arrow{
+        -fx-background-color:transparent;
+}
+.textarea .scroll-bar:horizontal{
+        -fx-background-color:transparent;
+}
+.textarea .scroll-bar:horizontal .decrement-arrow{
+        -fx-background-color:transparent;
+}
+.textarea .scroll-bar:horizontal .increment-arrow{
+        -fx-background-color:transparent;
+}

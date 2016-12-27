@@ -1,0 +1,7 @@
+.ss{
+    -fx-background-insets: 0;
+    -fx-border-radius: 2px;
+    -fx-background-color: transparent;
+    -fx-min-width: 135;
+    -fx-min-height: 35.5;
+}
