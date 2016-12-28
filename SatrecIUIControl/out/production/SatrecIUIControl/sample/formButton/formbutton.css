@@ -1,0 +1,22 @@
+.form-button{
+    -fx-background-color:#DEE5ED;
+    -fx-min-width: 135;
+    -fx-min-height: 40px;
+    -fx-background-insets: 0;
+    -fx-border-radius: 2px;
+    -fx-border-color: #B3B9BF;
+    -fx-text-fill:black;
+}
+.form-button:focused{
+    -fx-background-color:#DEE5ED;
+    -fx-focus-color:red;
+}
+.form-button:hover{
+    -fx-background-color:#E8EFF7;
+}
+.form-button:armed{
+    -fx-background-color:#DEE5ED;
+}
+.form-button:disabled{
+    -fx-opacity : 0.6;
+}

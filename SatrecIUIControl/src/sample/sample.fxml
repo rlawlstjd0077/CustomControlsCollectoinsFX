@@ -1,16 +1,11 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
-
-<?import javafx.scene.control.Button?>
-<?import sample.primaryButton.PrimaryButton?>
-<?import sample.secondaryButton.SecondaryButton?>
-<?import sample.tertiaryButton.TertiaryButton?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import sample.linkButton.LinkButton?>
 <?import sample.textarea.Gk2TextArea?>
+<?import sample.headerButton.HeaderButton?>
+<?import javafx.scene.control.CheckBox?>
+<?import sample.radioButton.Gk2RadioButton?>
+<?import sample.combobox.Gk2ComboBoxControl?>
 <AnchorPane fx:controller="sample.Controller"
-            xmlns:fx="http://javafx.com/fxml" >
-    <Gk2TextArea></Gk2TextArea>
-    <Button layoutX="200"></Button>
+            xmlns:fx="http://javafx.com/fxml" stylesheets="@style.css">
+    <Gk2RadioButton></Gk2RadioButton>
+    <CheckBox></CheckBox>
 </AnchorPane>
