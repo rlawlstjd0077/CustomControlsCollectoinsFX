@@ -5,9 +5,13 @@
     -fx-background-insets: 0;
     -fx-border-radius: 2px;
     -fx-border-color: #B3B9BF;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: none;
+    -fx-background-insets:0;
 }
 .textarea:focused{
     -fx-background-color:transparent;
+    -fx-background-insets:0;
 }
 .textarea:error{
     -fx-border-color:#F5B7B8;
@@ -18,21 +22,24 @@
 .textarea:disabled{
     -fx-opacity : 0.6;
 }
-.textarea .scroll-bar:vertical{
-        -fx-background-color:transparent;
+.text-area > .scroll-pane > .scroll-bar:horizontal {
+    -fx-background-color:white;
 }
-.textarea .scroll-bar:vertical .decrement-arrow{
-        -fx-background-color:transparent;
+.text-area > .scroll-pane > .scroll-bar:horizontal .decrement-arrow,
+.text-area > .scroll-pane > .scroll-bar:horizontal .increment-arrow{
+    -fx-background-color:white;
 }
-.textarea .scroll-bar:vertical .increment-arrow{
-        -fx-background-color:transparent;
+.text-area > .scroll-pane > .scroll-bar:vertical .decrement-arrow,
+.text-area > .scroll-pane > .scroll-bar:vertical .increment-arrow{
+    -fx-background-color:white;
 }
-.textarea .scroll-bar:horizontal{
-        -fx-background-color:transparent;
+.text-area > .scroll-pane > .scroll-bar:vertical {
+    -fx-background-color:white;
 }
-.textarea .scroll-bar:horizontal .decrement-arrow{
-        -fx-background-color:transparent;
+.text-area > .scroll-pane > .corner{
+    -fx-background-color:white;
 }
-.textarea .scroll-bar:horizontal .increment-arrow{
-        -fx-background-color:transparent;
+.text-area > .scroll-pane > .scroll-bar .thumb{
+    -fx-background-color: #B2B7BB;
+    -fx-background-insets: 2.5;
 }

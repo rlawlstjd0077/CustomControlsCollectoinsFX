@@ -1,0 +1,6 @@
+.gk2-scroll-bar{
+    -fx-background-color:transparent;
+}
+.gk2-scroll-bar .thumb{
+    -fx-background-color:#B4B9BF;
+}

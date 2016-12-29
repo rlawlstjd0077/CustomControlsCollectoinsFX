@@ -1,7 +1,44 @@
-.ss{
+.gk2-check-box{
+    -fx-background-radius:2;
     -fx-background-insets: 0;
     -fx-border-radius: 2px;
-    -fx-background-color: transparent;
-    -fx-min-width: 135;
-    -fx-min-height: 35.5;
+}
+.gk2-check-box > .box{
+    -fx-max-width : 20;
+    -fx-border-color:#B3B98F;
+    -fx-border-radius:2;
+    -fx-background-color: white;
+}
+.gk2-check-box:hover > .box{
+    -fx-border-color:#3C92E7;
+    -fx-background-color:transparent;
+}
+.gk2-check-box:focused > .box{
+    -fx-border-color:#2671CE;
+    -fx-background-color:transparent;
+}
+.gk2-check-box > .box > .mark >{
+    -fx-min-width:20;
+    -fx-min-height:20;
+    -fx-background-color:transparent;
+}
+.gk2-check-box:selected > .box{
+    -fx-background-color:#2272D1;
+    -fx-background-radius:2;
+    -fx-border-color:transparent;
+    -fx-background-image:url("ok.png");
+    -fx-background-position:center;
+    -fx-background-repeat: no-repeat no-repeat;
+}
+.gk2-check-box:selected > .box:hover{
+    -fx-background-color:#3C92E7;
+}
+.gk2-check-box:selected > .box:armed{
+    -fx-background-color:#2970CC;
+}
+.gk2-check-box:selected > .box:focused{
+    -fx-background-color:#2272D1;
+}
+.gk2-check-box:disabled{
+    -fx-opacity : 0.6;
 }

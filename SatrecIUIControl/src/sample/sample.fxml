@@ -1,11 +1,15 @@
 <?import javafx.scene.layout.AnchorPane?>
-<?import sample.textarea.Gk2TextArea?>
-<?import sample.headerButton.HeaderButton?>
-<?import javafx.scene.control.CheckBox?>
+        <?import sample.textarea.Gk2TextArea?>
+        <?import javafx.scene.control.CheckBox?>
+<?import sample.spinner.Gk2Spinner?>
+<?import sample.togglebutton.Gk2ToggleButton?>
+<?import sample.checkbox.Gk2CheckBox?>
+<?import javafx.scene.control.Button?>
 <?import sample.radioButton.Gk2RadioButton?>
-<?import sample.combobox.Gk2ComboBoxControl?>
+<?import javafx.scene.control.ScrollBar?>
+<?import sample.scrollbar.Gk2ScrollBar?>
 <AnchorPane fx:controller="sample.Controller"
             xmlns:fx="http://javafx.com/fxml" stylesheets="@style.css">
-    <Gk2RadioButton></Gk2RadioButton>
-    <CheckBox></CheckBox>
+    <Gk2ScrollBar></Gk2ScrollBar>
+    <Button layoutX="200" prefHeight="30"></Button>
 </AnchorPane>

@@ -1,5 +1,6 @@
 package sample.checkbox;
 
+import com.sun.javafx.scene.control.skin.CheckBoxSkin;
 import javafx.scene.control.CheckBox;
 
 /**
@@ -8,6 +9,6 @@ import javafx.scene.control.CheckBox;
 public class Gk2CheckBox extends CheckBox{
     public Gk2CheckBox(){
         getStylesheets().add("sample/checkbox/checkbox.css");
-        getStyleClass().add("ss");
+        getStyleClass().add("gk2-check-box");
     }
 }
