@@ -1,0 +1,61 @@
+.gk2-pagination{
+    -fx-min-width: 50;
+}
+.pagination > .pagination-control > .control-box > .number-button:selected{
+    -fx-background-color:#4189DE;
+    -fx-border-color:#4189DE;
+    -fx-text-fill:white;
+}
+.pagination > .pagination-control > .control-box > .number-button:selected:hover{
+    -fx-background-color:#4189DE;
+    -fx-border-color:#4189DE;
+    -fx-text-fill:white;
+}
+.pagination > .pagination-control > .control-box > .number-button:hover{
+    -fx-background-color:#DEE5ED;
+}
+.pagination > .pagination-control > .control-box > .number-button {
+    -fx-background-color: transparent;
+    -fx-text-fill:grey;
+    -fx-background-insets:0;
+    -fx-border-color:#B3B98F;
+}
+.pagination .pagination-control .control-box {
+    -fx-spacing: 0;
+    -fx-alignment: center;
+}
+.pagination .pagination-control .left-arrow-button:disabled{
+    -fx-background-color:transparent;
+    -fx-background-image:url("pagination_left_arrow.png");
+    -fx-background-position:center;
+    -fx-background-repeat: no-repeat no-repeat;
+}
+.pagination .pagination-control .right-arrow-button:disabled{
+    -fx-background-color:transparent;
+    -fx-background-image:url("pagination_right_arrow.png");
+    -fx-background-position:center;
+    -fx-background-repeat: no-repeat no-repeat;
+}
+.pagination .pagination-control .left-arrow-button{
+    -fx-background-color:transparent;
+    -fx-border-color:#B3B98F;
+    -fx-background-image:url("pagination_left_arrow_on.png");
+    -fx-background-position:center;
+    -fx-background-repeat: no-repeat no-repeat;
+    -fx-border-radius: 2 0 0 2;
+}
+.pagination .pagination-control .right-arrow-button{
+    -fx-background-color:transparent;
+    -fx-border-color:#B3B98F;
+    -fx-background-image:url("pagination_right_arrow_on.png");
+    -fx-background-position:center;
+    -fx-background-repeat: no-repeat no-repeat;
+    -fx-border-radius: 0 2 2 0;
+}
+.pagination > .pagination-control .left-arrow,
+.pagination > .pagination-control .right-arrow{
+    -fx-background-color: transparent;
+}
+.pagination .pagination-control .page-information {
+    -fx-text-fill:transparent;
+}
