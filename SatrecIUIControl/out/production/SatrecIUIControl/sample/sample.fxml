@@ -1,21 +1,9 @@
 <?import javafx.scene.layout.AnchorPane?>
-        <?import sample.textarea.Gk2TextArea?>
-        <?import javafx.scene.control.CheckBox?>
-<?import sample.spinner.Gk2Spinner?>
-<?import sample.togglebutton.Gk2ToggleButton?>
-<?import sample.checkbox.Gk2CheckBox?>
-<?import javafx.scene.control.Button?>
-<?import sample.radioButton.Gk2RadioButton?>
-<?import javafx.scene.control.ScrollBar?>
-<?import sample.scrollbar.Gk2ScrollBar?>
-<?import sample.progressbar.Gk2ProgressBar?>
+
 <?import sample.pagination.Gk2Pagination?>
+
 <?import sample.accordion.Gk2Accordion?>
-<?import javafx.scene.control.Accordion?>
-<?import sample.listview.Gk2ListView?>
-<?import sample.darklistview.Gk2DarkListView?>
 <AnchorPane fx:controller="sample.Controller"
             xmlns:fx="http://javafx.com/fxml" stylesheets="@style.css">
     <Gk2Accordion fx:id="gk2Accordion"></Gk2Accordion>
-    <Button layoutX="280" prefHeight="30"></Button>
 </AnchorPane>

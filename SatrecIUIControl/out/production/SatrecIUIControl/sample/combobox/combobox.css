@@ -17,6 +17,7 @@
 }
 .gk2-combo-box:focused{
     -fx-border-color:#2196F3;
+    -fx-effect: dropshadow(three-pass-box, rgba(65,137,221,0.8), 4, 0, 0, 0);
 }
 .gk2-combo-box .scroll-bar{
     -fx-background-color:transparent;

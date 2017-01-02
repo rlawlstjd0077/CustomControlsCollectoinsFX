@@ -13,7 +13,9 @@
     -fx-border-color:#F5B7B8;
 }
 .text-field:focused{
-    -fx-border-color:#2196F3;;
+    -fx-border-color:#2196F3;
+    -fx-effect: dropshadow(three-pass-box, rgba(65,137,221,0.8), 4, 0, 0, 0);
+
 }
 .text-field:disabled{
     -fx-opacity : 0.6;

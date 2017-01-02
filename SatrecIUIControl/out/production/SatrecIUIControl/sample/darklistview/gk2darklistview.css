@@ -9,6 +9,8 @@
 }
 .gk2-list-view:focused{
     -fx-border-color:#2272D1;
+    -fx-effect: dropshadow(three-pass-box, rgba(34,114,209,0.8), 4, 0, 0, 0);
+
 }
 .list-cell{
     -fx-text-fill:white;

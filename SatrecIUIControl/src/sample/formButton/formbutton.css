@@ -10,6 +10,7 @@
 .form-button:focused{
     -fx-background-color:#DEE5ED;
     -fx-focus-color:red;
+    -fx-effect: dropshadow(three-pass-box, rgba(222,229,237,0.8), 4, 0, 0, 0);
 }
 .form-button:hover{
     -fx-background-color:#E8EFF7;

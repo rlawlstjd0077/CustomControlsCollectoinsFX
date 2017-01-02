@@ -16,6 +16,7 @@
      -fx-background-color:#4189DE;
      -fx-text-fill:white;
      -fx-border-color:#2671CC;
+     -fx-effect: dropshadow(three-pass-box, rgba(65,137,221,0.8), 4, 0, 0, 0);
 }
 .link-button:hover{
     -fx-border-color:#4189DD;

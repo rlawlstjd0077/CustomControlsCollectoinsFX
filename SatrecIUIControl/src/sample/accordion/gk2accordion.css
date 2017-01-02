@@ -1,10 +1,10 @@
 .gk2-accordion{
     -fx-border-color:transparent;
+    -fx-border-color:#898C91;
+    -fx-border-radius:2;
 }
 .accordion > .titled-pane{
     -fx-min-width : 100;
-    -fx-border-color:#B3B98F;
-    -fx-border-width:0.4;
 }
 .accordion > .titled-pane > .title > .arrow-button{
    -fx-background-image:url("down.png");
@@ -15,4 +15,5 @@
    -fx-background-color:transparent;
 }
 .accordion > .titled-pane > .title{
+    -fx-border-color:#898C91;
 }

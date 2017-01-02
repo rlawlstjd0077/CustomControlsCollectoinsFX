@@ -29,12 +29,14 @@
     -fx-background-image:url("pagination_left_arrow.png");
     -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
+    -fx-opacity:1;
 }
 .pagination .pagination-control .right-arrow-button:disabled{
     -fx-background-color:transparent;
     -fx-background-image:url("pagination_right_arrow.png");
     -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
+    -fx-opacity:1;
 }
 .pagination .pagination-control .left-arrow-button{
     -fx-background-color:transparent;

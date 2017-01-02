@@ -23,6 +23,8 @@
     -fx-background-radius:2;
     -fx-border-radius:2;
     -fx-background-insets:0;
+    -fx-effect: dropshadow(three-pass-box, rgba(65,137,221,0.8), 4, 0, 0, 0);
+
 }
 .spinner .increment-arrow-button,
 .spinner .decrement-arrow-button{

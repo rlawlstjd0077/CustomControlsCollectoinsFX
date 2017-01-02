@@ -2,10 +2,7 @@
     -fx-background-color:red;
     -fx-min-width: 135;
     -fx-min-height: 40px;
-    -fx-background-insets: 0;
-
 }
 .test-button:focused{
-    -fx-background-color:black;
-    -fx-focus-faint-color:blue;
+
 }

@@ -17,6 +17,7 @@
     -fx-background-color:#4189DE;
     -fx-background-radius: 2 2 2 2;
     -fx-border-radius: 2 2 2 2;
+    -fx-effect: dropshadow(three-pass-box, rgba(65,137,221,0.8), 4, 0, 0, 0);
 }
 .secondary-button:hover{
     -fx-background-color: #438FE7;
