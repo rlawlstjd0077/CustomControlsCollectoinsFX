@@ -1,9 +1,0 @@
-<?import javafx.scene.layout.AnchorPane?>
-
-<?import sample.pagination.Gk2Pagination?>
-
-<?import sample.accordion.Gk2Accordion?>
-<AnchorPane fx:controller="sample.Controller"
-            xmlns:fx="http://javafx.com/fxml" stylesheets="@style.css">
-    <Gk2Accordion fx:id="gk2Accordion"></Gk2Accordion>
-</AnchorPane>

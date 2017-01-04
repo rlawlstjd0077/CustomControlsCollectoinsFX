@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="SatrecIUIControl:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/SatrecIUIControl_jar</output-path>
-    <root id="archive" name="SatrecIUIControl.jar">
-      <element id="module-output" name="SatrecIUIControl" />
-    </root>
-  </artifact>
-</component>

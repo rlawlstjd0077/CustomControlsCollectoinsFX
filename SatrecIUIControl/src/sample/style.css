@@ -1,9 +1,0 @@
-.check-box .label{
-    -fx-font-size: 20;
-    -fx-min-width: 135;
-    -fx-min-height: 40px;
-}
-.button{
-    -fx-min-width: 20;
-    -fx-min-height: 20;
-}
