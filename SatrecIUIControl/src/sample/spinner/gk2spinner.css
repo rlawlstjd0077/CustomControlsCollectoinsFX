@@ -1,0 +1,41 @@
+.spinner{
+    -fx-min-width:135;
+    -fx-min-height:35;
+    -fx-background-radius:2;
+    -fx-border-color:#B3B98F;
+    -fx-border-radius:2;
+    -fx-background-insets:0;
+}
+.spinner:hover{
+    -fx-border-color:#2196F3;
+}
+.spinner:focused{
+    -fx-background-color:white;
+    -fx-border-color:#2196F3;
+}
+.spinner .text-field:focused{
+    -fx-background-color:white;
+}
+.spinner .text-field{
+    -fx-background-color:transparent;
+}
+.spinner:focused{
+    -fx-background-radius:2;
+    -fx-border-radius:2;
+    -fx-background-insets:0;
+    -fx-effect: dropshadow(three-pass-box, rgba(65,137,221,0.8), 4, 0, 0, 0);
+
+}
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button{
+    -fx-border-color:transparent;
+    -fx-background-insets:0;
+    -fx-background-color:transparent;
+    -fx-background-image:url("arrow_small_down.png");
+    -fx-background-position:center;
+    -fx-background-repeat: no-repeat no-repeat;
+}
+.spinner .increment-arrow-button .increment-arrow,
+.spinner .decrement-arrow-button .decrement-arrow{
+    -fx-background-color:transparent;
+}

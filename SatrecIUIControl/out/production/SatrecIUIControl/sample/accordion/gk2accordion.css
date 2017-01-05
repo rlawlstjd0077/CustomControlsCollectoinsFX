@@ -1,0 +1,19 @@
+.gk2-accordion{
+    -fx-border-color:transparent;
+    -fx-border-color:#898C91;
+    -fx-border-radius:2;
+}
+.accordion > .titled-pane{
+    -fx-min-width : 100;
+}
+.accordion > .titled-pane > .title > .arrow-button{
+   -fx-background-image:url("down.png");
+   -fx-background-position:center;
+   -fx-background-repeat: no-repeat no-repeat;
+}
+.accordion > .titled-pane > .title > .arrow-button > .arrow{
+   -fx-background-color:transparent;
+}
+.accordion > .titled-pane > .title{
+    -fx-border-color:#898C91;
+}

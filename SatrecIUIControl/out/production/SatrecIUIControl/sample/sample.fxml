@@ -1,0 +1,13 @@
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import sample.pagination.Gk2Pagination?>
+
+<?import sample.accordion.Gk2Accordion?>
+<?import sample.scrollbar.Gk2ScrollBar?>
+<?import javafx.scene.control.Button?>
+<?import sample.combobox.Gk2ComboBox?>
+<AnchorPane fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml" stylesheets="@style.css">
+    <Gk2ComboBox fx:id="comboBox"></Gk2ComboBox>
+    <Button layoutX="150" prefHeight="2"></Button>
+</AnchorPane>

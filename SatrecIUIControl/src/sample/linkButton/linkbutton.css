@@ -1,0 +1,30 @@
+.link-button{
+    -fx-background-color:transparent;
+    -fx-min-width: 135;
+    -fx-min-height: 35.5;
+    -fx-border-width : 0.8;
+    -fx-border-color: transparent;
+    -fx-font-family: "Roboto";
+    -fx-text-fill:#4189DD;
+    -fx-background-radius: 2 2 2 2;
+    -fx-border-radius: 2 2 2 2;
+    -fx-background-insets: 0;
+    -fx-font-weight: bold;
+    -fx-font-size : 14;
+}
+.link-button:focused{
+     -fx-background-color:#4189DE;
+     -fx-text-fill:white;
+     -fx-border-color:#2671CC;
+     -fx-effect: dropshadow(three-pass-box, rgba(65,137,221,0.8), 4, 0, 0, 0);
+}
+.link-button:hover{
+    -fx-border-color:#4189DD;
+}
+.link-button:armed{
+     -fx-background-color : #2671CC;
+     -fx-text-fill:white;
+ }
+.link-button:disabled{
+    -fx-opacity : 0.6;
+}
