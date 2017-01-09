@@ -50,5 +50,4 @@ public class Controller implements Initializable {
 //        gk2Accordion.getPanes().addAll(tps);
 //        gk2Accordion.setExpandedPane(tps[0]);
     }
-
 }

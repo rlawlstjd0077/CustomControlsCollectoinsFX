@@ -1,0 +1,129 @@
+.gk2-tree-table-view{
+    -fx-table-cell-border-color: transparent;
+    -fx-table-cell-border-width: 0;
+    -fx-background-color:white;
+    -fx-border-color:#868D93;
+    -fx-background-insets:0;
+    -fx-padding:0;
+     -fx-font-family: "Roboto";
+     -fx-font-size : 12;
+}
+.table-row-cell, .tree-table-row-cell{
+    -fx-inner-border:transparent;
+    -fx-background-color:white;
+}
+.tree-table-row-cell:odd,
+.table-row-cell:odd{
+    -fx-background-color: #EFF2F7;
+    -fx-background-insets:0;
+}
+.tree-table-row-cell:focused,
+.table-row-cell:focused{
+    -fx-background-color:#4189DE;
+    -fx-background-insets:0;
+}
+.table-row-cell:focused:odd{
+    -fx-background-color:#4189DE;
+    -fx-background-insets:0;
+}
+.tree-table-view .column-header{
+    -fx-background-color:white;
+     -fx-border-color:#868D93;
+    -fx-padding: 22px;
+    -fx-border-width: 0 1 1 0;
+}
+.tree-table-view .column-header .label{
+    -fx-alignment: CENTER-LEFT;
+    -fx-text-fill:#4B526F;
+}
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:hover > .table-cell,
+.tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:hover> .tree-table-cell {
+    -fx-background-color:#4189DE;
+    -fx-text-fill: white;
+    -fx-border-color:transparent;
+    -fx-border-width:0;
+    -fx-background-insets:0;
+}
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:focused > .table-cell,
+.tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:focused> .tree-table-cell {
+    -fx-background-color:#4189DE;
+    -fx-text-fill: white;
+    -fx-border-color:transparent;
+    -fx-border-width:0;
+    -fx-background-insets:0;
+}
+.tree-cell:filled:hover:expanded > .tree-disclosure-node,
+.tree-table-row-cell:filled:hover:expanded > .tree-disclosure-node{
+    -fx-background-image:url("arrow_down_white.png");
+    -fx-background-repeat:no-repeat;
+    -fx-background-position:center;
+}
+.tree-cell:filled:hover > .tree-disclosure-node,
+.tree-table-row-cell:filled:hover> .tree-disclosure-node{
+    -fx-background-image:url("arrow_right_white.png");
+    -fx-background-repeat:no-repeat;
+    -fx-background-position:center;
+}
+.tree-cell:filled:selected:expanded > .tree-disclosure-node,
+.tree-table-row-cell:filled:selected:expanded > .tree-disclosure-node{
+    -fx-background-image:url("arrow_down_white.png");
+    -fx-background-repeat:no-repeat;
+    -fx-background-position:center;
+}
+.tree-cell:filled:selected > .tree-disclosure-node,
+.tree-table-row-cell:filled:selected > .tree-disclosure-node{
+    -fx-background-image:url("arrow_right_white.png");
+    -fx-background-repeat:no-repeat;
+    -fx-background-position:center;
+}
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled > .table-cell:focused:selected:hover,
+.tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled > .tree-table-cell:focused:selected:hover{
+    -fx-background: red;
+    -fx-background-color: red;
+    -fx-background-insets: 0;
+    -fx-text-fill: red;
+}
+.tree-table-row-cell > .tree-disclosure-node > .arrow{
+    -fx-background-color: transparent;
+}
+.tree-cell > .tree-disclosure-node,
+.tree-table-row-cell:expanded > .tree-disclosure-node{
+    -fx-background-image:url("arrow_down.png");
+    -fx-background-repeat:no-repeat;
+    -fx-background-position:center;
+}
+.tree-cell:expanded > .tree-disclosure-node,
+.tree-table-row-cell > .tree-disclosure-node{
+    -fx-background-image:url("arrow_right.png");
+    -fx-background-repeat:no-repeat;
+    -fx-background-position:center;
+}
+.tree-table-view > .virtual-flow > .scroll-bar:vertical{
+    -fx-min-width:14;
+    -fx-background-insets:0;
+    -fx-background-color:transparent;
+}
+.tree-table-view > .virtual-flow > .scroll-bar:horizontal{
+    -fx-min-height:14;
+    -fx-background-insets:0;
+    -fx-background-color: transparent;
+}
+.tree-table-view > .virtual-flow > .scroll-bar:vertical .thumb{
+    -fx-background-color:#B4B9BF;
+    -fx-background-radius: 11em;
+    -fx-background-insets:0 3.5 0 3.5;
+}
+
+.tree-table-view > .virtual-flow > .scroll-bar:horizontal .thumb{
+    -fx-background-color:#B4B9BF;
+    -fx-background-radius: 11em;
+    -fx-background-insets:3.5 0 3.5 0;
+}
+.tree-table-view > .virtual-flow > .scroll-bar > .increment-button > .increment-arrow,
+.tree-table-view > .virtual-flow > .scroll-bar > .decrement-button > .decrement-arrow{
+    -fx-background-color: transparent;
+}
+.tree-table-view > .virtual-flow > .scroll-bar > .increment-button,
+.tree-table-view > .virtual-flow > .scroll-bar > .decrement-button{
+    -fx-background-color: transparent;
+}
