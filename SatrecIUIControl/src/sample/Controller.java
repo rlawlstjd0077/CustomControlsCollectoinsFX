@@ -30,17 +30,17 @@ public class Controller implements Initializable {
 //    final Image[] images = new Image[imageNames.length];
 //    final ImageView[] pics = new ImageView[imageNames.length];
 //    final TitledPane[] tps = new TitledPane[imageNames.length];
-    @FXML
-    Gk2ComboBox comboBox;
+//    @FXML
+//    Gk2ComboBox comboBox;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        comboBox.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if(newValue)
-                    System.out.println("ddd");
-            }
-        });
+//        comboBox.focusedProperty().addListener(new ChangeListener<Boolean>() {
+//            @Override
+//            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+//                if(newValue)
+//                    System.out.println("ddd");
+//            }
+//        });
 //        for (int i = 0; i < imageNames.length; i++) {
 //            images[i] = new
 //                    Image(getClass().getResourceAsStream("image/"+imageNames[i] + ".png"));

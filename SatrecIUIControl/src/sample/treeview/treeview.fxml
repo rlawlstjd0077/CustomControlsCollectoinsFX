@@ -1,0 +1,8 @@
+<?import javafx.scene.layout.AnchorPane?>
+<?import commons.ui.control.formbutton.FormButton?>
+<?import commons.ui.control.togglebutton.Gk2ToggleButton?>
+<?import commons.ui.control.treeview.Gk2TreeView?>
+<?import javafx.scene.control.Button?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="commons.ui.control.treeview.Controller">
+    <Gk2TreeView layoutX="20" layoutY="20"></Gk2TreeView>
+</AnchorPane>
