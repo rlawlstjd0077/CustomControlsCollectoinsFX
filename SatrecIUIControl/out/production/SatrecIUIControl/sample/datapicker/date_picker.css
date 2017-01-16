@@ -1,0 +1,63 @@
+.date-picker-form{
+    -fx-skin:"commons.ui.control.datepicker.DatePickerSkin";
+    -fx-font-size : 14;
+    -fx-font-family: "Roboto";
+    -fx-min-height : 40;
+}
+.combo-box .arrow-button{
+    -fx-background-image : url("image/calendar_gray.png");
+    -fx-background-size: 20 20;
+    -fx-background-position:center;
+    -fx-background-repeat: no-repeat no-repeat;
+    -fx-background-color:transparent;
+}
+.combo-box .arrow-button .arrow{
+    -fx-background-color:transparent;
+}
+.combo-box{
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-border-color: #B3B9BF;
+    -fx-border-radius: 2px;
+    -fx-padding: -3,0,-3,0;
+    -fx-min-height : 36;
+}
+.form-text{
+    -fx-background-color:white;
+    -fx-background-insets: 0;
+    -fx-border-color: #B3B9BF;
+    -fx-border-radius: 2px;
+}
+.form-button{
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-image:url("image/calendar_gray.png");
+    -fx-background-position:center;
+    -fx-background-repeat: no-repeat no-repeat;
+}
+.form-button:focused{
+     -fx-background-color: #ffffff;
+     -fx-border-color: transparent;
+     -fx-background-insets: 0;
+     -fx-background-image:url("image/calendar_gray.png");
+     -fx-background-position:center;
+     -fx-background-repeat: no-repeat no-repeat;
+ }
+.form-text:hover{
+    -fx-border-color:#2196F3;
+}
+.form-text:focused{
+    -fx-focus-color:transparent;
+    -fx-border-color:#2196F3;
+}
+.date-picker-form:disabled{
+    -fx-opacity:0.6;
+}
+.form-text-error{
+    -fx-border-color:#E16B67;
+}
+.form-text:invalid{
+    -fx-border-color:#E16B67;
+    -fx-focus-color:none;
+}

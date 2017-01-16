@@ -8,11 +8,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.SpinnerValueFactory;
-import javafx.scene.control.TitledPane;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import sample.accordion.Gk2Accordion;
 import sample.combobox.Gk2ComboBox;
 import sample.darklistview.Gk2DarkListView;
@@ -23,31 +25,16 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-//    @FXML
-//    Gk2Accordion gk2Accordion;
-//
-//    final String[] imageNames = new String[]{"Apples", "Flowers", "Leaves"};
-//    final Image[] images = new Image[imageNames.length];
-//    final ImageView[] pics = new ImageView[imageNames.length];
-//    final TitledPane[] tps = new TitledPane[imageNames.length];
-//    @FXML
-//    Gk2ComboBox comboBox;
+    @FXML
+    TabPane tab;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        comboBox.focusedProperty().addListener(new ChangeListener<Boolean>() {
-//            @Override
-//            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-//                if(newValue)
-//                    System.out.println("ddd");
-//            }
-//        });
-//        for (int i = 0; i < imageNames.length; i++) {
-//            images[i] = new
-//                    Image(getClass().getResourceAsStream("image/"+imageNames[i] + ".png"));
-//            pics[i] = new ImageView(images[i]);
-//            tps[i] = new TitledPane(imageNames[i],pics[i]);
-//        }
-//        gk2Accordion.getPanes().addAll(tps);
-//        gk2Accordion.setExpandedPane(tps[0]);
+        Tab tab1 = new Tab();
+        tab1.setText("Tab" + 1);
+        TextArea area = new TextArea();
+        area.setStyle("-fx-background-insets:20");
+        tab1.setContent(area);
+        tab.getTabs().add(tab1);
     }
 }

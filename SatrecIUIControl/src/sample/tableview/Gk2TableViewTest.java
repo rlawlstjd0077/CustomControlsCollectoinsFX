@@ -8,8 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
-import org.junit.Ignore;
-import org.junit.Test;
+
 
 /**
  * 생성자를 제외한 사용법은 TableView 와 동일함
@@ -69,10 +68,10 @@ public class Gk2TableViewTest extends Application {
     stage.show();
   }
 
-  @Test
-  @Ignore
-  public void testGk2TableView() {
-    launch();
-  }
+//  @Test
+//  @Ignore
+//  public void testGk2TableView() {
+//    launch();
+//  }
 
 }

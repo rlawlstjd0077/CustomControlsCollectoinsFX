@@ -8,8 +8,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
-import org.junit.Ignore;
-import org.junit.Test;
 
 /**
  * TableView에 접근하려면 getter를 통해 접근해야 하는것과 생성자를 제외하면
@@ -69,10 +67,10 @@ public class Gk2TableViewGroupHeaderTest extends Application {
     stage.show();
   }
 
-  @Test
-  @Ignore
-  public void testGk2TableViewGroupHeader() {
-    launch();
-  }
+//  @Test
+//  @Ignore
+//  public void testGk2TableViewGroupHeader() {
+//    launch();
+//  }
 
 }
