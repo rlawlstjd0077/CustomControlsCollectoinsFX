@@ -4,7 +4,6 @@ import javafx.beans.property.SimpleStringProperty;
 
 /**
  * 테스트에 쓰일 TableView의 모델
- * Created by 신동찬
  */
 public class ExampleModel {
   private SimpleStringProperty first;

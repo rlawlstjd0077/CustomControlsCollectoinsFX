@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 
 /**
  * 생성자를 제외한 사용법은 TableView 와 동일함
- * Created by 신동찬
  */
 public class Gk2TableViewTest extends Application {
   private ObservableList<ExampleModel> data = FXCollections.observableArrayList(

@@ -10,7 +10,6 @@ import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 /**
  * 툴팁은
- * Created by 신동찬
  */
 public class Gk2TooltipTest extends Application{
   @Override

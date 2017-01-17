@@ -21,7 +21,6 @@ import javafx.util.Duration;
 import java.lang.reflect.Field;
 
 /**
- * Created by 신동찬
  */
 public class Gk2Tooltip extends Tooltip{
 

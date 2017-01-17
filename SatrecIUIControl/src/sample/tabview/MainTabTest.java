@@ -6,7 +6,6 @@ import javafx.stage.Stage;
 
 
 /**
- * Created by 쎄트렉아이 on 2016-12-23.
  */
 public class MainTabTest extends Application {
 

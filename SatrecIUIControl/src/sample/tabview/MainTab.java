@@ -10,7 +10,6 @@ import javafx.scene.text.Font;
 
 /**
  * MainTab (Floating)
- * Created by 신동찬
  */
 public class MainTab extends TabPane {
   public MainTab() {

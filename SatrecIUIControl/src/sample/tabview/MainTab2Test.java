@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 /**
- * Created by 신동찬
  */
 public class MainTab2Test extends Application {
 
@@ -37,7 +36,6 @@ public class MainTab2Test extends Application {
       e.printStackTrace();
     }
   }
-
 
 //  @Test
 //  @Ignore

@@ -7,7 +7,6 @@ import javafx.scene.text.Font;
 
 /**
  * Header가 있는 TableView로 BASIC, DARK style 두가지가 있음
- * Created by 신동찬
  */
 public class Gk2TableViewGroupHeader extends AnchorPane {
 

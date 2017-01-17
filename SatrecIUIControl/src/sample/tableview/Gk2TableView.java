@@ -5,7 +5,6 @@ import javafx.scene.text.Font;
 
 /**
  * 기본 형태의 TableView로 BASIC, DARK, TOPCOLOR style 세가지가 있음
- * Created by 신동찬
  */
 public class Gk2TableView extends TableView {
 

@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 /**
  * TableView에 접근하려면 getter를 통해 접근해야 하는것과 생성자를 제외하면
  * TableView와 사용법이 동일함.
- * Created by 신동찬
  */
 public class Gk2TableViewGroupHeaderTest extends Application {
   ObservableList<ExampleModel> data = FXCollections.observableArrayList(
