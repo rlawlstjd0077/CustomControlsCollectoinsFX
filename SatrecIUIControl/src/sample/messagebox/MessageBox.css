@@ -1,0 +1,50 @@
+.tooltip{
+    -fx-font-family: "Roboto";
+    -fx-font-size:14px;
+}
+
+#messagebox_info{
+    -fx-background-color:#E0EEFD;
+    -fx-border-width:1px;
+    -fx-border-color:#4B90E1;
+    -fx-border-radius:2px;
+}
+
+#messagebox_warning{
+    -fx-background-color:#FFF5E2;
+    -fx-border-width:1px;
+    -fx-border-color:#9B751B;
+    -fx-border-radius:2px;
+}
+
+#messagebox_critical{
+    -fx-background-color:#F7E0DE;
+    -fx-border-width:1px;
+    -fx-border-color:#EE8478;
+    -fx-border-radius:2px;
+}
+
+#messagebox_title{
+    -fx-font-weight:bold;
+    -fx-font-size:22px;
+}
+
+#messagebox_info #messagebox_title{
+    -fx-text-fill:#394150;
+}
+
+#messagebox_warning #messagebox_title{
+    -fx-text-fill:#6A4100;
+}
+
+#messagebox_critical #messagebox_title{
+    -fx-text-fill:#7C1816;
+}
+
+#messagebox_explain{
+    -fx-text-fill:#3D4248;
+}
+
+#messagebox_exit{
+    -fx-background-color:transparent;
+}

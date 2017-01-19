@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="sidemenu" fx:id="sideMenu" blendMode="SRC_ATOP" maxWidth="250.0"
+            prefHeight="0.0" prefWidth="250.0" style="-fx-background-color: #153050;" xmlns="http://javafx.com/javafx/8"
+            fx:controller="commons.ui.control.sidemenu.SideMenuConfiguration">
+    <children>
+        <TreeView fx:id="treeView" blendMode="SRC_ATOP" prefHeight="0.0" prefWidth="275.0"
+                  style="-fx-background-color: #153050;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-25.0"
+                  AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0"/>
+    </children>
+</AnchorPane>

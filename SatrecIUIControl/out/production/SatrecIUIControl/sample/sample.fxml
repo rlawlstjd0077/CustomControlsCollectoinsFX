@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
-<HBox fx:controller="sample.Controller"
+<HBox fx:controller="sample.Controller" maxWidth="3000"
       xmlns:fx="http://javafx.com/fxml" prefWidth="500" stylesheets="@style.css">
     <Pane>
 
