@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -26,15 +28,16 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     @FXML
-    TabPane tab;
+    LineChart lineChart;
+    @FXML
+    NumberAxis xAxis;
+    @FXML
+    NumberAxis yAxis;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Tab tab1 = new Tab();
-        tab1.setText("Tab" + 1);
-        TextArea area = new TextArea();
-        area.setStyle("-fx-background-insets:20");
-        tab1.setContent(area);
-        tab.getTabs().add(tab1);
+        xAxis.setLowerBound(100);
+        xAxis.setUpperBound(200);
+        xAxis.setTickUnit(1);
     }
 }
