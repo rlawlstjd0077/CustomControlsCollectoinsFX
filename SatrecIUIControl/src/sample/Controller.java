@@ -18,6 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import sample.accordion.Gk2Accordion;
+import sample.circlechart.CircleChart;
 import sample.combobox.Gk2ComboBox;
 import sample.darklistview.Gk2DarkListView;
 import sample.listview.Gk2ListView;
@@ -28,16 +29,23 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     @FXML
-    LineChart lineChart;
-    @FXML
-    NumberAxis xAxis;
-    @FXML
-    NumberAxis yAxis;
+    CircleChart circleChart;
+    private NumberAxis xAxis;
+    private NumberAxis yAxis;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        xAxis.setLowerBound(100);
-        xAxis.setUpperBound(200);
-        xAxis.setTickUnit(1);
+//        xAxis = circleChart.getxAxis();
+//        yAxis = circleChart.getyAxis();
+//
+//        xAxis.setLowerBound(-7);
+//        xAxis.setUpperBound(7);
+//        xAxis.setTickUnit(1);
+//        xAxis.setAutoRanging(false);
+//        yAxis.setAutoRanging(false);
+//
+//        yAxis.setLowerBound(-7);
+//        yAxis.setUpperBound(7);
+//        yAxis.setTickUnit(1);
     }
 }

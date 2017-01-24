@@ -7,3 +7,57 @@
     -fx-min-width: 20;
     -fx-min-height: 20;
 }
+.chart-plot-background {
+    -fx-background-color: white;
+}
+.chart-vertical-grid-lines, .chart-horizontal-grid-lines {
+    -fx-stroke: white;
+}
+.chart-alternative-column-fill {
+    -fx-fill: white;
+    -fx-stroke: transparent;
+}
+.chart-alternative-row-fill {
+    -fx-fill: white;
+    -fx-stroke: transparent;
+}
+.axis {
+    -fx-tick-label-font-size: 0.833333em;  /* 10 pix */
+    -fx-tick-label-fill: -fx-text-background-color;
+}
+.axis:top {
+    -fx-border-color: transparent transparent transparent transparent;
+}
+.axis:right {
+    -fx-border-color: transparent transparent transparent transparent;
+}
+.axis:bottom {
+    -fx-border-color: transparent transparent transparent transparent;
+}
+.axis:left {
+    -fx-border-color: transparent transparent transparent transparent;
+}
+.axis-tick-mark {
+    -fx-fill: null;
+    -fx-stroke: white;
+}
+.axis-minor-tick-mark {
+    -fx-fill: null;
+    -fx-stroke: white;
+}
+.chart-pie-label {
+    -fx-padding: 0;
+    -fx-fill: red;
+}
+.chart-pie-label-line {
+    -fx-stroke: red;
+    -fx-fill: red;
+}
+.pie-legend-symbol.chart-pie {
+    -fx-background-radius: 0px;
+    -fx-padding: 0px;
+    -fx-border-color: null;
+}
+.line{
+    -fx-stroke-dash-array: 12 2 4 2;
+}
