@@ -8,22 +8,14 @@
     -fx-min-height: 20;
 }
 .chart-plot-background {
-    -fx-background-color: white;
+    -fx-background-color: transparent;
 }
 .chart-vertical-grid-lines, .chart-horizontal-grid-lines {
-    -fx-stroke: white;
-}
-.chart-alternative-column-fill {
-    -fx-fill: white;
-    -fx-stroke: transparent;
-}
-.chart-alternative-row-fill {
-    -fx-fill: white;
     -fx-stroke: transparent;
 }
 .axis {
     -fx-tick-label-font-size: 0.833333em;  /* 10 pix */
-    -fx-tick-label-fill: -fx-text-background-color;
+    -fx-tick-label-fill: transparent;
 }
 .axis:top {
     -fx-border-color: transparent transparent transparent transparent;
@@ -43,11 +35,7 @@
 }
 .axis-minor-tick-mark {
     -fx-fill: null;
-    -fx-stroke: white;
-}
-.chart-pie-label {
-    -fx-padding: 0;
-    -fx-fill: red;
+    -fx-stroke: transparent;
 }
 .chart-pie-label-line {
     -fx-stroke: red;
