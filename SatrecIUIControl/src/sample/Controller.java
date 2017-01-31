@@ -29,7 +29,7 @@ public class Controller implements Initializable {
 //        yAxis.setLowerBound(-7);
 //        yAxis.setUpperBound(7);
 //        yAxis.setTickUnit(1);
-
+//
         XYChart.Series series = new XYChart.Series();
 
         series.getData().add(new XYChart.Data<>(1, 1));

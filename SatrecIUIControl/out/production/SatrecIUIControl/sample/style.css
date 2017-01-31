@@ -31,7 +31,7 @@
 }
 .axis-tick-mark {
     -fx-fill: null;
-    -fx-stroke: white;
+    -fx-stroke: transparent;
 }
 .axis-minor-tick-mark {
     -fx-fill: null;
@@ -48,4 +48,14 @@
 }
 .line{
     -fx-stroke-dash-array: 12 2 4 2;
+}
+.chart-vertical-zero-line {
+    -fx-stroke: black;
+}
+.chart-horizontal-zero-line {
+    -fx-stroke: black;
+}
+.date_label_circle{
+    -fx-fill:white;
+    -fx-stroke:blue;
 }

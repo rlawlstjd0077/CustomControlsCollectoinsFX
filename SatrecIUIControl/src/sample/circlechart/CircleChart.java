@@ -1,7 +1,5 @@
 package sample.circlechart;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.chart.NumberAxis;
@@ -14,153 +12,182 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.transform.Rotate;
 
-import java.util.Calendar;
+import java.time.ZonedDateTime;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.TimeZone;
 
 /**
  * Created by GSD on 2017-01-24.
  */
 public class CircleChart extends StackPane {
-    ScatterChart coreChart;
-    NumberAxis xAxis;
-    NumberAxis yAxis;
-    Circle outsideCircle;
-    AnchorPane gradationCanvas;
-    AnchorPane dateLabelCanvas;
-    AnchorPane bottomCanvas;
+    private ScatterChart coreChart;
+    private NumberAxis xAxis;
+    private NumberAxis yAxis;
+    private Circle outsideCircle;
+    private AnchorPane gradationCanvas;
+    private AnchorPane dateLabelCanvas;
+    private AnchorPane bottomCanvas;
+    private AnchorPane baseCanvas;
+    final private int FIXED_SIZE = 230;
 
     public CircleChart() {
-        setPrefHeight(300);
-        setPrefWidth(300);
+        getStylesheets().add("/commons/ui/control/circlechart/circlechart.css");
+        setPadding(new Insets(10));
+        setPrefSize(FIXED_SIZE, FIXED_SIZE);
+        setMaxSize(FIXED_SIZE, FIXED_SIZE);
+        setMinSize(FIXED_SIZE, FIXED_SIZE);
+
         xAxis = new NumberAxis();
         yAxis = new NumberAxis();
-        xAxis.setLowerBound(-5.5);
-        xAxis.setUpperBound(5.5);
-        xAxis.setTickUnit(1);
-
-        yAxis.setLowerBound(-5.5);
-        yAxis.setUpperBound(5.5);
-        yAxis.setTickUnit(1);
         xAxis.setTickLabelsVisible(false);
         yAxis.setTickLabelsVisible(false);
         xAxis.setAutoRanging(false);
         yAxis.setAutoRanging(false);
 
         coreChart = new ScatterChart(xAxis, yAxis);
+        coreChart.setPrefSize(FIXED_SIZE, FIXED_SIZE);
+        coreChart.setMaxSize(FIXED_SIZE, FIXED_SIZE);
+        coreChart.setMinSize(FIXED_SIZE, FIXED_SIZE);
 
-        setMargin(coreChart, new Insets(11, 11, 0, 0));
-        outsideCircle = new Circle(165, Color.TRANSPARENT);
+        baseCanvas = new AnchorPane();
+        baseCanvas.setTranslateX(coreChart.getMinHeight() / 2 - 10);
+        baseCanvas.setTranslateY(coreChart.getMinHeight() / 2 - 10);
+        getChildren().add(baseCanvas);
+
+        setMargin(coreChart, new Insets(10, 12, 0, 0));
+        outsideCircle = new Circle(coreChart.getMinHeight() / 2 - 20, Color.TRANSPARENT);
         outsideCircle.setStroke(Color.BLACK);
         getChildren().add(outsideCircle);
 
+        prefWidthProperty().bind(outsideCircle.radiusProperty());
+
         bottomCanvas = new AnchorPane();
-        bottomCanvas.setTranslateX(190);
-        bottomCanvas.setTranslateY(190);
+        bottomCanvas.setTranslateX(coreChart.getMinHeight() / 2 - 12);
+        bottomCanvas.setTranslateY(coreChart.getMinHeight() / 2 - 12);
         getChildren().add(bottomCanvas);
 
         for (int i = 1; i <= 12; i++) {
-            Line line = new Line(-175, 0, 175, 0);
-            line.setRotate(i * 15);
-            line.setStroke(Paint.valueOf("#dadee5"));
-            line.setStyle("-fx-stroke-dash-array: 12 2 4 2;");
-            getChildren().add(line);
+            Line innerLine = new Line(-outsideCircle.getRadius(), 0, outsideCircle.getRadius(), 0);
+            Line outerPrimaryLine = new Line(-outsideCircle.getRadius() - 8, 0, outsideCircle.getRadius() + 8, 0);
+            Line outerSecondaryLine = new Line(-outsideCircle.getRadius() - 4, 0, outsideCircle.getRadius() + 4, 0);
+            innerLine.setRotate(i * 15);
+            innerLine.setStroke(Paint.valueOf("#dadee5"));
+            innerLine.setStyle("-fx-stroke-dash-array: 12 2 4 2;");
+
+            outerPrimaryLine.setRotate(i * 15);
+            outerPrimaryLine.setFill(Color.BLACK);
+            baseCanvas.getChildren().add(outerPrimaryLine);
+
+            outerSecondaryLine.setRotate(i * 15 + 7.5);
+            outerSecondaryLine.setFill(Color.BLACK);
+            baseCanvas.getChildren().add(outerSecondaryLine);
+
+            getChildren().addAll(innerLine);
         }
 
+        Circle circle = new Circle(outsideCircle.getRadius(), Color.WHITE);
+        baseCanvas.getChildren().add(circle);
+
         gradationCanvas = new AnchorPane();
-        gradationCanvas.setTranslateX(190);
-        gradationCanvas.setTranslateY(190);
+        gradationCanvas.setTranslateX(coreChart.getMinHeight() / 2 - 10);
+        gradationCanvas.setTranslateY(coreChart.getMinHeight() / 2 - 10);
 
         dateLabelCanvas = new AnchorPane();
-        dateLabelCanvas.setTranslateX(190);
-        dateLabelCanvas.setTranslateY(190);
+        dateLabelCanvas.setTranslateX(coreChart.getMinHeight() / 2 - 10);
+        dateLabelCanvas.setTranslateY(coreChart.getMinHeight() / 2 - 10);
         getChildren().add(gradationCanvas);
         getChildren().add(coreChart);
         getChildren().add(dateLabelCanvas);
-        doDraw();
-        drawObjectCircle(4.2);
-        drawDateLabel(135, new GregorianCalendar(2014, 0, 13).getTime());
     }
 
-    public ScatterChart getCoreChart() {
-        return this.coreChart;
-    }
-
-    public NumberAxis getxAxis() {
-        return xAxis;
-    }
-
-    public NumberAxis getyAxis() {
-        return yAxis;
-    }
-
-    public void drawDateLabel(double degree, Date date){
+    public void drawDateLabel(double degree, ZonedDateTime date) {
         HBox hBox = new HBox();
         hBox.setPrefHeight(20);
-        hBox.setPrefWidth(217);
+        hBox.setPrefWidth(coreChart.getMinHeight() / 2 + 28);
         hBox.setAlignment(Pos.CENTER_RIGHT);
-        Label label = new Label("12-16");
-        label.setPadding(new Insets(4));
+        Label label = new Label(date.getMonth() + "/" + date.getDayOfMonth());
+        label.setPadding(new Insets(2));
         label.setStyle("-fx-background-color:white; -fx-text-fill:blue; -fx-border-color:gray;");
         label.setRotate(degree);
 
         Circle circle = new Circle(4, Color.BLACK);
+        circle.getStyleClass().add("date_label_circle");
         VBox box = new VBox();
         box.setAlignment(Pos.TOP_CENTER);
         box.getChildren().add(circle);
+
         hBox.getChildren().add(box);
         hBox.getChildren().add(label);
 
-
-        double regulateValue = (degree % 180) / 90 == 0 ? (2 * (degree % 90)) / 15 : (2 * (90 - degree % 90)) / 15;
-        hBox.setMargin(label, new Insets(-15,regulateValue,0,-regulateValue));
-        box.setMargin(circle, new Insets(-3, 0, 0, 0));
+//        double regulateValue = (degree % 180) / 90 == 0 ? (2 * (degree % 90)) / 15 : (2 * (90 - degree % 90)) / 15;
+        hBox.setMargin(label, new Insets(-10, 1, 0, -1));
+        box.setMargin(circle, new Insets(-4, 0, 0, 0));
         Rotate rotate = new Rotate(-degree);
         hBox.getTransforms().add(rotate);
         dateLabelCanvas.getChildren().add(hBox);
     }
 
-    public void drawObjectCircle(double radiusCoordinate){
-        Circle circle = new Circle((radiusCoordinate * outsideCircle.getRadius())/xAxis.getUpperBound(), Paint.valueOf("#D5FEAD"));
+    public void drawObjectCircle(double radiusCoordinate) {
+        Circle circle = new Circle(((radiusCoordinate - xAxis.getLowerBound()) * outsideCircle.getRadius()) / (xAxis.getUpperBound() - xAxis.getLowerBound()), Paint.valueOf("#D5FEAD"));
         circle.setStroke(Color.RED);
         bottomCanvas.getChildren().add(circle);
     }
 
     public void doDraw() {
         boolean state = true;
-        for (int i = 1; i <= 4; i++) {
-            state = !state;
-            for (double j = 0 + xAxis.getTickUnit(); j < xAxis.getUpperBound(); j += xAxis.getTickUnit()) {
-                Line line = new Line(6, 0, -6, 0);
-                line.setFill(Color.BLACK);
-                if (i <= 2) {
-                    line.setRotate(90);
-                    line.setLayoutX((j * outsideCircle.getRadius()) / xAxis.getUpperBound() * (state ? -1 : 1) );
-                } else {
-                    line.setLayoutY((j * outsideCircle.getRadius()) / xAxis.getUpperBound() * (state ? -1 : 1));
-                }
-                gradationCanvas.getChildren().add(line);
-            }
-        }
-        for (double j = 0 + xAxis.getTickUnit(); j < xAxis.getUpperBound(); j += xAxis.getTickUnit()) {
+        double lowerBound = xAxis.getLowerBound();
+        double upperBound = xAxis.getUpperBound();
+        double tickUnit = xAxis.getTickUnit();
+        for (double j = 0 + tickUnit; j <= upperBound; j += tickUnit) {
             Circle circle = new Circle();
             circle.setStroke(Paint.valueOf("#dadee5"));
             circle.setFill(Color.TRANSPARENT);
-            circle.setRadius((j * outsideCircle.getRadius()) / xAxis.getUpperBound());
+            circle.setRadius((j  * outsideCircle.getRadius()) / upperBound );
             gradationCanvas.getChildren().add(circle);
+
+            Label markingLabel = new Label();
+            markingLabel.setText(j + "");
+            markingLabel.getStyleClass().add("marking-label");
+            gradationCanvas.getChildren().add(markingLabel);
+            markingLabel.setLayoutY(((j * outsideCircle.getRadius()) / upperBound * -1) - 8);
+            markingLabel.setLayoutX(10);
         }
-        for(int i = 0; i < 12; i++) {
+
+        for (int i = 1; i <= 4; i++) {
+            state = !state;
+            for (double j = 0 + tickUnit; j <= upperBound; j += tickUnit) {
+                Line primaryLine = new Line(8, 0, -8, 0);
+                primaryLine.setFill(Color.BLACK);
+                Line secondaryLine = new Line(4, 0, -4, 0);
+                secondaryLine.setFill(Color.BLACK);
+
+                if (i <= 2) {
+                    primaryLine.setRotate(90);
+                    secondaryLine.setRotate(90);
+                    primaryLine.setLayoutX((j * outsideCircle.getRadius()) / upperBound * (state ? -1 : 1));
+                    secondaryLine.setLayoutX(((j   - tickUnit / 2) * outsideCircle.getRadius()) / upperBound * (state ? -1 : 1));
+                } else {
+                    primaryLine.setLayoutY((j * outsideCircle.getRadius()) / upperBound * (state ? -1 : 1));
+                    secondaryLine.setLayoutY(((j- tickUnit / 2) * outsideCircle.getRadius()) / upperBound * (state ? -1 : 1));
+                }
+
+                gradationCanvas.getChildren().add(secondaryLine);
+                gradationCanvas.getChildren().add(primaryLine);
+            }
+        }
+
+        for (int i = 0; i < 12; i++) {
             BorderPane border = new BorderPane();
             border.setPrefHeight(20);
-            border.setPrefWidth(396);
-            border.setStyle("-fx-background-color:transparent");
+            border.setPrefWidth(coreChart.getMinHeight() + 20);
             border.setRotate(i * -15);
-            border.setLayoutX(-198);
+            border.setLayoutX((coreChart.getMinHeight() / 2 + 10 ) * -1);
             border.setLayoutY(-10);
-            Label label1 = new Label(i * 15 + 180 + "" );
+            Label label1 = new Label(i * 15 + 180 + "");
             label1.setRotate(i * 15);
             Label label2 = new Label(i * 15 + "");
+            label1.getStyleClass().add("degree-label");
+            label2.getStyleClass().add("degree-label");
             VBox vBox = new VBox(label2);
             vBox.setAlignment(Pos.CENTER_LEFT);
             label2.setRotate(i * 15);
@@ -168,5 +195,15 @@ public class CircleChart extends StackPane {
             border.setRight(vBox);
             gradationCanvas.getChildren().add(border);
         }
+    }
+
+    public void setAxisProperty(double lowerBound, double upperBound, double tickUnit){
+        xAxis.setUpperBound(upperBound);
+        xAxis.setLowerBound(0 - upperBound);
+        xAxis.setTickUnit(tickUnit);
+        yAxis.setUpperBound(upperBound);
+        yAxis.setLowerBound(0 - upperBound);
+        yAxis.setTickUnit(tickUnit);
+        doDraw();
     }
 }

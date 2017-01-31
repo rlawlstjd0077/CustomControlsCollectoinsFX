@@ -55,7 +55,14 @@
 .chart-horizontal-zero-line {
     -fx-stroke: black;
 }
+.chart-symbol{
+    -fx-padding:3px;
+}
 .date_label_circle{
     -fx-fill:white;
     -fx-stroke:blue;
+}
+.inner-line{
+    -fx-stroke:#dadee5;
+    -fx-stroke-dash-array:12 2 4 2;
 }

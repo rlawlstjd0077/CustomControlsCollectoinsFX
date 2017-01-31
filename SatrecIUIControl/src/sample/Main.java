@@ -1,41 +1,20 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.*;
-import javafx.scene.control.Accordion;
-import javafx.scene.control.TitledPane;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.Border;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
-import sample.accordion.Gk2Accordion;
-import sample.primaryButton.PrimaryButton;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
-import java.util.TimeZone;
 
 public class Main extends Application {
-    //    final String[] imageNames = new String[]{"Apples", "Flowers", "Leaves"};
-//    final Image[] images = new Image[imageNames.length];
-//    final ImageView[] pics = new ImageView[imageNames.length];
-//    final TitledPane[] tps = new TitledPane[imageNames.length];
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        root.setStyle("-fx-background-color:white");
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 400, 400));
+        primaryStage.setScene(new Scene(root, 800,400));
         primaryStage.show();
 //        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 //        ObservableList<XYChart.Series<Date, Number>> series = FXCollections.observableArrayList();
@@ -45,7 +24,6 @@ public class Main extends Application {
 //        series1Data.add(new XYChart.Data<Date, Number>(new GregorianCalendar(2018, 2, 15).getTime(), 3));
 //
 //        series1Data.add(new XYChart.Data<Date, Number>(new GregorianCalendar(2018, 2, 16).getTime(), 4));
-//
 //
 //
 //        series.add(new XYChart.Series<>("Series1", series1Data));
@@ -60,7 +38,6 @@ public class Main extends Application {
 //            public String toString(Date object) {
 //                return simpleDateFormat.format(object);
 //            }
-//
 //            @Override
 //            public Date fromString(String string) {
 //                return null;
@@ -84,11 +61,8 @@ public class Main extends Application {
 //        yAxis.setTickUnit(500);
 //        XYChart.Series series1 = new XYChart.Series();
 //        series1.setName("Portfolio 1");
-
-
-//
-//        Scene scene = new Scene(chart, 900, 400);
-//        lineChart.getData().addAll(series1);
+//        LineChart lineChart = new LineChart(dateAxis, numberAxis, series);
+//        Scene scene = new Scene(lineChart, 900, 400);
 //
 //        primaryStage.setScene(scene);
 //        primaryStage.show();

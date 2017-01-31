@@ -1,59 +1,23 @@
-<?import javafx.scene.layout.HBox?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Line?>
-<?import sample.circlechart.CircleChart?>
 <?import javafx.scene.layout.Priority?>
-<VBox fx:controller="sample.Controller" maxWidth="3000"
-      xmlns:fx="http://javafx.com/fxml" prefWidth="300" prefHeight="300" stylesheets="@style.css">
-    <CircleChart fx:id="circleChart" >
-        <VBox.vgrow>
-            <Priority fx:constant="ALWAYS" />
-        </VBox.vgrow>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import sample.circlechart.CircleChart?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" >
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-background-color:red;"></VBox>
+    <CircleChart fx:id="circleChart" GridPane.columnIndex="1" GridPane.rowIndex="0" >
+        <padding>
+            <Insets top="10" left="10" right="10" bottom="10"/>
+        </padding>
     </CircleChart>
-    <!--<VBox prefWidth="300" prefHeight="300" alignment="CENTER">-->
-        <!--<LineChart fx:id="lineChart">-->
-            <!--<xAxis>-->
-                <!--<NumberAxis fx:id="xAxis" tickLabelsVisible="false">-->
-
-                <!--</NumberAxis>-->
-            <!--</xAxis>-->
-            <!--<yAxis>-->
-                <!--<NumberAxis fx:id="yAxis" tickLabelsVisible="false">-->
-
-                <!--</NumberAxis>-->
-            <!--</yAxis>-->
-            <!--<VBox.margin>-->
-                <!--<Insets right="10" top="10"/>-->
-            <!--</VBox.margin>-->
-        <!--</LineChart>-->
-    <!--</VBox>-->
-    <!--<Circle fill="transparent" radius="165" stroke="BLACK" strokeType="INSIDE"/>-->
-    <!--<Line endX="170.0" layoutX="30.0" rotate="15.0" startX="-170.0"/>-->
-    <!--<Line endX="170.0" layoutX="30.0" rotate="30.0" startX="-170.0"/>-->
-    <!--<Line endX="170.0" layoutX="30.0" rotate="45.0" startX="-170.0"/>-->
-    <!--<Line endX="170.0" layoutX="30.0" rotate="60.0" startX="-170.0"/>-->
-    <!--<Line endX="170.0" layoutX="30.0" rotate="75.0" startX="-170.0"/>-->
-    <!--<Line endX="170.0" layoutX="30.0" rotate="90.0" startX="-170.0"/>-->
-    <!--<Line endX="170.0" layoutX="30.0" rotate="105.0" startX="-170.0"/>-->
-    <!--<Line endX="170.0" layoutX="30.0" rotate="120.0" startX="-170.0" />-->
-    <!--<Line endX="170.0" layoutX="30.0" rotate="135.0" startX="-170.0" />-->
-    <!--<Line endX="170.0" layoutX="30.0" rotate="150.0" startX="-170.0" />-->
-    <!--<Line endX="170.0" layoutX="30.0" rotate="165.0" startX="-170.0" />-->
-    <!--<Line endX="170.0" layoutX="30.0" rotate="180.0" startX="-170.0" />-->
-    <padding>
-        <Insets>
-            <top>10</top>
-            <left>10</left>
-            <right>10</right>
-            <bottom>10</bottom>
-        </Insets>
-    </padding>
-</VBox>
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"></ColumnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"></ColumnConstraints>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS"></RowConstraints>
+    </rowConstraints>
+</GridPane>
