@@ -589,7 +589,7 @@ public final class DateAxis extends Axis<Date> {
     MONTH_3(Calendar.MONTH, 3),
     MONTH_1(Calendar.MONTH, 1),
     WEEK(Calendar.WEEK_OF_YEAR, 1),
-    DAY(Calendar.DATE, 1),
+    DAY(Calendar.DATE, 2),
     HOUR_12(Calendar.HOUR, 12),
     HOUR_6(Calendar.HOUR, 6),
     HOUR_3(Calendar.HOUR, 3),

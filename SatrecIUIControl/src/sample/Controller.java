@@ -30,15 +30,15 @@ public class Controller implements Initializable {
 //        yAxis.setUpperBound(7);
 //        yAxis.setTickUnit(1);
 //
-        XYChart.Series series = new XYChart.Series();
-
-        series.getData().add(new XYChart.Data<>(1, 1));
-        series.getData().add(new XYChart.Data<>(1.5, 1.5));
-        series.getData().add(new XYChart.Data<>(2.5, 2));
-        series.getData().add(new XYChart.Data<>(3, 2.5));
-        series.getData().add(new XYChart.Data<>(2, 3));
-        series.getData().add(new XYChart.Data<>(1, 3.5));
-        circleChart.getCoreChart().getData().add(series);
-        circleChart.getCoreChart().setLegendVisible(false);
+//        XYChart.Series series = new XYChart.Series();
+//
+//        series.getData().add(new XYChart.Data<>(1, 1));
+//        series.getData().add(new XYChart.Data<>(1.5, 1.5));
+//        series.getData().add(new XYChart.Data<>(2.5, 2));
+//        series.getData().add(new XYChart.Data<>(3, 2.5));
+//        series.getData().add(new XYChart.Data<>(2, 3));
+//        series.getData().add(new XYChart.Data<>(1, 3.5));
+//        circleChart.getCoreChart().getData().add(series);
+//        circleChart.getCoreChart().setLegendVisible(false);
     }
 }

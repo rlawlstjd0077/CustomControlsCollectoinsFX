@@ -13,8 +13,6 @@ import javafx.scene.shape.Line;
 import javafx.scene.transform.Rotate;
 
 import java.time.ZonedDateTime;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 /**
  * Created by GSD on 2017-01-24.
