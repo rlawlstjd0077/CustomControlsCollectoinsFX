@@ -1,5 +1,4 @@
-package sample.scrollchart;
-
+package commons.ui.control.scrollchart;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
@@ -9,6 +8,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 
 import java.time.ZoneId;
@@ -19,15 +19,17 @@ import java.util.ArrayList;
 /**
  * Created by GSD on 2017-02-01.
  */
+
 public class ScrollChart extends StackPane {
+  private final int[] RATIO_ARRAY = {1, 2, 5, 10};
+  private final int SIX_DAYS_SECONDS = 518400;
+  private final int ONE_DAYS_SECONDS = 84600;
   private ArrayList<ZonedDateTime> datas1;
   private int currentRatio;
   private ComboBox<String> comboBox;
   private ZonedDateTime startDateTime;
   private ZonedDateTime endDateTime;
-  private HBox cellBox;
   private ScrollPane coreChart;
-  private final int[] RATIO_ARRAY = {1, 2, 5, 10};
   private SimpleIntegerProperty chartWidth;
   private SimpleIntegerProperty chartHeight;
   private int entireTime;
@@ -53,7 +55,7 @@ public class ScrollChart extends StackPane {
 
   public SimpleIntegerProperty chartHeightProperty() {
     if (chartHeight == null) {
-      chartHeight = new SimpleIntegerProperty(this, "height", 70);
+      chartHeight = new SimpleIntegerProperty(this, "height", 75);
     }
     return chartHeight;
   }
@@ -63,7 +65,7 @@ public class ScrollChart extends StackPane {
   }
 
   private int getChartHeight() {
-    return chartHeight == null ? 70 : chartHeightProperty().getValue();
+    return chartHeight == null ? 75 : chartHeightProperty().getValue();
   }
 
   public ScrollChart() {
@@ -76,6 +78,7 @@ public class ScrollChart extends StackPane {
     setMinSize(getChartWidth(), getChartHeight());
     setMaxSize(getChartWidth(), getChartHeight());
     coreChart = new ScrollPane();
+    coreChart.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
     coreChart.setPrefSize(getChartWidth(), getChartHeight());
     coreChart.setMinSize(getChartWidth(), getChartHeight());
     coreChart.setMaxSize(getChartWidth(), getChartHeight());
@@ -90,7 +93,7 @@ public class ScrollChart extends StackPane {
       doDraw(RATIO_ARRAY[comboBox.getSelectionModel().getSelectedIndex()]);
     });
     getChildren().addAll(coreChart, comboBox);
-    doDraw(comboBox.getSelectionModel().getSelectedIndex());
+    doDraw(RATIO_ARRAY[comboBox.getSelectionModel().getSelectedIndex()]);
   }
 
   public void setDatas(ArrayList<ZonedDateTime> datas1, ZonedDateTime startDateTime, ZonedDateTime endDateTime, ZonedDateTime EWStartDate, ZonedDateTime NSStartDate) {
@@ -99,13 +102,12 @@ public class ScrollChart extends StackPane {
     this.endDateTime = endDateTime;
     this.EWStartDate = EWStartDate;
     this.NSStartDate = NSStartDate;
-    doDraw(comboBox.getSelectionModel().getSelectedIndex());
-    startDateTime.getMinute();
+    doDraw(RATIO_ARRAY[comboBox.getSelectionModel().getSelectedIndex()]);
   }
 
   private void doDraw(int ratio) {
-    int startDateInstantSecond = (int) startDateTime.getLong(ChronoField.INSTANT_SECONDS);
-    int endDateInstantSecond = (int) endDateTime.getLong(ChronoField.INSTANT_SECONDS);
+    int startDateInstantSecond = getInstantSeconds(startDateTime);
+    int endDateInstantSecond = getInstantSeconds(endDateTime);
     entireTime = endDateInstantSecond - startDateInstantSecond;
     entireWidth = getChartWidth() * ratio;
 
@@ -115,48 +117,99 @@ public class ScrollChart extends StackPane {
 
   private HBox drawEntireBox() {
     HBox entireBox = new HBox();
-    entireBox.setPrefSize(entireWidth, getChartHeight());
+    entireBox.setStyle("-fx-background-color:red");
+    VBox cellBox;
+    VBox dateBoard;
+    int entireBoxHeight = getChartHeight() - 20;
+    entireBox.setPrefSize(entireWidth, entireBoxHeight);
 
-    cellBox = new HBox();
-    cellBox.setPrefSize((entireWidth * startDateTime.getLong(ChronoField.SECOND_OF_DAY)) / entireTime, getChartHeight());
+    cellBox = new VBox();
+    cellBox.setPrefSize((double)(entireWidth * startDateTime.getLong(ChronoField.SECOND_OF_DAY)) / entireTime, entireBoxHeight);
     entireBox.getChildren().add(cellBox);
+    drawChartBoards(cellBox);
+    dateBoard = new VBox();
+    dateBoard.setPrefSize(cellBox.getPrefWidth(), 20);
+    dateBoard.setStyle("-fx-background-color:#F2F3F5; -fx-border-color:#9AB3CA; -fx-border-width:1 0 0 1");
+    cellBox.getChildren().add(dateBoard);
 
-    for (int i = 0; i < endDateTime.getLong(ChronoField.EPOCH_DAY) - startDateTime.getLong(ChronoField.EPOCH_DAY) - 2; i++) {
-      cellBox = new HBox();
-      cellBox.setPrefSize((entireWidth * 86400) / entireTime, getChartHeight());
+    for (int i = 0; i < getEpochDay(endDateTime) - getEpochDay(startDateTime) - 2; i++) {
+      cellBox = new VBox();
+      cellBox.setPrefSize((double)(entireWidth * 86400) / entireTime, entireBoxHeight);
       entireBox.getChildren().add(cellBox);
+      drawChartBoards(cellBox);
+      dateBoard = new VBox();
+      dateBoard.setPrefSize(cellBox.getPrefWidth(), 20);
+      dateBoard.setStyle("-fx-background-color:#F2F3F5; -fx-border-color:#9AB3CA; -fx-border-width:1 0 0 0");
+      cellBox.getChildren().add(dateBoard);
     }
-    cellBox = new HBox();
-    cellBox.setPrefSize((entireWidth * endDateTime.getLong(ChronoField.SECOND_OF_DAY)) / entireTime, getChartHeight());
+    cellBox = new VBox();
+    cellBox.setPrefSize((double)(entireWidth * endDateTime.getLong(ChronoField.SECOND_OF_DAY)) / entireTime, entireBoxHeight);
     entireBox.getChildren().add(cellBox);
-
+    drawChartBoards(cellBox);
+    dateBoard = new VBox();
+    dateBoard.setPrefSize(cellBox.getPrefWidth(), 20);
+    dateBoard.setStyle("-fx-background-color:#F2F3F5; -fx-border-color:#9AB3CA; -fx-border-width:1 1 0 0");
+    cellBox.getChildren().add(dateBoard);
     return entireBox;
   }
+  private void drawChartBoards(VBox cellBox){
+    AnchorPane board = new AnchorPane();
+    board.setPrefSize(cellBox.getPrefWidth(), cellBox.getPrefHeight() - 10);
+    cellBox.getChildren().add(board);
+  }
+
 
   public void drawDatas() {
     for (ZonedDateTime time : datas1) {
-      drawLineToChart((int)time.getLong(ChronoField.EPOCH_DAY));
+      drawLineToChart(getEpochDay(time), getInstantSeconds(time));
     }
   }
 
   public void drawRefDateData() {
-    for(int i = 0; i < 2; i++){
-
+    for(int i = getInstantSeconds(EWStartDate); i < getInstantSeconds(endDateTime); i += SIX_DAYS_SECONDS){
+      Line line  = drawBarToChart(i / ONE_DAYS_SECONDS, i);
+      line.getStyleClass().add("bar-ew");
+    }
+    for(int i = getInstantSeconds(NSStartDate); i < getInstantSeconds(endDateTime); i += SIX_DAYS_SECONDS){
+      Line line  = drawBarToChart(i / ONE_DAYS_SECONDS, i);
+      line.getStyleClass().add("bar-ns");
     }
   }
 
-  public void drawLineToChart(int epoch_day){
-    HBox entireBox = (HBox) coreChart.getContent();
-    HBox currentBox = (HBox) entireBox.getChildren().get((int)(epoch_day - startDateTime.getLong(ChronoField.EPOCH_DAY)));
+  public void drawLineToChart(int epochDay, int instantSecond){
+    HBox currentBox = getMatchBoxByCoordinate(epochDay);
     AnchorPane boxCell = (AnchorPane) currentBox.getChildren().get(0);
     Line line = new Line(0, -5, 5, 0);
-    line.setLayoutX(getDataXCoordinate((int)currentBox.getPrefWidth()));
-    line.setLayoutY(5);
+    line.setLayoutY(10);
     boxCell.getChildren().add(line);
   }
 
-  public int getDataXCoordinate(int width){
+  public Line drawBarToChart(int epochDay, int instantSecond){
+    HBox currentBox = getMatchBoxByCoordinate(epochDay);
+    AnchorPane boxCell = (AnchorPane) currentBox.getChildren().get(0);
+    Line line = new Line(0, -8, 8, 0);
+    line.setLayoutX(getDataXCoordinate((int)currentBox.getPrefWidth(), instantSecond));
+    line.setStrokeWidth(15);
+    line.setLayoutY(10);
+    boxCell.getChildren().add(line);
+    return line;
+  }
+
+  public HBox getMatchBoxByCoordinate(int epoch_day){
+    HBox entireBox = (HBox) coreChart.getContent();
+    return (HBox)entireBox.getChildren().get(epoch_day - getEpochDay(startDateTime));
+  }
+
+  public int getDataXCoordinate(int width, int dataSecond){
     int second = (width * entireTime) / entireWidth;
-    return (width * second) / entireTime;
+    return (width * dataSecond - (3600 - second)) / second;
+  }
+
+  public int getEpochDay(ZonedDateTime time){
+    return (int)time.getLong(ChronoField.EPOCH_DAY);
+  }
+
+  public int getInstantSeconds(ZonedDateTime time){
+    return (int)time.getLong(ChronoField.INSTANT_SECONDS);
   }
 }
