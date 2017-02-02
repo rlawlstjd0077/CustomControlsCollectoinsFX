@@ -5,6 +5,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
@@ -62,7 +64,10 @@ public class Main extends Application {
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("Portfolio 1");
         LineChart lineChart = new LineChart(dateAxis, numberAxis, series);
-        Scene scene = new Scene(lineChart, 900, 400);
+        Line line = new Line(0, -5, 0, 5);
+        line.setStrokeWidth(10);
+        HBox hBox = new HBox(lineChart, line);
+        Scene scene = new Scene(hBox, 900, 400);
 
         primaryStage.setScene(scene);
         primaryStage.show();
