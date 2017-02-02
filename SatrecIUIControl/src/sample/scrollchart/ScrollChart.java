@@ -1,18 +1,22 @@
-package commons.ui.control.scrollchart;
+package sample.scrollchart;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 import java.util.ArrayList;
 
@@ -23,7 +27,7 @@ import java.util.ArrayList;
 public class ScrollChart extends StackPane {
   private final int[] RATIO_ARRAY = {1, 2, 5, 10};
   private final int SIX_DAYS_SECONDS = 518400;
-  private final int ONE_DAYS_SECONDS = 84600;
+  private final int ONE_DAYS_SECONDS = 86400;
   private ArrayList<ZonedDateTime> datas1;
   private int currentRatio;
   private ComboBox<String> comboBox;
@@ -34,6 +38,7 @@ public class ScrollChart extends StackPane {
   private SimpleIntegerProperty chartHeight;
   private int entireTime;
   private int entireWidth;
+  private int entireBoxHeight;
   private ZonedDateTime EWStartDate;
   private ZonedDateTime NSStartDate;
   ObservableList<String> list = FXCollections.observableArrayList("1:1", "1:2", "1:5", "1:10");
@@ -113,14 +118,15 @@ public class ScrollChart extends StackPane {
 
     coreChart.setContent(drawEntireBox());
 //    drawDatas(entireTime, entireTime);
+    drawLineToChart(16754, 1417343800);
   }
 
   private HBox drawEntireBox() {
+    ZonedDateTime tempDateTime = startDateTime;
     HBox entireBox = new HBox();
-    entireBox.setStyle("-fx-background-color:red");
     VBox cellBox;
     VBox dateBoard;
-    int entireBoxHeight = getChartHeight() - 20;
+    entireBoxHeight = getChartHeight() - 20;
     entireBox.setPrefSize(entireWidth, entireBoxHeight);
 
     cellBox = new VBox();
@@ -128,7 +134,10 @@ public class ScrollChart extends StackPane {
     entireBox.getChildren().add(cellBox);
     drawChartBoards(cellBox);
     dateBoard = new VBox();
+
     dateBoard.setPrefSize(cellBox.getPrefWidth(), 20);
+    addDateLabel(dateBoard, tempDateTime);
+    tempDateTime = tempDateTime.plusDays(1);
     dateBoard.setStyle("-fx-background-color:#F2F3F5; -fx-border-color:#9AB3CA; -fx-border-width:1 0 0 1");
     cellBox.getChildren().add(dateBoard);
 
@@ -139,6 +148,8 @@ public class ScrollChart extends StackPane {
       drawChartBoards(cellBox);
       dateBoard = new VBox();
       dateBoard.setPrefSize(cellBox.getPrefWidth(), 20);
+      addDateLabel(dateBoard, tempDateTime);
+      tempDateTime = tempDateTime.plusDays(1);
       dateBoard.setStyle("-fx-background-color:#F2F3F5; -fx-border-color:#9AB3CA; -fx-border-width:1 0 0 0");
       cellBox.getChildren().add(dateBoard);
     }
@@ -148,16 +159,24 @@ public class ScrollChart extends StackPane {
     drawChartBoards(cellBox);
     dateBoard = new VBox();
     dateBoard.setPrefSize(cellBox.getPrefWidth(), 20);
+    addDateLabel(dateBoard, tempDateTime);
     dateBoard.setStyle("-fx-background-color:#F2F3F5; -fx-border-color:#9AB3CA; -fx-border-width:1 1 0 0");
     cellBox.getChildren().add(dateBoard);
     return entireBox;
   }
   private void drawChartBoards(VBox cellBox){
     AnchorPane board = new AnchorPane();
-    board.setPrefSize(cellBox.getPrefWidth(), cellBox.getPrefHeight() - 10);
+    board.setPrefSize(cellBox.getPrefWidth(), cellBox.getPrefHeight() - 20);
     cellBox.getChildren().add(board);
+    board.setTranslateY(cellBox.getPrefHeight() - 20);
   }
 
+  private void addDateLabel(VBox vBox, ZonedDateTime dateTime){
+    vBox.setAlignment(Pos.CENTER);
+    DateTimeFormatter format = DateTimeFormatter
+            .ofPattern("MM-dd");
+    vBox.getChildren().add(new Label(dateTime.format(format)));
+  }
 
   public void drawDatas() {
     for (ZonedDateTime time : datas1) {
@@ -177,32 +196,34 @@ public class ScrollChart extends StackPane {
   }
 
   public void drawLineToChart(int epochDay, int instantSecond){
-    HBox currentBox = getMatchBoxByCoordinate(epochDay);
+    VBox currentBox = getMatchBoxByCoordinate(epochDay);
     AnchorPane boxCell = (AnchorPane) currentBox.getChildren().get(0);
-    Line line = new Line(0, -5, 5, 0);
-    line.setLayoutY(10);
+    Line line = new Line(0, -20, 0, 0);
+    line.setLayoutX(getDataXCoordinate(currentBox.getPrefWidth(), instantSecond));
+    line.getStyleClass().add("bar-ew");
+    line.setStrokeWidth(4);
+    line.setStroke(Color.RED);
     boxCell.getChildren().add(line);
   }
 
   public Line drawBarToChart(int epochDay, int instantSecond){
-    HBox currentBox = getMatchBoxByCoordinate(epochDay);
+    VBox currentBox = getMatchBoxByCoordinate(epochDay);
     AnchorPane boxCell = (AnchorPane) currentBox.getChildren().get(0);
-    Line line = new Line(0, -8, 8, 0);
+    Line line = new Line(0, -8, 0, 0);
     line.setLayoutX(getDataXCoordinate((int)currentBox.getPrefWidth(), instantSecond));
     line.setStrokeWidth(15);
-    line.setLayoutY(10);
     boxCell.getChildren().add(line);
     return line;
   }
 
-  public HBox getMatchBoxByCoordinate(int epoch_day){
+  public VBox getMatchBoxByCoordinate(int epoch_day){
     HBox entireBox = (HBox) coreChart.getContent();
-    return (HBox)entireBox.getChildren().get(epoch_day - getEpochDay(startDateTime));
+    return (VBox) entireBox.getChildren().get(epoch_day - getEpochDay(startDateTime));
   }
 
-  public int getDataXCoordinate(int width, int dataSecond){
-    int second = (width * entireTime) / entireWidth;
-    return (width * dataSecond - (3600 - second)) / second;
+  public double getDataXCoordinate(double width, int dataSecond){
+    double second = (width * entireTime) / entireWidth;
+    return (width * (dataSecond / ONE_DAYS_SECONDS - (ONE_DAYS_SECONDS - second))) / second;
   }
 
   public int getEpochDay(ZonedDateTime time){

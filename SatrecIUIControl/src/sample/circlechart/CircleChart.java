@@ -29,7 +29,7 @@ public class CircleChart extends StackPane {
     final private int FIXED_SIZE = 230;
 
     public CircleChart() {
-        getStylesheets().add("/commons/ui/control/circlechart/circlechart.css");
+        getStylesheets().add("/commons/ui/control/circlechart/circlechart1.css");
         setPadding(new Insets(10));
         setPrefSize(FIXED_SIZE, FIXED_SIZE);
         setMaxSize(FIXED_SIZE, FIXED_SIZE);
