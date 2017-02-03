@@ -1,4 +1,5 @@
 /*------ 배율 Button 부분 -------*/
+/*
 .scroll-button{
     -fx-background-insets: 0;
     -fx-border-color:black;
@@ -9,7 +10,20 @@
 .scroll-button > .arrow-button > .arrow{
     -fx-background-color: transparent;
 }
-
+.combo-box-base  {
+    -fx-background-radius: 5, 5, 4, 3;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-text-fill:black;
+}*/
+.combo-box{
+    -fx-font-size:8;
+    -fx-background-color:transparent;
+    -fx-inner-border:black;
+}
+.combo-box > .arrow-button > .arrow{
+    -fx-background-color: transparent;
+}
 /*---- Scroll Bar 부분  -----*/
 .scroll-bar:vertical{
     -fx-min-width:14;
@@ -18,7 +32,7 @@
 }
 .scroll-bar:horizontal{
     -fx-min-height:14;
-    -fx-background-insets:0;
+    -fx-background-insets:10;
     -fx-background-color: transparent;
     -fx-border-color:#868E95;
 }
@@ -62,11 +76,20 @@
     -fx-border-width:0;
     -fx-background-insets: 0;
 }
+.scroll-bar:horizontal > .track {
+    -fx-background-insets: 10;
+}
 
 /*--------  ChartData 부분 ---------*/
 .bar-ew{
-    -fx-fill:#B296E4;
+    -fx-stroke:#B296E4;
 }
 .bar-ns{
-    -fx-fill:#E08DCE;
+    -fx-stroke:#E08DCE;
+}
+.bar-start-date{
+    -fx-stroke:#426FA8;
+}
+.bar-end-date{
+    -fx-stroke:#426FA8;
 }
