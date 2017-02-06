@@ -57,8 +57,6 @@ public class CircleChart extends StackPane {
         outsideCircle.setStroke(Color.BLACK);
         getChildren().add(outsideCircle);
 
-        prefWidthProperty().bind(outsideCircle.radiusProperty());
-
         bottomCanvas = new AnchorPane();
         bottomCanvas.setTranslateX(coreChart.getMinHeight() / 2 - 12);
         bottomCanvas.setTranslateY(coreChart.getMinHeight() / 2 - 12);
@@ -98,6 +96,28 @@ public class CircleChart extends StackPane {
         getChildren().add(dateLabelCanvas);
     }
 
+    /**
+     * Data를 세팅 하는 메소드
+     * x축, y축 의 Axis 데이터는 동일 하기 때문에 한 축만 setting
+     * @param lowerBound : 축의 시작값
+     * @param upperBound : 축의  최댓값
+     * @param tickUnit : 눈금의 값 단위
+     */
+    public void setAxisProperty(double lowerBound, double upperBound, double tickUnit){
+        xAxis.setUpperBound(upperBound);
+        xAxis.setLowerBound(0 - upperBound);
+        xAxis.setTickUnit(tickUnit);
+        yAxis.setUpperBound(upperBound);
+        yAxis.setLowerBound(0 - upperBound);
+        yAxis.setTickUnit(tickUnit);
+        doDraw();
+    }
+
+    /**
+     * dateLabel을 그려주는 메소드
+     * @param degree : circle 의 degree
+     * @param date
+     */
     public void drawDateLabel(double degree, ZonedDateTime date) {
         HBox hBox = new HBox();
         hBox.setPrefHeight(20);
@@ -125,15 +145,21 @@ public class CircleChart extends StackPane {
         dateLabelCanvas.getChildren().add(hBox);
     }
 
+    /**
+     * radius를 받아 내부에 연두색 circle을 그려주는 메소드
+     * @param radiusCoordinate
+     */
     public void drawObjectCircle(double radiusCoordinate) {
         Circle circle = new Circle(((radiusCoordinate - xAxis.getLowerBound()) * outsideCircle.getRadius()) / (xAxis.getUpperBound() - xAxis.getLowerBound()), Paint.valueOf("#D5FEAD"));
         circle.setStroke(Color.RED);
         bottomCanvas.getChildren().add(circle);
     }
 
+    /**
+     * 원  내부의 눈금등 전체적인 contents들을 그려주는 메소드
+     */
     public void doDraw() {
         boolean state = true;
-        double lowerBound = xAxis.getLowerBound();
         double upperBound = xAxis.getUpperBound();
         double tickUnit = xAxis.getTickUnit();
         for (double j = 0 + tickUnit; j <= upperBound; j += tickUnit) {
@@ -193,15 +219,5 @@ public class CircleChart extends StackPane {
             border.setRight(vBox);
             gradationCanvas.getChildren().add(border);
         }
-    }
-
-    public void setAxisProperty(double lowerBound, double upperBound, double tickUnit){
-        xAxis.setUpperBound(upperBound);
-        xAxis.setLowerBound(0 - upperBound);
-        xAxis.setTickUnit(tickUnit);
-        yAxis.setUpperBound(upperBound);
-        yAxis.setLowerBound(0 - upperBound);
-        yAxis.setTickUnit(tickUnit);
-        doDraw();
     }
 }

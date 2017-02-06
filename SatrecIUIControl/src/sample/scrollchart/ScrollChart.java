@@ -27,7 +27,6 @@ import java.util.ArrayList;
 
 public class ScrollChart extends StackPane {
   private final int[] RATIO_ARRAY = {1, 2, 5, 10};
-  private final int SIX_DAYS_SECONDS = 518400;
   private final int ONE_DAYS_SECONDS = 86400;
   private ArrayList<ZonedDateTime> datas1;
   private ComboBox<String> comboBox;
@@ -78,7 +77,7 @@ public class ScrollChart extends StackPane {
     //임시 데이터
     startDateTime = ZonedDateTime.of(2015, 11, 14, 11, 45, 59, 1234, zoneId);
     endDateTime = ZonedDateTime.of(2015, 11, 20, 0, 45, 59, 1234, zoneId);
-    getStylesheets().add("/commons/ui/control/scrollchart/scrollchart.css");
+    getStylesheets().add("/sample/scrollchart/scrollchart.css");
     setPrefSize(getChartWidth(), getChartHeight());
     setMinSize(getChartWidth(), getChartHeight());
     setMaxSize(getChartWidth(), getChartHeight());
@@ -138,22 +137,18 @@ public class ScrollChart extends StackPane {
     drawLineToChart(getEpochDay(TestTime), getSecondsOfDay(TestTime));
     ZonedDateTime TestTime2 = ZonedDateTime.of(2015, 11, 16, 23, 30, 59, 1234, zoneId);
     drawBarToChart(getEpochDay(TestTime2), getSecondsOfDay(TestTime2));
-
-
 //    drawRefDateData();
 //    drawDatas();
   }
 
   /**
    * Scroll Pane에 들어갈 전체 Box를 생성하는 메소드
-   *
    * @return EntireBox
    */
   private HBox drawEntireBox() {
     ZonedDateTime tempDateTime = startDateTime;
     HBox entireBox = new HBox();
     VBox cellBox;
-
     VBox dateBoard;
     entireBoxHeight = getChartHeight() - 20;
     entireBox.setPrefSize(entireWidth, entireBoxHeight);
@@ -166,22 +161,20 @@ public class ScrollChart extends StackPane {
 
     dateBoard.setPrefSize(cellBox.getPrefWidth(), 20);
     tempDateTime = tempDateTime.plusDays(1);
-    dateBoard.setStyle("-fx-background-color:#F2F3F5; -fx-border-color:#9AB3CA; -fx-border-width:1 0 0 1");
+    dateBoard.getStyleClass().add("start-date-cell-box");
     cellBox.getChildren().add(dateBoard);
-    cellBox.setStyle("-fx-border-color:red;");
 
     for (int i = 0; i < getEpochDay(endDateTime) - getEpochDay(startDateTime) - 1; i++) {
       cellBox = new VBox();
-      cellBox.setPrefSize((double) (entireWidth * 86400) / entireTime, entireBoxHeight);
+      cellBox.setPrefSize((double) (entireWidth * ONE_DAYS_SECONDS) / entireTime, entireBoxHeight);
       entireBox.getChildren().add(cellBox);
       drawChartBoards(cellBox);
       dateBoard = new VBox();
       dateBoard.setPrefSize(cellBox.getPrefWidth(), 20);
       addDateLabel(dateBoard, tempDateTime);
       tempDateTime = tempDateTime.plusDays(1);
-      dateBoard.setStyle("-fx-background-color:#F2F3F5; -fx-border-color:#9AB3CA; -fx-border-width:1 0 0 0");
+      dateBoard.getStyleClass().add("normal-date-cell-box");
       cellBox.getChildren().add(dateBoard);
-      cellBox.setStyle("-fx-border-color:red;");
     }
     cellBox = new VBox();
     cellBox.setPrefSize((double) (entireWidth * getSecondsOfDay(endDateTime)) / entireTime, entireBoxHeight);
@@ -189,7 +182,7 @@ public class ScrollChart extends StackPane {
     drawChartBoards(cellBox);
     dateBoard = new VBox();
     dateBoard.setPrefSize(cellBox.getPrefWidth(), 20);
-    dateBoard.setStyle("-fx-background-color:#F2F3F5; -fx-border-color:#9AB3CA; -fx-border-width:1 1 0 0");
+    dateBoard.getStyleClass().add("end-date-cell-box");
     cellBox.getChildren().add(dateBoard);
 
     return entireBox;
@@ -216,7 +209,7 @@ public class ScrollChart extends StackPane {
     DateTimeFormatter format = DateTimeFormatter
             .ofPattern("MM-dd");
     Label date = new Label(dateTime.format(format));
-    date.setPrefSize(34, 20);
+    date.setPrefSize(40, 20);
     vBox.getChildren().add(date);
     vBox.setMargin(date, new Insets(0, 0, 0, -date.getPrefWidth() / 2));
   }

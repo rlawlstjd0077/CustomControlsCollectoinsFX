@@ -5,19 +5,8 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import sample.circlechart.CircleChart?>
+<?import sample.scrollchart.ScrollChart?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" >
-    <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-background-color:red;"></VBox>
-    <CircleChart fx:id="circleChart" GridPane.columnIndex="1" GridPane.rowIndex="0" >
-        <padding>
-            <Insets top="10" left="10" right="10" bottom="10"/>
-        </padding>
-    </CircleChart>
-    <columnConstraints>
-        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"></ColumnConstraints>
-        <ColumnConstraints hgrow="ALWAYS" percentWidth="50"></ColumnConstraints>
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints vgrow="ALWAYS"></RowConstraints>
-    </rowConstraints>
+    <ScrollChart></ScrollChart>
 </GridPane>
