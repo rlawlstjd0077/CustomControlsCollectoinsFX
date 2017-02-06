@@ -75,8 +75,16 @@ public class ScrollChart extends StackPane {
   }
 
   public ScrollChart() {
+<<<<<<< HEAD
 
     getStylesheets().add("/commons/ui/control/scrollchart/scrollchart.css");
+=======
+    ZoneId zoneId = ZoneId.of("UTC+1");
+    //임시 데이터
+    startDateTime = ZonedDateTime.of(2015, 11, 14, 11, 45, 59, 1234, zoneId);
+    endDateTime = ZonedDateTime.of(2015, 11, 20, 0, 45, 59, 1234, zoneId);
+    getStylesheets().add("/sample/scrollchart/scrollchart.css");
+>>>>>>> ddcddddbbdc8fc37f2706e2d3897010282422171
     setPrefSize(getChartWidth(), getChartHeight());
     setMinSize(getChartWidth(), getChartHeight());
     setMaxSize(getChartWidth(), getChartHeight());
@@ -132,13 +140,24 @@ public class ScrollChart extends StackPane {
 
     coreChart.setContent(drawEntireBox());
     drawStartEndDateBar();
+<<<<<<< HEAD
     drawRefDateData();
     drawDatas();
+=======
+//    drawDatas(entireTime, entireTime);
+    ZoneId zoneId = ZoneId.of("UTC+1");
+
+    ZonedDateTime TestTime = ZonedDateTime.of(2015, 11, 14, 23, 30, 59, 1234, zoneId);
+    drawLineToChart(getEpochDay(TestTime), getSecondsOfDay(TestTime));
+    ZonedDateTime TestTime2 = ZonedDateTime.of(2015, 11, 16, 23, 30, 59, 1234, zoneId);
+    drawBarToChart(getEpochDay(TestTime2), getSecondsOfDay(TestTime2));
+//    drawRefDateData();
+//    drawDatas();
+>>>>>>> ddcddddbbdc8fc37f2706e2d3897010282422171
   }
 
   /**
    * Scroll Pane에 들어갈 전체 Box를 생성하는 메소드
-   *
    * @return EntireBox
    */
   private StackPane drawEntireBox() {
@@ -147,7 +166,6 @@ public class ScrollChart extends StackPane {
     entireBox = new HBox();
     labelBoard = new AnchorPane();
     VBox cellBox;
-
     VBox dateBoard;
     entireBoxHeight = getChartHeight() - 20;
     entireBox.setPrefSize(entireWidth, entireBoxHeight);
@@ -212,7 +230,7 @@ public class ScrollChart extends StackPane {
     DateTimeFormatter format = DateTimeFormatter
             .ofPattern("MM-dd");
     Label date = new Label(dateTime.format(format));
-    date.setPrefSize(34, 20);
+    date.setPrefSize(40, 20);
     vBox.getChildren().add(date);
     vBox.setMargin(date, new Insets(0, 0, 0, -date.getPrefWidth() / 2));
   }

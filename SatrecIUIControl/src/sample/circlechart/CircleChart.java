@@ -110,9 +110,12 @@ public class  CircleChart extends StackPane {
         yAxis.setUpperBound(upperBound);
         yAxis.setLowerBound(0 - upperBound);
         yAxis.setTickUnit(tickUnit);
+<<<<<<< HEAD
         gradationCanvas.getChildren().removeAll();
         dateLabelCanvas.getChildren().removeAll();
         baseCanvas.getChildren().removeAll();
+=======
+>>>>>>> ddcddddbbdc8fc37f2706e2d3897010282422171
         doDraw();
     }
 
