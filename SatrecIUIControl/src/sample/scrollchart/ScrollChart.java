@@ -75,16 +75,13 @@ public class ScrollChart extends StackPane {
   }
 
   public ScrollChart() {
-<<<<<<< HEAD
 
     getStylesheets().add("/commons/ui/control/scrollchart/scrollchart.css");
-=======
     ZoneId zoneId = ZoneId.of("UTC+1");
     //임시 데이터
     startDateTime = ZonedDateTime.of(2015, 11, 14, 11, 45, 59, 1234, zoneId);
     endDateTime = ZonedDateTime.of(2015, 11, 20, 0, 45, 59, 1234, zoneId);
     getStylesheets().add("/sample/scrollchart/scrollchart.css");
->>>>>>> ddcddddbbdc8fc37f2706e2d3897010282422171
     setPrefSize(getChartWidth(), getChartHeight());
     setMinSize(getChartWidth(), getChartHeight());
     setMaxSize(getChartWidth(), getChartHeight());
@@ -140,10 +137,8 @@ public class ScrollChart extends StackPane {
 
     coreChart.setContent(drawEntireBox());
     drawStartEndDateBar();
-<<<<<<< HEAD
     drawRefDateData();
     drawDatas();
-=======
 //    drawDatas(entireTime, entireTime);
     ZoneId zoneId = ZoneId.of("UTC+1");
 
@@ -153,7 +148,6 @@ public class ScrollChart extends StackPane {
     drawBarToChart(getEpochDay(TestTime2), getSecondsOfDay(TestTime2));
 //    drawRefDateData();
 //    drawDatas();
->>>>>>> ddcddddbbdc8fc37f2706e2d3897010282422171
   }
 
   /**
