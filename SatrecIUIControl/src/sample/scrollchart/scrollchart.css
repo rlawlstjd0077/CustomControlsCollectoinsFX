@@ -19,7 +19,7 @@
 .combo-box{
     -fx-font-size:8;
     -fx-background-color:transparent;
-    -fx-inner-border:black;
+    -fx-outer-border:red;
 }
 .combo-box > .arrow-button > .arrow{
     -fx-background-color: transparent;
@@ -79,7 +79,22 @@
 .scroll-bar:horizontal > .track {
     -fx-background-insets: 10;
 }
-
+/*------- date cell Box 부분 ---------*/
+.start-date-cell-box{
+    -fx-background-color:#F2F3F5;
+    -fx-border-color:#9AB3CA;
+    -fx-border-width:1 0 0 1
+}
+.normal-date-cell-box{
+    -fx-background-color:#F2F3F5;
+    -fx-border-color:#9AB3CA;
+    -fx-border-width:1 0 0 0
+}
+.end-date-cell-box{
+    -fx-background-color:#F2F3F5;
+    -fx-border-color:#9AB3CA;
+    -fx-border-width:1 1 0 0
+}
 /*--------  ChartData 부분 ---------*/
 .bar-ew{
     -fx-stroke:#B296E4;
