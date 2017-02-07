@@ -3,8 +3,7 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
-import sample.circlechart.CircleChart;
+import sample.ui.control.circlechart.CircleChart;
 
 import java.net.URL;
 import java.util.ResourceBundle;

@@ -4,8 +4,8 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import sample.circlechart.CircleChart?>
-<?import sample.scrollchart.ScrollChart?>
+<?import sample.ui.control.circlechart.CircleChart?>
+<?import sample.ui.control.scrollchart.ScrollChart?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" >
     <ScrollChart></ScrollChart>
