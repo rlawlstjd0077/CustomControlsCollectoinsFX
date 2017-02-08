@@ -1,12 +1,6 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.Priority?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import sample.circlechart.CircleChart?>
-<?import sample.scrollchart.ScrollChart?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" >
-    <ScrollChart></ScrollChart>
-</GridPane>
+<?import sample.ui.control.collocationcirclechart.CollocationCircleChart?>
+<VBox xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" stylesheets="@textviewer.css">
+    <CollocationCircleChart fx:id="colloCircleChart"/>
+</VBox>
