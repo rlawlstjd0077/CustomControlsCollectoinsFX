@@ -23,8 +23,8 @@ public class Main extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         root.setStyle("-fx-background-color:white");
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 800,400));
+        primaryStage.setTitle("TextViewer Test");
+        primaryStage.setScene(new Scene(root, 800,800));
         primaryStage.show();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         ObservableList<XYChart.Series<Date, Number>> series = FXCollections.observableArrayList();

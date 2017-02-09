@@ -6,14 +6,14 @@ import javafx.geometry.Insets;
 import javafx.print.PrinterJob;
 import javafx.scene.Scene;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import sample.ui.control.tabview.MainTab2;
-import sample.ui.control.textarea.Gk2TextArea;
 
 import java.io.*;
 
@@ -21,10 +21,10 @@ import java.io.*;
  * Created by GSD on 2017-01-25.
  */
 public class TextViewerEventHandler implements EventHandler<MouseEvent> {
-  private MainTab2 tabPane;
+  private TabPane tabPane;
   private Pane context;
 
-  public TextViewerEventHandler(Pane context, MainTab2 tabPane) {
+  public TextViewerEventHandler(Pane context, TabPane tabPane) {
     this.tabPane = tabPane;
     this.context = context;
   }
@@ -32,18 +32,23 @@ public class TextViewerEventHandler implements EventHandler<MouseEvent> {
   @Override
   public void handle(MouseEvent event) {
     switch (event.getPickResult().getIntersectedNode().getId()) {
-      case "preSave":
+      case "newFileButton":
+        FileChooser newFileChooser = new FileChooser();
+        File newFile = newFileChooser .showOpenDialog(context.getScene().getWindow());
+        openNewTab(newFile.getPath());
+        break;
+      case "saveButton":
         if (isTabExist()) {
           if (isTabExist()) {
-            FileChooser fileChooser = new FileChooser();
-            File file = fileChooser.showSaveDialog(context.getScene().getWindow());
-            if (file != null) {
-              saveFile(file);
+            FileChooser saveFileChooser = new FileChooser();
+            File saveFile = saveFileChooser.showSaveDialog(context.getScene().getWindow());
+            if (saveFile != null) {
+              saveFile(saveFile);
             }
           }
         }
         break;
-      case "prePrint":
+      case "printButton":
         if (isTabExist()) {
           PrinterJob printerJob = PrinterJob.createPrinterJob();
           if (printerJob.showPrintDialog(context.getScene().getWindow())) {
@@ -54,13 +59,13 @@ public class TextViewerEventHandler implements EventHandler<MouseEvent> {
           }
         }
         break;
-      case "preNewWindow":
+      case "newWindowButton":
         if (isTabExist()) {
           Stage stage = new Stage();
           stage.setTitle(tabPane.getSelectionModel().getSelectedItem().getText());
           HBox hBox = (HBox) tabPane.getSelectionModel().getSelectedItem().getContent();
-          Gk2TextArea textArea = (Gk2TextArea) hBox.getChildren().get(0);
-          Gk2TextArea newArea = new Gk2TextArea(textArea.getText());
+          TextArea textArea = (TextArea) hBox.getChildren().get(0);
+          TextArea newArea = new TextArea(textArea.getText());
           newArea.setEditable(false);
           stage.setScene(new Scene(newArea, 1000, 800));
           stage.show();
@@ -83,7 +88,7 @@ public class TextViewerEventHandler implements EventHandler<MouseEvent> {
    */
   private void saveFile(File file){
     HBox hBox = (HBox) tabPane.getSelectionModel().getSelectedItem().getContent();
-    Gk2TextArea textArea = (Gk2TextArea) hBox.getChildren().get(0);
+    TextArea textArea = (TextArea) hBox.getChildren().get(0);
     try{
       FileWriter writer = null;
       writer = new FileWriter(file);
@@ -102,7 +107,7 @@ public class TextViewerEventHandler implements EventHandler<MouseEvent> {
   private Tab addTabFromFile(File txtFile){
     Tab tab = new Tab();
     tab.setText(txtFile.getName());
-    Gk2TextArea textArea = new Gk2TextArea();
+    TextArea textArea = new TextArea();
     textArea.setEditable(false);
 
     HBox hBox = new HBox();
@@ -132,5 +137,4 @@ public class TextViewerEventHandler implements EventHandler<MouseEvent> {
   public void openNewTab(String path){
     tabPane.getTabs().add(addTabFromFile(new File(path)));
   }
-
 }

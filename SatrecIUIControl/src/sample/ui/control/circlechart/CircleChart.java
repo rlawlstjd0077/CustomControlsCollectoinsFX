@@ -99,7 +99,7 @@ public class CircleChart extends StackPane {
     }
 
     /**
-     * Data를 세팅 하는 메소드
+     * 축 데이터를 세팅하는 메소드
      * x축, y축 의 Axis 데이터는 동일 하기 때문에 한 축만 setting
      *
      * @param lowerBound : 축의 시작값

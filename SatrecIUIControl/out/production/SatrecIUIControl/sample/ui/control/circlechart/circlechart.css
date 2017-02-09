@@ -47,7 +47,7 @@
     -fx-border-color: null;
 }
 .line{
-    -fx-stroke-dash-array: 12 2 4 2;
+    -fx-stroke-dash-ar ray: 12 2 4 2;
 }
 .chart-vertical-zero-line {
     -fx-stroke: black;

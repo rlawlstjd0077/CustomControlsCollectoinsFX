@@ -1,13 +1,13 @@
 .maintab{
     -fx-border-color:#7C848B;
-    -fx-border-width:2 1 1 1;
+    -fx-border-width:1 1 1 1;
     -fx-border-radius:2;
     -fx-background-radius:2;
     -fx-tab-min-height: 30;
 }
 .maintab .tab-header-background{
     -fx-border-color:#7C848B;
-    -fx-border-width:4.2 0 0 0;
+    -fx-border-width:1 0 0 0;
     -fx-background-color:#BDC7D0;
 }
 
