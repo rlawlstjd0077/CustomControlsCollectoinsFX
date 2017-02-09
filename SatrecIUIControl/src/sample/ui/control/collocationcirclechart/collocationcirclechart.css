@@ -90,10 +90,10 @@
    -fx-padding: 0px;
 }
 .chart-vertical-zero-line {
-    -fx-stroke: white;
+    -fx-stroke: transparent;
 }
 .chart-horizontal-zero-line {
-   -fx-stroke: white;
+   -fx-stroke: transparent;
 }
 .degree-label, .marking-label{
    -fx-font-size:10;

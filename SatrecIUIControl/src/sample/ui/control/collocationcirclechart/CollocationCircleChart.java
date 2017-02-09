@@ -1,7 +1,5 @@
 package sample.ui.control.collocationcirclechart;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -17,13 +15,14 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
  * Created by GSD on 2017-01-24.
  */
 public class CollocationCircleChart extends StackPane {
-    private final String CSS_PATH = "/sample/ui/control/collocationcirclechart/collocationcirclechart.css";
+    private final String CSS_NAME = "collocationcirclechart.css";
     private LineChart<Number, Number> coreChart;
     private NumberAxis xAxis;
     private NumberAxis yAxis;
@@ -38,10 +37,10 @@ public class CollocationCircleChart extends StackPane {
     private Circle gk2BCircleData;
     private Circle eccCircleData;
     private HBox eccContainer;
-    private final int FIXED_SIZE = 230;
+    private final int FIXED_SIZE = 185;
 
     public CollocationCircleChart() {
-        getStylesheets().add(CSS_PATH);
+        this.getStylesheets().add(getClass().getResource(CSS_NAME).toExternalForm());
         setPadding(new Insets(10));
         setPrefSize(FIXED_SIZE, FIXED_SIZE);
         setMaxSize(FIXED_SIZE, FIXED_SIZE);
@@ -91,6 +90,7 @@ public class CollocationCircleChart extends StackPane {
         gradationCanvas = new AnchorPane();
         gradationCanvas.setTranslateX(coreChart.getMinHeight() / 2 - 10);
         gradationCanvas.setTranslateY(coreChart.getMinHeight() / 2 - 10);
+
         getChildren().add(gradationCanvas);
 
         /**
@@ -118,13 +118,12 @@ public class CollocationCircleChart extends StackPane {
             gradationCanvas.getChildren().add(border);
         }
         circleDataPane = new AnchorPane();
-        circleDataPane .setTranslateY( +10 );
-        circleDataPane .setTranslateX( 10 );
+        circleDataPane.setTranslateY(+10);
+        circleDataPane.setTranslateX(10);
         getChildren().add(circleDataPane);
 
         checkBoxContainer = new VBox();
         checkBoxContainer.setAlignment(Pos.TOP_RIGHT);
-        checkBoxContainer.setStyle("-fx-border-color:red;");
         getChildren().add(checkBoxContainer);
 
         getChildren().add(coreChart);
@@ -141,9 +140,9 @@ public class CollocationCircleChart extends StackPane {
         Label gk2ALabel = new Label("GK2A");
         HBox gk2AContainer = new HBox(gk2ALine, gk2ACheckBox, gk2ALabel);
         gk2AContainer.setAlignment(Pos.CENTER_RIGHT);
-        gk2AContainer.setMargin(gk2ALine, new Insets(0,5,0,0));
-        gk2AContainer.setMargin(gk2ACheckBox, new Insets(0,0,0,0));
-        gk2AContainer.setMargin(gk2ALabel, new Insets(0,-121.6,0,0));
+        gk2AContainer.setMargin(gk2ALine, new Insets(0, 5, 0, 0));
+        gk2AContainer.setMargin(gk2ACheckBox, new Insets(0, 0, 0, 0));
+        gk2AContainer.setMargin(gk2ALabel, new Insets(0, -100, 0, 0));
 
         Line gk2BLine = new Line(-20, 0, 10, 0);
         gk2BLine.setStrokeWidth(3);
@@ -153,9 +152,9 @@ public class CollocationCircleChart extends StackPane {
         Label gk2BLabel = new Label("GK2B");
         HBox gk2BContainer = new HBox(gk2BLine, gk2BCheckBox, gk2BLabel);
         gk2BContainer.setAlignment(Pos.CENTER_RIGHT);
-        gk2BContainer.setMargin(gk2BLine, new Insets(0,5,0,0));
-        gk2BContainer.setMargin(gk2BCheckBox, new Insets(0,0,0,0));
-        gk2BContainer.setMargin(gk2BLabel, new Insets(0,-120,0,0));
+        gk2BContainer.setMargin(gk2BLine, new Insets(0, 5, 0, 0));
+        gk2BContainer.setMargin(gk2BCheckBox, new Insets(0, 0, 0, 0));
+        gk2BContainer.setMargin(gk2BLabel, new Insets(0, -100, 0, 0));
 
         Line eccLine = new Line(-20, 0, 10, 0);
         eccLine.setStrokeWidth(3);
@@ -165,40 +164,40 @@ public class CollocationCircleChart extends StackPane {
         Label eccLabel = new Label("GK2B");
         eccContainer = new HBox(eccLine, eccCheckBox, eccLabel);
         eccContainer.setAlignment(Pos.CENTER_RIGHT);
-        eccContainer.setMargin(eccLine, new Insets(0,5,0,0));
-        eccContainer.setMargin(eccCheckBox, new Insets(0,0,0,0));
-        eccContainer.setMargin(eccLabel , new Insets(0,-120,0,0));
+        eccContainer.setMargin(eccLine, new Insets(0, 5, 0, 0));
+        eccContainer.setMargin(eccCheckBox, new Insets(0, 0, 0, 0));
+        eccContainer.setMargin(eccLabel, new Insets(0, -120, 0, 0));
 
         checkBoxContainer.getChildren().addAll(gk2AContainer, gk2BContainer, eccContainer);
-        checkBoxContainer.setMargin(gk2BContainer, new Insets(4,0,0,0));
+        checkBoxContainer.setMargin(gk2BContainer, new Insets(4, 0, 0, 0));
         gk2ACheckBox.setSelected(true);
         gk2BCheckBox.setSelected(true);
         eccContainer.setVisible(false);
 
         gk2ACheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            if(newValue) {
+            if (newValue) {
                 coreChart.getData().get(0).getNode().setId("data-line-1");
                 gk2ACircleData.setId("data-line-1");
-            }else{
+            } else {
                 coreChart.getData().get(0).getNode().setId("data-line-1-unselect");
                 gk2ACircleData.setId("data-line-1-unselect");
             }
         });
 
         gk2BCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            if(newValue) {
+            if (newValue) {
                 coreChart.getData().get(1).getNode().setId("data-line-2");
                 gk2BCircleData.setId("data-line-2");
-            }else{
+            } else {
                 coreChart.getData().get(1).getNode().setId("data-line-2-unselect");
                 gk2BCircleData.setId("data-line-2-unselect");
             }
         });
 
         eccCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            if(newValue) {
+            if (newValue) {
                 eccCircleData.setId("EccTol-data");
-            }else{
+            } else {
                 eccCircleData.setId("EccTol-data-unselect");
             }
         });
@@ -216,7 +215,7 @@ public class CollocationCircleChart extends StackPane {
      * @param upperBound : 축의  최댓값
      * @param tickUnit   : 눈금의 값 단위
      */
-    public void setAxisProperty(double lowerBound, double upperBound, double tickUnit){
+    public void setAxisProperty(double lowerBound, double upperBound, double tickUnit) {
         xAxis.setUpperBound(upperBound);
         xAxis.setLowerBound(0 - upperBound);
         xAxis.setTickUnit(tickUnit);
@@ -233,7 +232,7 @@ public class CollocationCircleChart extends StackPane {
      * @param seriesData
      * @param circleDatas
      */
-    public void setDatas(ObservableList<XYChart.Series<Number, Number>> seriesData, ArrayList<CircleData> circleDatas, CircleData EccTolData){
+    public void setDatas(ObservableList<XYChart.Series<Number, Number>> seriesData, ArrayList<CircleData> circleDatas, CircleData EccTolData) {
         coreChart.setData(seriesData);
         coreChart.getData().get(0).getNode().setId("data-line-1");
         coreChart.getData().get(1).getNode().setId("data-line-2");
@@ -241,7 +240,7 @@ public class CollocationCircleChart extends StackPane {
         gk2BCircleData = drawDataCircle(circleDatas.get(1), "data-line-2");
         gk2ACheckBox.setDisable(false);
         gk2BCheckBox.setDisable(false);
-        if(EccTolData != null){
+        if (EccTolData != null) {
             eccContainer.setVisible(true);
             eccCircleData = drawDataCircle(EccTolData, "EccTol-data-unselect");
         }
@@ -250,32 +249,36 @@ public class CollocationCircleChart extends StackPane {
     /**
      * 원  내부의 눈금등 전체적인 contents들을 그려주는 메소드
      */
-    public void doDraw(){
+    public void doDraw() {
         double upperBound = xAxis.getUpperBound();
         double tickUnit = xAxis.getTickUnit();
 
         /**
          * 눈금 Label 그리기
          */
-        AnchorPane markingLabelContainer = new AnchorPane();
-        markingLabelContainer.setPrefHeight(20);
-        markingLabelContainer.setPrefWidth(coreChart.getMinHeight() + 4);
-        markingLabelContainer.setLayoutX((coreChart.getMinHeight() / 2 + 2) * -1);
-        markingLabelContainer.setLayoutY(-10);
-        markingLabelContainer.setRotate(-70);
-        gradationCanvas.getChildren().add(markingLabelContainer);
+        AnchorPane innerMarkingLabelContainer = new AnchorPane();
+        innerMarkingLabelContainer.setPrefHeight(20);
+        innerMarkingLabelContainer.setPrefWidth(coreChart.getMinHeight() + 4);
+        innerMarkingLabelContainer.setLayoutX((coreChart.getMinHeight() / 2 + 2) * -1);
+        innerMarkingLabelContainer.setLayoutY(-10);
+        innerMarkingLabelContainer.setRotate(-70);
+
+        AnchorPane outerMarkingLabelCanvas = new AnchorPane();
+        gradationCanvas.getChildren().add(outerMarkingLabelCanvas);
+        gradationCanvas.getChildren().add(innerMarkingLabelContainer);
 
         for (double j = 0 + tickUnit; j <= upperBound; j += tickUnit) {
             Circle circle = new Circle();
             circle.setStroke(Paint.valueOf("#dadee5"));
             circle.setFill(Color.TRANSPARENT);
             circle.setRadius((j * outsideCircle.getRadius()) / upperBound);
-            gradationCanvas.getChildren().add(circle);
+            outerMarkingLabelCanvas.getChildren().add(circle);
 
+            DecimalFormat format = new DecimalFormat("0.####");
             Label markingLabel = new Label();
-            markingLabel.setText(j + "");
-            markingLabelContainer.getChildren().add(markingLabel);
-            markingLabel.setLayoutX(markingLabelContainer.getPrefWidth()/2 + (j * outsideCircle.getRadius()) / upperBound);
+            markingLabel.setText(format.format(j) + "");
+            innerMarkingLabelContainer.getChildren().add(markingLabel);
+            markingLabel.setLayoutX(innerMarkingLabelContainer.getPrefWidth() / 2 + (j * outsideCircle.getRadius()) / upperBound);
             markingLabel.setRotate(70);
             markingLabel.getStyleClass().add("marking-label");
         }
@@ -283,9 +286,10 @@ public class CollocationCircleChart extends StackPane {
 
     /**
      * Circle Data를 그려주는 메소드
+     *
      * @param circleData
      */
-    public Circle drawDataCircle(CircleData circleData, String styleId){
+    public Circle drawDataCircle(CircleData circleData, String styleId) {
         double upperBound = xAxis.getUpperBound();
         Circle circle = new Circle(circleData.getRadius(), Color.TRANSPARENT);
         circleDataPane.getChildren().add(circle);
