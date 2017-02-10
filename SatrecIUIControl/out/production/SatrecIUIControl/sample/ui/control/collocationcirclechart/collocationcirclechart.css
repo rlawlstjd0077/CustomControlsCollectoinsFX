@@ -90,24 +90,24 @@
    -fx-padding: 0px;
 }
 .chart-vertical-zero-line {
-    -fx-stroke: white;
+    -fx-stroke: transparent;
 }
 .chart-horizontal-zero-line {
-   -fx-stroke: white;
+   -fx-stroke: transparent;
 }
 .degree-label, .marking-label{
    -fx-font-size:10;
 }
-#data-line-1{
+#gk2a-line{
   -fx-stroke: #0D68FF;
 }
-#data-line-2{
+#gk2b-line{
    -fx-stroke: #FF0000;
 }
-#data-line-1-unselect{
+#gk2a-line-unselect{
     -fx-stroke:white;
 }
-#data-line-2-unselect{
+#gk2b-line-unselect{
     -fx-stroke:white;
 }
 #EccTol-data{

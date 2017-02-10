@@ -74,7 +74,7 @@
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="456">
+                <state relative-caret-position="0">
                   <caret line="38" column="67" lean-forward="false" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
                   <folding>
                     <element signature="imports" expanded="false" />
@@ -95,44 +95,23 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CollocationCircleChart.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="CollocationCircleChart.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/CollocationCircleChart.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="76">
-                  <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-                  <folding />
+                <state relative-caret-position="578">
+                  <caret line="251" column="0" lean-forward="true" selection-start-line="251" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CircleData.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/CircleData.java">
+          <file leaf-file-name="collocationlongitudechart.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationlongitudechart/collocationlongitudechart.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="171">
-                  <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="textviewer.fxml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/textviewer.fxml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="311">
-                  <caret line="71" column="29" lean-forward="false" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
-                  <folding />
-                </state>
-              </provider>
-              <provider editor-type-id="JavaFX-Scene-Builder">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="collocationcirclechart.css" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/collocationcirclechart.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="616">
-                  <caret line="95" column="26" lean-forward="false" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
+                <state relative-caret-position="559">
+                  <caret line="44" column="1" lean-forward="false" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -142,7 +121,7 @@
             <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="19">
-                  <caret line="1" column="59" lean-forward="false" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
+                  <caret line="1" column="78" lean-forward="false" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="78" />
                   <folding />
                 </state>
               </provider>
@@ -151,25 +130,47 @@
               </provider>
             </entry>
           </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="circlechart.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/circlechart/circlechart.css">
+          <file leaf-file-name="collocationcirclechart.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/collocationcirclechart.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="893">
-                  <caret line="47" column="1" lean-forward="false" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="44" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CircleChart.java" pinned="false" current-in-tab="true">
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="CircleChart.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/sample/ui/control/circlechart/CircleChart.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="232">
-                  <caret line="169" column="23" lean-forward="false" selection-start-line="169" selection-start-column="22" selection-end-line="169" selection-end-column="23" />
+                <state relative-caret-position="171">
+                  <caret line="29" column="6" lean-forward="false" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CollocationLongitudeChart.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationlongitudechart/CollocationLongitudeChart.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="399">
+                  <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="33" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Gk2ComboBox.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/combobox/Gk2ComboBox.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="133">
+                  <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -214,6 +215,9 @@
       <find>check</find>
       <find>coreC</find>
       <find>ECC</find>
+      <find>zero</find>
+      <find>data-line-2</find>
+      <find>data-line</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -221,6 +225,7 @@
       <replace>coreChart.getMinHeight()</replace>
       <replace>maintab</replace>
       <replace>.text-area</replace>
+      <replace>gk2b-line</replace>
     </replaceStrings>
   </component>
   <component name="FindManager">
@@ -236,9 +241,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/tabview/MainTab2.java" />
-        <option value="$PROJECT_DIR$/src/sample/label/Gk2Label.java" />
-        <option value="$PROJECT_DIR$/src/sample/label/Gk2Label.css" />
         <option value="$PROJECT_DIR$/src/sample/label/Gk2LabelTest.java" />
         <option value="$PROJECT_DIR$/src/sample/tableview/ExampleModel.java" />
         <option value="$PROJECT_DIR$/src/sample/tableview/Gk2TableView.java" />
@@ -275,8 +277,6 @@
         <option value="$PROJECT_DIR$/src/sample/style.css" />
         <option value="$PROJECT_DIR$/src/sample/ui/control/textviewer/TtextViewer.fxml" />
         <option value="$PROJECT_DIR$/src/sample/styles.css" />
-        <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
         <option value="$PROJECT_DIR$/src/sample/ui/control/circlechart/circlechart.css" />
         <option value="$PROJECT_DIR$/src/sample/textviewer.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Controller.java" />
@@ -285,15 +285,19 @@
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/ui/control/circlechart/CircleChart.java" />
         <option value="$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/CircleData.java" />
-        <option value="$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/CollocationCircleChart.java" />
+        <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/ui/control/collocationlongitudechart/CircleCollocationLongitudeChart.java" />
         <option value="$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/collocationcirclechart.css" />
+        <option value="$PROJECT_DIR$/src/sample/ui/control/collocationlongitudechart/collocationlongitudechart.css" />
+        <option value="$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/CollocationCircleChart.java" />
+        <option value="$PROJECT_DIR$/src/sample/ui/control/collocationlongitudechart/CollocationLongitudeChart.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
     <option name="width" value="1932" />
     <option name="height" value="1056" />
   </component>
@@ -374,7 +378,61 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="combobox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SatrecIUIControl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SatrecIUIControl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="collocationlongitudechart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SatrecIUIControl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SatrecIUIControl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="collocationcirclechart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SatrecIUIControl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SatrecIUIControl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="circlechart" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -418,25 +476,25 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="text&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/textviewer.fxml&#10;sample&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/sample.fxml&#10;TextV&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/ui/control/textviewer/TextViewerEventHandler.java&#10;st&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/styles.css&#10;CircleC&#9;FILE&#9;file://C:/Users/HP/Desktop/Project/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/circlechart/CircleChart.java&#10;Controll&#9;FILE&#9;file://C:/Users/HP/Desktop/Project/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/Controller.java&#10;Main&#9;FILE&#9;file://C:/Users/HP/Desktop/Project/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/Main.java&#10;fxml&#9;FILE&#9;file://C:/Users/HP/Desktop/Project/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/sample.fxml&#10;ScrollC&#9;FILE&#9;file://C:/Users/HP/Desktop/Project/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/scrollchart/ScrollChart.java&#10;ScrollChart&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/scrollchart/ScrollChart.java&#10;Scroll&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/scrollchart/ScrollChart.java&#10;DateA&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/DateAxis.java&#10;sty&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/style.css&#10;Circle&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/circlechart/CircleChart.java&#10;HeaderButton&#9;PSI&#9;JAVA://sample.headerButton.HeaderButton&#10;PieC&#9;FILE&#9;jar://C:/Program Files/Java/jdk1.8.0_101/javafx-src.zip!/javafx/scene/chart/PieChart.java" />
+    <property name="SearchEverywhereHistoryKey" value="Coll&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/ui/control/collocationlongitudechart/collocationlongitudechart.css&#10;sample&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/sample.fxml&#10;text&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/textviewer.fxml&#10;TextV&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/ui/control/textviewer/TextViewerEventHandler.java&#10;st&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/styles.css&#10;CircleC&#9;FILE&#9;file://C:/Users/HP/Desktop/Project/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/circlechart/CircleChart.java&#10;Controll&#9;FILE&#9;file://C:/Users/HP/Desktop/Project/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/Controller.java&#10;Main&#9;FILE&#9;file://C:/Users/HP/Desktop/Project/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/Main.java&#10;fxml&#9;FILE&#9;file://C:/Users/HP/Desktop/Project/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/sample.fxml&#10;ScrollC&#9;FILE&#9;file://C:/Users/HP/Desktop/Project/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/scrollchart/ScrollChart.java&#10;ScrollChart&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/scrollchart/ScrollChart.java&#10;Scroll&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/scrollchart/ScrollChart.java&#10;DateA&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/DateAxis.java&#10;sty&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/style.css&#10;Circle&#9;FILE&#9;file://C:/Users/GSD/Desktop/CustomControlsCollectoinsFX/SatrecIUIControl/src/sample/circlechart/CircleChart.java&#10;HeaderButton&#9;PSI&#9;JAVA://sample.headerButton.HeaderButton&#10;PieC&#9;FILE&#9;jar://C:/Program Files/Java/jdk1.8.0_101/javafx-src.zip!/javafx/scene/chart/PieChart.java" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\SatrecIUIControl\src\sample\circlechart" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="sample.ui.control.collocationlongitudechart" />
+      <recent name="sample.textviewer" />
+      <recent name="sample.scrollchart" />
+      <recent name="sample" />
+      <recent name="sample.dialogwindow" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\SatrecIUIControl\src\sample\ui\image" />
       <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\SatrecIUIControl\src\sample\scrollchart" />
       <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\SatrecIUIControl\src\sample\images" />
       <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\SatrecIUIControl\src\sample\circlechart" />
       <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\SatrecIUIControl\src\sample\dialogwindow" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="sample.textviewer" />
-      <recent name="sample.scrollchart" />
-      <recent name="sample" />
-      <recent name="sample.dialogwindow" />
-      <recent name="sample.messagebox" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\SatrecIUIControl\src\sample\circlechart" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -696,7 +754,7 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <frame x="-8" y="0" width="1932" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -805,7 +863,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/CollocationCircleChart.java</url>
-          <line>299</line>
+          <line>296</line>
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
@@ -828,7 +886,7 @@
           <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="44" />
+      <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -848,6 +906,7 @@
         <watch expression="series" language="JAVA" />
         <watch expression="coreChart.getData()" language="JAVA" />
         <watch expression="coreChart.getData().get(0).getNode().getStyleClass()" language="JAVA" />
+        <watch expression="coreChart.getStyleClass()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -856,11 +915,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/sidemenu/SideMenu.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/messagebox/MessageBox.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/messagebox/MessageBoxTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/messagebox/MessageBox.css" />
     <entry file="file://$PROJECT_DIR$/src/sample/dialogwindow/DialogWindow.css" />
     <entry file="file://$PROJECT_DIR$/src/sample/dialogwindow/ResizeListener.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/dialogwindow/DialogWindowTest.java" />
@@ -957,14 +1011,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/circlechart/circlechart.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="47" column="1" lean-forward="false" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ui/control/textviewer/TextViewerEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -979,7 +1025,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
+        <state relative-caret-position="0">
           <caret line="38" column="67" lean-forward="false" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="false" />
@@ -994,17 +1040,6 @@
         <state relative-caret-position="171">
           <caret line="9" column="69" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="69" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="59" lean-forward="false" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/textviewer.css">
@@ -1025,12 +1060,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/lang/Number.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="43" selection-end-column="1" />
+        <state relative-caret-position="-685">
+          <caret line="54" column="22" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/textviewer.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="61" column="36" lean-forward="true" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/CircleData.java">
@@ -1041,10 +1087,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/textviewer.fxml">
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="71" column="29" lean-forward="false" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+        <state relative-caret-position="76">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="43" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationlongitudechart/CollocationLongitudeChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/combobox/Gk2ComboBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/circlechart/CircleChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="29" column="6" lean-forward="false" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="78" lean-forward="false" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="78" />
           <folding />
         </state>
       </provider>
@@ -1052,27 +1130,47 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/CollocationCircleChart.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/circlechart/circlechart.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/circlechart/CircleChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="169" column="23" lean-forward="false" selection-start-line="169" selection-start-column="22" selection-end-line="169" selection-end-column="23" />
+        <state relative-caret-position="263">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="56" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/collocationcirclechart.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="95" column="26" lean-forward="false" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="44" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationlongitudechart/collocationlongitudechart.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="44" column="1" lean-forward="false" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationlongitudechart/CollocationLongitudeChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/CollocationCircleChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="251" column="0" lean-forward="true" selection-start-line="251" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

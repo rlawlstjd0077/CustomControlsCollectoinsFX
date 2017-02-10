@@ -50,22 +50,6 @@
 .chart-vertical-grid-lines, .chart-horizontal-grid-lines {
     -fx-stroke: transparent;
 }
-.axis {
-    -fx-tick-label-font-size: 0.833333em;
-    -fx-tick-label-fill: transparent;
-}
-.axis:top {
-    -fx-border-color: transparent transparent transparent transparent;
-}
-.axis:right {
-    -fx-border-color: transparent transparent transparent transparent;
-}
-.axis:bottom {
-    -fx-border-color: transparent transparent transparent transparent;
-}
-.axis:left {
-    -fx-border-color: transparent transparent transparent transparent;
-}
 .axis-tick-mark {
     -fx-fill: null;
     -fx-stroke: transparent;
@@ -74,30 +58,41 @@
     -fx-fill: null;
     -fx-stroke: transparent;
 }
-.chart-vertical-zero-line {
-    -fx-stroke: black;
+.chart-title {
+    -fx-padding:0 0 0 10;
+    -fx-font-size: 1em;
 }
-.chart-horizontal-zero-line {
-    -fx-stroke: black;
-}
-.chart-series-line {
-    -fx-stroke-width: 1.5px;
-}
-.chart-line-symbol {
-   -fx-background-color: #f9d900, black;
+.chart-legend {
+   -fx-background-color:red;
    -fx-background-insets: 0;
-   -fx-background-radius: 0px;
    -fx-padding: 0px;
 }
+.chart{
+    -fx-padding:0;
+    -fx-font-size:11;
+}
+.chart-content {
+    -fx-padding: 0 11 0 0;
+}
 .chart-vertical-zero-line {
-    -fx-stroke: transparent;
+    -fx-stroke: white;
 }
 .chart-horizontal-zero-line {
-   -fx-stroke: transparent;
+    -fx-stroke: white;
 }
-.degree-label, .marking-label{
-   -fx-font-size:10;
+.axis:top {
+    -fx-border-color: transparent transparent black transparent;
 }
+.axis:right {
+    -fx-border-color: transparent transparent transparent black;
+}
+.axis:bottom {
+    -fx-border-color: black transparent transparent transparent;
+}
+.axis:left {
+    -fx-border-color: transparent black transparent transparent;
+}
+
 #gk2a-line{
   -fx-stroke: #0D68FF;
 }
@@ -108,11 +103,5 @@
     -fx-stroke:white;
 }
 #gk2b-line-unselect{
-    -fx-stroke:white;
-}
-#EccTol-data{
-    -fx-stroke:black;
-}
-#EccTol-data-unselect{
     -fx-stroke:white;
 }

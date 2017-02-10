@@ -134,26 +134,24 @@ public class CollocationCircleChart extends StackPane {
          */
         Line gk2ALine = new Line(-20, 0, 10, 0);
         gk2ALine.setStrokeWidth(3);
-        gk2ALine.setId("data-line-1");
+        gk2ALine.setId("gk2a-line");
         gk2ACheckBox = new CheckBox();
         gk2ACheckBox.getStyleClass().add("fds-check-box");
         Label gk2ALabel = new Label("GK2A");
         HBox gk2AContainer = new HBox(gk2ALine, gk2ACheckBox, gk2ALabel);
         gk2AContainer.setAlignment(Pos.CENTER_RIGHT);
         gk2AContainer.setMargin(gk2ALine, new Insets(0, 5, 0, 0));
-        gk2AContainer.setMargin(gk2ACheckBox, new Insets(0, 0, 0, 0));
         gk2AContainer.setMargin(gk2ALabel, new Insets(0, -100, 0, 0));
 
         Line gk2BLine = new Line(-20, 0, 10, 0);
         gk2BLine.setStrokeWidth(3);
-        gk2BLine.setId("data-line-2");
+        gk2BLine.setId("gk2b-line");
         gk2BCheckBox = new CheckBox();
         gk2BCheckBox.getStyleClass().add("fds-check-box");
         Label gk2BLabel = new Label("GK2B");
         HBox gk2BContainer = new HBox(gk2BLine, gk2BCheckBox, gk2BLabel);
         gk2BContainer.setAlignment(Pos.CENTER_RIGHT);
         gk2BContainer.setMargin(gk2BLine, new Insets(0, 5, 0, 0));
-        gk2BContainer.setMargin(gk2BCheckBox, new Insets(0, 0, 0, 0));
         gk2BContainer.setMargin(gk2BLabel, new Insets(0, -100, 0, 0));
 
         Line eccLine = new Line(-20, 0, 10, 0);
@@ -165,7 +163,6 @@ public class CollocationCircleChart extends StackPane {
         eccContainer = new HBox(eccLine, eccCheckBox, eccLabel);
         eccContainer.setAlignment(Pos.CENTER_RIGHT);
         eccContainer.setMargin(eccLine, new Insets(0, 5, 0, 0));
-        eccContainer.setMargin(eccCheckBox, new Insets(0, 0, 0, 0));
         eccContainer.setMargin(eccLabel, new Insets(0, -120, 0, 0));
 
         checkBoxContainer.getChildren().addAll(gk2AContainer, gk2BContainer, eccContainer);
@@ -176,21 +173,21 @@ public class CollocationCircleChart extends StackPane {
 
         gk2ACheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
-                coreChart.getData().get(0).getNode().setId("data-line-1");
-                gk2ACircleData.setId("data-line-1");
+                coreChart.getData().get(0).getNode().setId("gk2a-line");
+                gk2ACircleData.setId("gk2a-line");
             } else {
-                coreChart.getData().get(0).getNode().setId("data-line-1-unselect");
-                gk2ACircleData.setId("data-line-1-unselect");
+                coreChart.getData().get(0).getNode().setId("gk2a-line-unselect");
+                gk2ACircleData.setId("gk2a-line-unselect");
             }
         });
 
         gk2BCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
-                coreChart.getData().get(1).getNode().setId("data-line-2");
-                gk2BCircleData.setId("data-line-2");
+                coreChart.getData().get(1).getNode().setId("gk2b-line");
+                gk2BCircleData.setId("gk2b-line");
             } else {
-                coreChart.getData().get(1).getNode().setId("data-line-2-unselect");
-                gk2BCircleData.setId("data-line-2-unselect");
+                coreChart.getData().get(1).getNode().setId("gk2b-line-unselect");
+                gk2BCircleData.setId("gk2b-line-unselect");
             }
         });
 
@@ -234,10 +231,10 @@ public class CollocationCircleChart extends StackPane {
      */
     public void setDatas(ObservableList<XYChart.Series<Number, Number>> seriesData, ArrayList<CircleData> circleDatas, CircleData EccTolData) {
         coreChart.setData(seriesData);
-        coreChart.getData().get(0).getNode().setId("data-line-1");
-        coreChart.getData().get(1).getNode().setId("data-line-2");
-        gk2ACircleData = drawDataCircle(circleDatas.get(0), "data-line-1");
-        gk2BCircleData = drawDataCircle(circleDatas.get(1), "data-line-2");
+        coreChart.getData().get(0).getNode().setId("gk2a-line");
+        coreChart.getData().get(1).getNode().setId("gk2b-line");
+        gk2ACircleData = drawDataCircle(circleDatas.get(0), "gk2a-line");
+        gk2BCircleData = drawDataCircle(circleDatas.get(1), "gk2b-line");
         gk2ACheckBox.setDisable(false);
         gk2BCheckBox.setDisable(false);
         if (EccTolData != null) {
