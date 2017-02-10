@@ -3,51 +3,39 @@ package sample.ui.control.collocationlongitudechart;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
+import sample.ui.control.collocationlinechart.CollocationLineChart;
 
 /**
  * Created by GSD on 2017-01-24.
  */
-public class CollocationLongitudeChart extends StackPane {
-    private LineChart<Number, Number> coreChart;
-    private NumberAxis xAxis, yAxis;
-    private VBox gradationCanvas;
-    private final int FIXED_WIDTH = 380;
-    private final int FIXED_HEIGHT = 200;
+public class CollocationLongitudeChart extends CollocationLineChart {
     private CheckBox gk2ACheckBox, gk2BCheckBox;
+    private final String CSS_PATH = "sample/ui/control/collocationlongitudechart/collocationlongitudechart.css";
+    private VBox gradationCanvas;
 
     public CollocationLongitudeChart() {
-        getStylesheets().add("sample/ui/control/collocationlongitudechart/collocationlongitudechart.css");
-        setPadding(new Insets(10));
-        setPrefSize(FIXED_WIDTH, FIXED_HEIGHT);
-        setMaxSize(FIXED_WIDTH, FIXED_HEIGHT);
-        setMinSize(FIXED_WIDTH, FIXED_HEIGHT);
+        getStylesheets().add(CSS_PATH);
 
-        xAxis = new NumberAxis(0,400,50);
-        yAxis = new NumberAxis(128.18, 128.25, 0.01);
-        xAxis.setAutoRanging(false);
-        yAxis.setAutoRanging(false);
+        xAxis.setLowerBound(0);
+        xAxis.setUpperBound(400);
+        xAxis.setTickUnit(50);
+        yAxis.setLowerBound(128.18);
+        yAxis.setUpperBound(128.25);
+        yAxis.setTickUnit(0.01);
+
         xAxis.setLabel("time (day)");
         yAxis.setLabel("Longitude(deg)");
-
-        coreChart = new LineChart<>(xAxis, yAxis);
-        coreChart.setPrefSize(FIXED_WIDTH, FIXED_HEIGHT);
-        coreChart.setMaxSize(FIXED_WIDTH, FIXED_HEIGHT);
-        coreChart.setMinSize(FIXED_WIDTH, FIXED_HEIGHT);
         coreChart.setTitle("Longitude of SetA and SetB");
 
         gradationCanvas = new VBox();
         setMargin(gradationCanvas, new Insets(4,0,28,51));
 
-        getChildren().add(coreChart);
         getChildren().add(gradationCanvas);
 
         /**
@@ -74,6 +62,9 @@ public class CollocationLongitudeChart extends StackPane {
         gk2BContainer.setAlignment(Pos.CENTER_RIGHT);
         gk2BContainer.setMargin(gk2BLine, new Insets(0, 5, 0, 0));
 
+        gk2ACheckBox.setSelected(true);
+        gk2BCheckBox.setSelected(true);
+
         gradationCanvas.getChildren().addAll(gk2AContainer, gk2BContainer);
 
         gk2ACheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
@@ -91,56 +82,20 @@ public class CollocationLongitudeChart extends StackPane {
                 coreChart.getData().get(1).getNode().setId("gk2b-line-unselect");
             }
         });
-        gk2ACheckBox.setSelected(true);
-        gk2BCheckBox.setSelected(true);
         gk2ACheckBox.setDisable(true);
         gk2BCheckBox.setDisable(true);
     }
 
-    /**
-     * x 축 정보 세팅 메소드
-     * @param lowerBound
-     * @param upperBound
-     * @param tickUnit
-     */
-    public void setxAxis(double lowerBound, double upperBound, double tickUnit){
-        xAxis.setLowerBound(lowerBound);
-        xAxis.setUpperBound(upperBound);
-        xAxis.setTickUnit(tickUnit);
-    }
-
-    /**
-     * y 축 정보 세팅 메소드
-     * @param lowerBound
-     * @param upperBound
-     * @param tickUnit
-     */
-    public void setyAxis(double lowerBound, double upperBound, double tickUnit){
-        yAxis.setLowerBound(lowerBound);
-        yAxis.setUpperBound(upperBound);
-        yAxis.setTickUnit(tickUnit);
-    }
-
-    /**
-     * 축 이름, Chart 이름 세팅 메소드
-     * @param title
-     * @param xLabel
-     * @param yLabel
-     */
-    public void setAxisInfo(String title, String xLabel, String yLabel){
-        coreChart.setTitle(title);
-        xAxis.setLabel(xLabel);
-        yAxis.setLabel(yLabel);
-    }
-
-    /**
-     * Data setting 메소드
-     */
-    public void setData(ObservableList<XYChart.Series<Number, Number>> seriesData){
+    @Override
+    public void setData(ObservableList<XYChart.Series<Number, Number>> seriesData) {
         coreChart.setData(seriesData);
+        /**
+         * List의 첫번쨰는 Gk2A data,
+         * 두번째는 Gk2B data 이여야 함
+         */
+        coreChart.getData().get(0).getNode().setId("gk2a-line");
+        coreChart.getData().get(1).getNode().setId("gk2b-line");
         gk2ACheckBox.setDisable(false);
         gk2BCheckBox.setDisable(false);
     }
-
-
 }

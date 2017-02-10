@@ -1,6 +1,6 @@
 <?import javafx.scene.layout.VBox?>
-<?import sample.ui.control.collocationlongitudechart.CollocationLongitudeChart?>
+<?import sample.ui.control.collocationecefchart.CollocationECEFChart?>
 <VBox xmlns="http://javafx.com/javafx/8"
       xmlns:fx="http://javafx.com/fxml/1" stylesheets="@textviewer.css">
-    <CollocationLongitudeChart fx:id="colloCircleChart"/>
+    <CollocationECEFChart fx:id="colloCircleChart"/>
 </VBox>
