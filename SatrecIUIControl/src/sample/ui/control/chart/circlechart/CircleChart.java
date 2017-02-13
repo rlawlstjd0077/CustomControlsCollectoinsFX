@@ -1,4 +1,4 @@
-package sample.ui.control.circlechart;
+package sample.ui.control.chart.circlechart;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;

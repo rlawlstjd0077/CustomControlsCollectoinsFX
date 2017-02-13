@@ -306,7 +306,7 @@
     -fx-background-color:#2272D1;
     -fx-background-radius:2;
     -fx-border-color:transparent;
-    -fx-background-image:url("image/check_white.png");
+    -fx-background-image:url("images/icons/check_white.png");
     -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
 }
@@ -334,7 +334,7 @@
     -fx-font-size : 14;
 }
 .gk2-combo-box > .arrow-button{
-    -fx-background-image:url("image/combobox_down.png");
+    -fx-background-image:url("images/icons/combobox_down.png");
         -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
 }
@@ -544,13 +544,13 @@
 }
 .gk2-pagination .pagination-control .left-arrow-button:disabled{
     -fx-background-color:transparent;
-    -fx-background-image:url("image/pagination_left_arrow.png");
+    -fx-background-image:url("images/icons/pagination/left_arrow.png");
     -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
 }
 .gk2-pagination .pagination-control .right-arrow-button:disabled{
     -fx-background-color:white;
-    -fx-background-image:url("image/pagination_right_arrow.png");
+    -fx-background-image:url("images/icons/pagination/right_arrow.png");
     -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
 }
@@ -561,7 +561,7 @@
     -fx-min-width:36;
     -fx-min-height:36;
     -fx-border-color:#B6B6BE;
-    -fx-background-image:url("image/pagination_left_arrow_on.png");
+    -fx-background-image:url("images/icons/pagination/left_arrow_on.png");
     -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
     -fx-border-radius: 2 0 0 2;
@@ -574,7 +574,7 @@
     -fx-min-width:36;
     -fx-min-height:36;
     -fx-border-color:#B6B6BE;
-    -fx-background-image:url("image/pagination_right_arrow_on.png");
+    -fx-background-image:url("images/icons/pagination/right_arrow_on.png");
     -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
     -fx-border-radius: 0 2 2 0;
@@ -601,7 +601,7 @@
     -fx-background-insets:0;
 }
 .gk2-accordion > .titled-pane > .title > .arrow-button{
-   -fx-background-image:url("image/accordion-down.png");
+   -fx-background-image:url("images/icons/accordion-down.png");
    -fx-background-position:center;
    -fx-background-repeat: no-repeat no-repeat;
 }
@@ -1530,13 +1530,13 @@
     -fx-background-color: transparent;
 }
 .gk2-tree-view .tree-cell > .tree-disclosure-node{
-    -fx-background-image:url("image/arrow_down.png");
+    -fx-background-image:url("images/icons/treeview/arrow_down.png");
     -fx-background-repeat:no-repeat;
     -fx-background-position:center;
 }
 .gk2-tree-view .tree-cell:expanded > .tree-disclosure-node,
 .gk2-tree-view .tree-table-row-cell:expanded > .tree-disclosure-node{
-    -fx-background-image:url("image/arrow_right.png");
+    -fx-background-image:url("images/icons/treeview/arrow_right.png");
     -fx-background-repeat:no-repeat;
     -fx-background-position:center;
 }
@@ -1551,25 +1551,25 @@
 }
 .gk2-tree-view .tree-cell:filled:hover:expanded > .tree-disclosure-node,
 .gk2-tree-view .tree-table-row-cell:filled:hover:expanded > .tree-disclosure-node{
-    -fx-background-image:url("images/arrow_right_white.png");
+    -fx-background-image:url("images/icons/treeview/arrow_right_white.png");
     -fx-background-repeat:no-repeat;
     -fx-background-position:center;
 }
 .gk2-tree-view .tree-cell:filled:hover > .tree-disclosure-node,
 .gk2-tree-view .tree-table-row-cell:filled:hover> .tree-disclosure-node{
-    -fx-background-image:url("images/arrow_down_white.png");
+    -fx-background-image:url("images/icons/treeview/arrow_down_white.png");
     -fx-background-repeat:no-repeat;
     -fx-background-position:center;
 }
 .gk2-tree-view .tree-cell:filled:selected:expanded > .tree-disclosure-node,
 .gk2-tree-view .tree-table-row-cell:filled:selected:expanded > .tree-disclosure-node{
-    -fx-background-image:url("images/arrow_right_white.png");
+    -fx-background-image:url("images/icons/treeview/arrow_right_white.png");
     -fx-background-repeat:no-repeat;
     -fx-background-position:center;
 }
 .gk2-tree-view .tree-cell:filled:selected > .tree-disclosure-node,
 .gk2-tree-view .tree-table-row-cell:filled:selected > .tree-disclosure-node{
-    -fx-background-image:url("images/arrow_down_white.png");
+    -fx-background-image:url("images/icons/treeview/arrow_down_white.png");
     -fx-background-repeat:no-repeat;
     -fx-background-position:center;
 }

@@ -1,4 +1,4 @@
-package sample.ui.control.collocationcirclechart;
+package sample.ui.control.chart.collocationcirclechart;
 
 /**
  * Created by GSD on 2017-02-09.

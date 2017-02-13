@@ -1,4 +1,4 @@
-package sample.ui.control.collocationcirclechart;
+package sample.ui.control.chart.collocationcirclechart;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

@@ -1,16 +1,15 @@
-package sample.ui.control.collocationecefchart;
+package sample.ui.control.chart.collocationecefchart;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
-import sample.ui.control.collocationlinechart.CollocationLineChart;
+import sample.ui.control.chart.collocationlinechart.CollocationLineChart;
 
 /**
  * Created by GSD on 2017-02-10.
@@ -19,7 +18,7 @@ public class CollocationECEFChart extends CollocationLineChart {
     private AnchorPane gradationCanvas;
 
     public CollocationECEFChart() {
-        getStylesheets().add("sample/ui/control/collocationecefchart/collocationecefchart.css");
+        getStylesheets().add("sample/ui/control/chart/collocationecefchart/collocationecefchart.css");
 
         xAxis.setLowerBound(5);
         xAxis.setUpperBound(40);

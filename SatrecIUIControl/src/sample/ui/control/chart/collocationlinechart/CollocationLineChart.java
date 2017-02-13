@@ -1,4 +1,4 @@
-package sample.ui.control.collocationlinechart;
+package sample.ui.control.chart.collocationlinechart;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -17,7 +17,7 @@ public class CollocationLineChart extends StackPane{
     private final int FIXED_HEIGHT = 200;
 
     public CollocationLineChart(){
-        getStylesheets().add("sample/ui/control/collocationlinechart/collocationlinechart.css");
+        getStylesheets().add("sample/ui/control/chart/collocationlinechart/collocationlinechart.css");
         setPadding(new Insets(10));
         setPrefSize(FIXED_WIDTH, FIXED_HEIGHT);
         setMaxSize(FIXED_WIDTH, FIXED_HEIGHT);

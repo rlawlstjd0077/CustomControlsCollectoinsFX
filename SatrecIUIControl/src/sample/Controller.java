@@ -1,21 +1,14 @@
 package sample;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TabPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
-import sample.ui.control.circlechart.CircleChart;
-import sample.ui.control.collocationcirclechart.CollocationCircleChart;
 import sample.ui.control.textviewer.TextViewerEventHandler;
 
 import java.net.URL;
-import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {

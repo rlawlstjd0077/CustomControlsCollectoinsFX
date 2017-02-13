@@ -1,4 +1,4 @@
-package sample.ui.control.scrollchart;
+package sample.ui.control.chart.scrollchart;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -81,7 +81,7 @@ public class ScrollChart extends StackPane {
     //임시 데이터
     startDateTime = ZonedDateTime.of(2015, 11, 14, 11, 45, 59, 1234, zoneId);
     endDateTime = ZonedDateTime.of(2015, 11, 20, 0, 45, 59, 1234, zoneId);
-    getStylesheets().add("/sample/ui/control/scrollchart/scrollchart.css");
+    getStylesheets().add("/sample/ui/control/chart/scrollchart/scrollchart.css");
     setPrefSize(getChartWidth(), getChartHeight());
     setMinSize(getChartWidth(), getChartHeight());
     setMaxSize(getChartWidth(), getChartHeight());

@@ -1,4 +1,4 @@
-package sample.ui.control.collocationlongitudechart;
+package sample.ui.control.chart.collocationlongitudechart;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -9,14 +9,14 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
-import sample.ui.control.collocationlinechart.CollocationLineChart;
+import sample.ui.control.chart.collocationlinechart.CollocationLineChart;
 
 /**
  * Created by GSD on 2017-01-24.
  */
 public class CollocationLongitudeChart extends CollocationLineChart {
     private CheckBox gk2ACheckBox, gk2BCheckBox;
-    private final String CSS_PATH = "sample/ui/control/collocationlongitudechart/collocationlongitudechart.css";
+    private final String CSS_PATH = "sample/ui/control/chart/collocationlongitudechart/collocationlongitudechart.css";
     private VBox gradationCanvas;
 
     public CollocationLongitudeChart() {
