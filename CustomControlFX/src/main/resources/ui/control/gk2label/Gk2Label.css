@@ -1,0 +1,32 @@
+#error_label, #warning_label, #info_label, #off_label{
+    -fx-alignment:center;
+    -fx-min-width:75px;
+    -fx-min-height:20px;
+    -fx-font-weight:bold;
+    -fx-text-fill:white;
+    -fx-border-radius:15px;
+    -fx-background-radius:15px;
+    -fx-font-family: "Roboto";
+    -fx-font-size : 14;
+    -fx-padding:0 0 0 0;
+}
+#error_label{
+    -fx-background-color:#EC6A5C;
+}
+#warning_label{
+    -fx-background-color:#F5A623;
+}
+#info_label{
+    -fx-background-color:#17CC67;
+}
+#info_label .text, #warning_label .text,
+#error_label .text, #off_label .text{
+    -fx-fill:white
+}
+#off_label{
+    -fx-background-color:#7E7E7E;
+}
+.table-row-cell:selcted #info_label{
+    -fx-background-color:red;
+    -fx-text-fill:red;
+}

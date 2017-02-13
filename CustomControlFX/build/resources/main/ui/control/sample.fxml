@@ -1,0 +1,6 @@
+<?import javafx.scene.layout.VBox?>
+<?import ui.control.chart.CollocationECEFChart?>
+<VBox xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" >
+    <CollocationECEFChart fx:id="colloCircleChart"/>
+</VBox>

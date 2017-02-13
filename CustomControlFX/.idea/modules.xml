@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CustomControlFX.iml" filepath="$PROJECT_DIR$/.idea/modules/CustomControlFX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CustomControlFX_main.iml" filepath="$PROJECT_DIR$/.idea/modules/CustomControlFX_main.iml" group="CustomControlFX" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CustomControlFX_test.iml" filepath="$PROJECT_DIR$/.idea/modules/CustomControlFX_test.iml" group="CustomControlFX" />
+    </modules>
+  </component>
+</project>
