@@ -281,8 +281,8 @@
                 <state />
               </provider>
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="456">
-                  <caret line="502" column="46" lean-forward="true" selection-start-line="502" selection-start-column="46" selection-end-line="502" selection-end-column="46" />
+                <state relative-caret-position="437">
+                  <caret line="501" column="51" lean-forward="false" selection-start-line="501" selection-start-column="51" selection-end-line="501" selection-end-column="51" />
                   <folding />
                 </state>
               </provider>
@@ -1478,8 +1478,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="502" column="46" lean-forward="true" selection-start-line="502" selection-start-column="46" selection-end-line="502" selection-end-column="46" />
+        <state relative-caret-position="437">
+          <caret line="501" column="51" lean-forward="false" selection-start-line="501" selection-start-column="51" selection-end-line="501" selection-end-column="51" />
           <folding />
         </state>
       </provider>
