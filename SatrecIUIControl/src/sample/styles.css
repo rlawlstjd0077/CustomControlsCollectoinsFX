@@ -334,7 +334,7 @@
     -fx-font-size : 14;
 }
 .gk2-combo-box > .arrow-button{
-    -fx-background-image:url("images/icons/combobox_down.png");
+    -fx-background-image:url("image/combobox_down.png");
         -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
 }
