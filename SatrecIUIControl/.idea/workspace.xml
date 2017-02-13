@@ -282,7 +282,7 @@
               </provider>
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="608">
-                  <caret line="501" column="63" lean-forward="true" selection-start-line="501" selection-start-column="63" selection-end-line="501" selection-end-column="63" />
+                  <caret line="501" column="29" lean-forward="true" selection-start-line="501" selection-start-column="29" selection-end-line="501" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -1479,7 +1479,7 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
-          <caret line="501" column="63" lean-forward="true" selection-start-line="501" selection-start-column="63" selection-end-line="501" selection-end-column="63" />
+          <caret line="501" column="29" lean-forward="true" selection-start-line="501" selection-start-column="29" selection-end-line="501" selection-end-column="29" />
           <folding />
         </state>
       </provider>
