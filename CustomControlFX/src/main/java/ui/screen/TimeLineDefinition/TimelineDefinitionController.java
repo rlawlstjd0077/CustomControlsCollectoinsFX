@@ -1,4 +1,4 @@
-package ui.screen.TimeLineDefinition;
+package ui.screen.timelinedefinition;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

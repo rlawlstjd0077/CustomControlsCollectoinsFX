@@ -1,4 +1,4 @@
-package ui.screen.SceneDefinition;
+package ui.screen.scenedefinition;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

@@ -1,4 +1,4 @@
-package ui.screen.TimeLineDefinition;
+package ui.screen.timelinedefinition;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
