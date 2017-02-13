@@ -71,56 +71,8 @@
     <splitter split-orientation="horizontal" split-proportion="0.5497598">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="CollocationECEFChart.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationecefchart/CollocationECEFChart.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="525">
-                  <caret line="61" column="38" lean-forward="false" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="collocationcirclechart.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/collocationcirclechart.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="667">
-                  <caret line="57" column="70" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SceneDefinition.fxml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/SceneDefinition.fxml">
-              <provider editor-type-id="JavaFX-Scene-Builder">
-                <state />
-              </provider>
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="278">
-                  <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TimelineDefinition.fxml" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/TimelineDefinition.fxml">
-              <provider editor-type-id="JavaFX-Scene-Builder">
-                <state />
-              </provider>
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="437">
-                  <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="scenetimedef.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/scenetimedef.css">
+          <file leaf-file-name="DateCalendarControl.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datepicker/DateCalendarControl.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="0">
                   <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -129,67 +81,94 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="collocationecefchart.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationecefchart/collocationecefchart.css">
+          <file leaf-file-name="DateTimePickerSkin.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/DateTimePickerSkin.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="209">
-                  <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CollocationInterLowerChart.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationinterlowerchart/CollocationInterLowerChart.java">
+          <file leaf-file-name="SearchBar.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/SearchBar.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1159">
-                  <caret line="71" column="32" lean-forward="false" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CircleData.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/CircleData.java">
+          <file leaf-file-name="CalendarSkin.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/CalendarSkin.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="171">
-                  <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#191#192#0" expanded="false" />
-                    <element signature="e#215#216#0" expanded="false" />
-                    <element signature="e#249#250#0" expanded="false" />
-                    <element signature="e#275#276#0" expanded="false" />
-                    <element signature="e#303#304#0" expanded="false" />
-                    <element signature="e#327#328#0" expanded="false" />
-                    <element signature="e#361#362#0" expanded="false" />
-                    <element signature="e#387#388#0" expanded="false" />
-                    <element signature="e#420#421#0" expanded="false" />
-                    <element signature="e#449#450#0" expanded="false" />
-                    <element signature="e#493#494#0" expanded="false" />
-                    <element signature="e#529#530#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CollocationLineChart.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationlinechart/CollocationLineChart.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="798">
-                  <caret line="47" column="36" lean-forward="false" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="sample.fxml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
+          <file leaf-file-name="DateTimeCalendarControl.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/DateTimeCalendarControl.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DateTimePicker.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/DateTimePicker.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DateTimePickerControl.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/DateTimePickerControl.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DateCalendarSkin.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datepicker/DateCalendarSkin.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DatePickerControl.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datepicker/DatePickerControl.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PreciseOrbitPrediction.fxml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/PreciseOrbitPrediction.fxml">
               <provider editor-type-id="JavaFX-Scene-Builder">
                 <state />
               </provider>
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="95">
-                  <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+                <state relative-caret-position="341">
+                  <caret line="41" column="64" lean-forward="true" selection-start-line="41" selection-start-column="64" selection-end-line="41" selection-end-column="64" />
                   <folding />
                 </state>
               </provider>
@@ -320,8 +299,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/sidemenu/ResizeWidthTranslation.java" />
-        <option value="$PROJECT_DIR$/src/sample/sidemenu/SideMenu.java" />
         <option value="$PROJECT_DIR$/src/sample/sidemenu/SideMenuConfiguration.java" />
         <option value="$PROJECT_DIR$/src/sample/UiUtil.java" />
         <option value="$PROJECT_DIR$/src/sample/sidemenu/SideMenuTest.java" />
@@ -371,6 +348,8 @@
         <option value="$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/CollocationCircleChart.java" />
         <option value="$PROJECT_DIR$/src/sample/ui/fxml/SceneDefinition.fxml" />
         <option value="$PROJECT_DIR$/src/sample/ui/fxml/TimelineDefinition.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/ui/control/datepicker/DatePickerControl.java" />
+        <option value="$PROJECT_DIR$/src/sample/ui/fxml/PreciseOrbitPrediction.fxml" />
       </list>
     </option>
   </component>
@@ -471,10 +450,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\SatrecIUIControl\src\sample\ui\fxml" />
+      <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\SatrecIUIControl\src\sample\ui\control" />
       <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\SatrecIUIControl\src\sample\ui\image" />
       <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\SatrecIUIControl\src\sample\scrollchart" />
       <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\SatrecIUIControl\src\sample\images" />
-      <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\SatrecIUIControl\src\sample\circlechart" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="sample.ui.control.collocationlongitudechart" />
@@ -868,49 +847,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/TimeZone.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/GregorianCalendar.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/javafx-src.zip!/javafx/scene/transform/Rotate.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/Stack.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/headerButton/HeaderButton.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/javafx-src.zip!/javafx/scene/shape/Circle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="887">
-          <caret line="81" column="21" lean-forward="true" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/javafx-src.zip!/javafx/scene/shape/Circle.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/DateAxis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="102" column="5" lean-forward="true" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/textviewer/TtextViewer.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/textviewer/TtextViewer.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/textarea/Gk2TextArea.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/textviewer/TextViewerEventHandler.java" />
@@ -1206,6 +1142,97 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/DateTimeInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datepicker/DateCalendarControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/DateTimePickerSkin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/SearchBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/CalendarSkin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/DateTimeCalendarControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/DateTimePicker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/DateTimePickerControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datepicker/DateCalendarSkin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datepicker/DatePickerControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/PreciseOrbitPrediction.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="41" column="64" lean-forward="true" selection-start-line="41" selection-start-column="64" selection-end-line="41" selection-end-column="64" />
           <folding />
         </state>
       </provider>
