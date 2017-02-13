@@ -281,8 +281,8 @@
                 <state />
               </provider>
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="399">
-                  <caret line="499" column="68" lean-forward="true" selection-start-line="499" selection-start-column="68" selection-end-line="499" selection-end-column="68" />
+                <state relative-caret-position="456">
+                  <caret line="502" column="46" lean-forward="true" selection-start-line="502" selection-start-column="46" selection-end-line="502" selection-end-column="46" />
                   <folding />
                 </state>
               </provider>
@@ -1447,17 +1447,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/PreciseOrbitPrediction.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="499" column="68" lean-forward="true" selection-start-line="499" selection-start-column="68" selection-end-line="499" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
@@ -1481,6 +1470,17 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/PreciseOrbitPrediction.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="502" column="46" lean-forward="true" selection-start-line="502" selection-start-column="46" selection-end-line="502" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
