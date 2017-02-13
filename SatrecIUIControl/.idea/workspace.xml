@@ -71,18 +71,6 @@
     <splitter split-orientation="horizontal" split-proportion="0.5497598">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="456">
-                  <caret line="40" column="71" lean-forward="false" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
-                  <folding>
-                    <element signature="imports" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="CollocationECEFChart.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationecefchart/CollocationECEFChart.java">
               <provider selected="true" editor-type-id="text-editor">
@@ -105,7 +93,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SceneDefinition.fxml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SceneDefinition.fxml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/SceneDefinition.fxml">
               <provider editor-type-id="JavaFX-Scene-Builder">
                 <state />
@@ -113,6 +101,19 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="278">
                   <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TimelineDefinition.fxml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/TimelineDefinition.fxml">
+              <provider editor-type-id="JavaFX-Scene-Builder">
+                <state />
+              </provider>
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="437">
+                  <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -319,7 +320,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/tooltip/Gk2TooltipTest.java" />
         <option value="$PROJECT_DIR$/src/sample/sidemenu/ResizeWidthTranslation.java" />
         <option value="$PROJECT_DIR$/src/sample/sidemenu/SideMenu.java" />
         <option value="$PROJECT_DIR$/src/sample/sidemenu/SideMenuConfiguration.java" />
@@ -370,6 +370,7 @@
         <option value="$PROJECT_DIR$/src/sample/ui/control/collocationlongitudechart/CollocationLongitudeChart.java" />
         <option value="$PROJECT_DIR$/src/sample/ui/control/collocationcirclechart/CollocationCircleChart.java" />
         <option value="$PROJECT_DIR$/src/sample/ui/fxml/SceneDefinition.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/ui/fxml/TimelineDefinition.fxml" />
       </list>
     </option>
   </component>
@@ -867,7 +868,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/javafx-src.zip!/javafx/scene/chart/PieChart.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/TimeZone.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/GregorianCalendar.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/javafx-src.zip!/javafx/scene/transform/Rotate.java" />
@@ -1195,6 +1195,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
           <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/TimelineDefinition.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
           <folding />
         </state>
       </provider>
