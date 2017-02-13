@@ -281,8 +281,8 @@
                 <state />
               </provider>
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="558">
-                  <caret line="728" column="57" lean-forward="false" selection-start-line="728" selection-start-column="57" selection-end-line="728" selection-end-column="57" />
+                <state relative-caret-position="235">
+                  <caret line="720" column="0" lean-forward="true" selection-start-line="720" selection-start-column="0" selection-end-line="720" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -1460,17 +1460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/PreciseOrbitPrediction.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="728" column="57" lean-forward="false" selection-start-line="728" selection-start-column="57" selection-end-line="728" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="643">
@@ -1497,6 +1486,17 @@
     <entry file="file://$PROJECT_DIR$/src/sample/ui/control/treetableview/arrow_down.png">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/PreciseOrbitPrediction.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="720" column="0" lean-forward="true" selection-start-line="720" selection-start-column="0" selection-end-line="720" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
