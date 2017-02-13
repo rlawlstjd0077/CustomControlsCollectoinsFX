@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="CustomControlFX_main" target="1.8" />
-      <module name="CustomControlFX_test" target="1.8" />
+      <module name="CustomControlFX_main" target="1.5" />
+      <module name="CustomControlFX_test" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
