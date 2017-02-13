@@ -71,22 +71,6 @@
     <splitter split-orientation="horizontal" split-proportion="0.5497598">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="DateTimePickerSkin.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/DateTimePickerSkin.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="false" />
-                    <element signature="e#1522#1523#0" expanded="false" />
-                    <element signature="e#1558#1559#0" expanded="false" />
-                    <element signature="e#3567#3714#0" expanded="false" />
-                    <element signature="e#3713#3714#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="SearchBar.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/sample/ui/control/datetimepicker/SearchBar.java">
               <provider selected="true" editor-type-id="text-editor">
@@ -295,7 +279,7 @@
           <file leaf-file-name="CircleChart.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/sample/ui/control/circlechart/CircleChart.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
+                <state relative-caret-position="0">
                   <caret line="29" column="6" lean-forward="false" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
                   <folding>
                     <element signature="imports" expanded="false" />
@@ -316,7 +300,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CollocationLongitudeChart.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="CollocationLongitudeChart.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationlongitudechart/CollocationLongitudeChart.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="359">
@@ -325,13 +309,6 @@
                     <element signature="imports" expanded="true" />
                   </folding>
                 </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="arrow_down.png" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/treetableview/arrow_down.png">
-              <provider selected="true" editor-type-id="images">
-                <state />
               </provider>
             </entry>
           </file>
@@ -951,9 +928,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/scrollchart/ScrollChart.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/circlechart/CircleChart.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/circlechart/CircleChart.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
@@ -1153,7 +1127,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ui/control/circlechart/CircleChart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="0">
           <caret line="29" column="6" lean-forward="false" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="false" />
@@ -1495,6 +1469,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="720" column="0" lean-forward="true" selection-start-line="720" selection-start-column="0" selection-end-line="720" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/testButton/TestButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/testButton/testbutton.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/treetableview/treetableview.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
