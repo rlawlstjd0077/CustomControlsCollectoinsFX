@@ -62,8 +62,7 @@ public class CollocationLongitudeChart extends CollocationLineChart {
         gk2BContainer.setAlignment(Pos.CENTER_RIGHT);
         gk2BContainer.setMargin(gk2BLine, new Insets(0, 5, 0, 0));
 
-        gk2ACheckBox.setSelected(true);
-        gk2BCheckBox.setSelected(true);
+
 
         gradationCanvas.getChildren().addAll(gk2AContainer, gk2BContainer);
 
@@ -95,6 +94,8 @@ public class CollocationLongitudeChart extends CollocationLineChart {
          */
         coreChart.getData().get(0).getNode().setId("gk2a-line");
         coreChart.getData().get(1).getNode().setId("gk2b-line");
+        gk2ACheckBox.setSelected(true);
+        gk2BCheckBox.setSelected(true);
         gk2ACheckBox.setDisable(false);
         gk2BCheckBox.setDisable(false);
     }

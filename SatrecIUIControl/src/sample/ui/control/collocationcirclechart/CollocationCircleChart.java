@@ -167,8 +167,7 @@ public class CollocationCircleChart extends StackPane {
 
         checkBoxContainer.getChildren().addAll(gk2AContainer, gk2BContainer, eccContainer);
         checkBoxContainer.setMargin(gk2BContainer, new Insets(4, 0, 0, 0));
-        gk2ACheckBox.setSelected(true);
-        gk2BCheckBox.setSelected(true);
+
         eccContainer.setVisible(false);
 
         gk2ACheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
@@ -235,6 +234,8 @@ public class CollocationCircleChart extends StackPane {
         coreChart.getData().get(1).getNode().setId("gk2b-line");
         gk2ACircleData = drawDataCircle(circleDatas.get(0), "gk2a-line");
         gk2BCircleData = drawDataCircle(circleDatas.get(1), "gk2b-line");
+        gk2ACheckBox.setSelected(true);
+        gk2BCheckBox.setSelected(true);
         gk2ACheckBox.setDisable(false);
         gk2BCheckBox.setDisable(false);
         if (EccTolData != null) {
