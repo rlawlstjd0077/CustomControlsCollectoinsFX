@@ -544,13 +544,13 @@
 }
 .gk2-pagination .pagination-control .left-arrow-button:disabled{
     -fx-background-color:transparent;
-    -fx-background-image:url("images/icons/pagination/left_arrow.png");
+    -fx-background-image:url("image/pagination_left_arrow.png");
     -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
 }
 .gk2-pagination .pagination-control .right-arrow-button:disabled{
     -fx-background-color:white;
-    -fx-background-image:url("images/icons/pagination/right_arrow.png");
+    -fx-background-image:url("image/pagination_right_arrow.png");
     -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
 }
@@ -561,7 +561,7 @@
     -fx-min-width:36;
     -fx-min-height:36;
     -fx-border-color:#B6B6BE;
-    -fx-background-image:url("images/icons/pagination/left_arrow_on.png");
+    -fx-background-image:url("image/pagination_left_arrow_on.png");
     -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
     -fx-border-radius: 2 0 0 2;
@@ -574,7 +574,7 @@
     -fx-min-width:36;
     -fx-min-height:36;
     -fx-border-color:#B6B6BE;
-    -fx-background-image:url("images/icons/pagination/right_arrow_on.png");
+    -fx-background-image:url("image/pagination_right_arrow_on.png");
     -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
     -fx-border-radius: 0 2 2 0;

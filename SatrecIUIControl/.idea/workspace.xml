@@ -265,7 +265,7 @@
                 <state />
               </provider>
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="235">
+                <state relative-caret-position="64">
                   <caret line="720" column="0" lean-forward="true" selection-start-line="720" selection-start-column="0" selection-end-line="720" selection-end-column="0" />
                   <folding />
                 </state>
@@ -300,7 +300,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CollocationLongitudeChart.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="CollocationLongitudeChart.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationlongitudechart/CollocationLongitudeChart.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="359">
@@ -322,11 +322,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/sample/styles.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="643">
-                  <caret line="1629" column="28" lean-forward="true" selection-start-line="1629" selection-start-column="28" selection-end-line="1629" selection-end-column="28" />
+                  <caret line="593" column="23" lean-forward="true" selection-start-line="593" selection-start-column="23" selection-end-line="593" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -1434,14 +1434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="1629" column="28" lean-forward="true" selection-start-line="1629" selection-start-column="28" selection-end-line="1629" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ui/control/treetableview/arrow_down_white.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1467,7 +1459,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
+        <state relative-caret-position="64">
           <caret line="720" column="0" lean-forward="true" selection-start-line="720" selection-start-column="0" selection-end-line="720" selection-end-column="0" />
           <folding />
         </state>
@@ -1493,6 +1485,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="593" column="23" lean-forward="true" selection-start-line="593" selection-start-column="23" selection-end-line="593" selection-end-column="23" />
           <folding />
         </state>
       </provider>
