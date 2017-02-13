@@ -281,8 +281,8 @@
                 <state />
               </provider>
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="608">
-                  <caret line="501" column="29" lean-forward="true" selection-start-line="501" selection-start-column="29" selection-end-line="501" selection-end-column="29" />
+                <state relative-caret-position="558">
+                  <caret line="728" column="57" lean-forward="false" selection-start-line="728" selection-start-column="57" selection-end-line="728" selection-end-column="57" />
                   <folding />
                 </state>
               </provider>
@@ -316,15 +316,22 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CollocationLongitudeChart.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="CollocationLongitudeChart.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationlongitudechart/CollocationLongitudeChart.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="93">
-                  <caret line="61" column="53" lean-forward="false" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
+                <state relative-caret-position="359">
+                  <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
                 </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="arrow_down.png" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/sample/ui/control/treetableview/arrow_down.png">
+              <provider selected="true" editor-type-id="images">
+                <state />
               </provider>
             </entry>
           </file>
@@ -341,8 +348,8 @@
           <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/sample/styles.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="341">
-                  <caret line="392" column="24" lean-forward="true" selection-start-line="392" selection-start-column="24" selection-end-line="392" selection-end-column="24" />
+                <state relative-caret-position="643">
+                  <caret line="1629" column="28" lean-forward="true" selection-start-line="1629" selection-start-column="28" selection-end-line="1629" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
@@ -361,7 +368,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;Insets left=&quot;10&quot; bottom=&quot;10&quot;/&gt;</find>
       <find>createPieLabel</find>
       <find>circleChart</find>
       <find>readonl</find>
@@ -391,6 +397,7 @@
       <find>accordian</find>
       <find>checkBox</find>
       <find>combo-box</find>
+      <find>tree</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -944,8 +951,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/circlechart/circlechart.css" />
-    <entry file="file://$PROJECT_DIR$/src/sample/scrollchart/scrollchart.css" />
     <entry file="file://$PROJECT_DIR$/src/sample/scrollchart/ScrollChart.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/circlechart/CircleChart.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/circlechart/CircleChart.java" />
@@ -1447,14 +1452,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="392" column="24" lean-forward="true" selection-start-line="392" selection-start-column="24" selection-end-line="392" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ui/control/darklistview/gk2darklistview.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1463,25 +1460,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/PreciseOrbitPrediction.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="728" column="57" lean-forward="false" selection-start-line="728" selection-start-column="57" selection-end-line="728" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="1629" column="28" lean-forward="true" selection-start-line="1629" selection-start-column="28" selection-end-line="1629" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/treetableview/arrow_down_white.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ui/control/collocationlongitudechart/CollocationLongitudeChart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="61" column="53" lean-forward="false" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
+        <state relative-caret-position="359">
+          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ui/fxml/PreciseOrbitPrediction.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
+    <entry file="file://$PROJECT_DIR$/src/sample/ui/control/treetableview/arrow_down.png">
+      <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="501" column="29" lean-forward="true" selection-start-line="501" selection-start-column="29" selection-end-line="501" selection-end-column="29" />
-          <folding />
-        </state>
       </provider>
     </entry>
   </component>
