@@ -306,7 +306,7 @@
     -fx-background-color:#2272D1;
     -fx-background-radius:2;
     -fx-border-color:transparent;
-    -fx-background-image:url("images/icons/check_white.png");
+    -fx-background-image:url("image/check_white.png");
     -fx-background-position:center;
     -fx-background-repeat: no-repeat no-repeat;
 }
