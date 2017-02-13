@@ -601,7 +601,7 @@
     -fx-background-insets:0;
 }
 .gk2-accordion > .titled-pane > .title > .arrow-button{
-   -fx-background-image:url("images/icons/accordion-down.png");
+   -fx-background-image:url("image/accordion-down.png");
    -fx-background-position:center;
    -fx-background-repeat: no-repeat no-repeat;
 }
