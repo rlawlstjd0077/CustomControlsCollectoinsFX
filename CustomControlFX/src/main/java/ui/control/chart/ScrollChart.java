@@ -22,12 +22,13 @@ import java.util.ArrayList;
 
 /**
  * Created by JinSeong on 2017-02-01.
+ * Start Date는 dat_term 간격이 아니라 다음날 00 시 00 분까지로 하루 간격이다.
  */
 
 public class ScrollChart extends StackPane {
   private final int[] RATIO_ARRAY = {1, 2, 5, 10};
   private final int ONE_DAYS_SECONDS = 86400;
-  private ArrayList<ZonedDateTime> datas1;
+  private ArrayList<ZonedDateTime> datas;
   private ComboBox<String> comboBox;
   private ZonedDateTime startDateTime;
   private ZonedDateTime endDateTime;
@@ -44,6 +45,9 @@ public class ScrollChart extends StackPane {
   private ZonedDateTime NSStartDate;
   private ObservableList<String> list = FXCollections.observableArrayList("1:1", "1:2", "1:5", "1:10");
   private int day_term;
+  private ZonedDateTime last_date;
+  //StartDate 의 다음날 00 : 00 의 날짜 이다.
+  private ZonedDateTime temp_date;
 
   public SimpleIntegerProperty chartWidthProperty() {
     if (chartWidth == null) {
@@ -112,7 +116,7 @@ public class ScrollChart extends StackPane {
    * @param NSStartDate   : NS Date 시작 날짜
    */
   public void setDatas(ArrayList<ZonedDateTime> datas1, ZonedDateTime startDateTime, ZonedDateTime endDateTime, ZonedDateTime EWStartDate, ZonedDateTime NSStartDate) {
-    this.datas1 = datas1;
+    this.datas = datas1;
     this.startDateTime = startDateTime;
     this.endDateTime = endDateTime;
     this.EWStartDate = EWStartDate;
@@ -132,10 +136,9 @@ public class ScrollChart extends StackPane {
 
     coreChart.setContent(drawEntireBox());
     drawStartEndDateBar();
-//    drawRefDateData();
-//    drawDatas();
+    drawRefDateData();
+    drawDatas();
   }
-
 
   /**
    * Scroll Pane에 들어갈 전체 Box를 생성하는 메소드
@@ -181,9 +184,10 @@ public class ScrollChart extends StackPane {
     int remainSeconds = (int)(ONE_DAYS_SECONDS - startDateTime.getLong(ChronoField.SECOND_OF_DAY));
 
     tempDateTime = tempDateTime.plusSeconds(remainSeconds);
+    temp_date = tempDateTime;
 
     do {
-      if(tempDateTime.isEqual(endDateTime) || (getEpochDay(endDateTime) - getEpochDay(tempDateTime)) < day_term){
+      if(tempDateTime.isEqual(endDateTime) || (double)(getEpochDay(endDateTime) - getEpochDay(tempDateTime)) < day_term){
         break;
       }
       cellBox = new VBox();
@@ -204,6 +208,7 @@ public class ScrollChart extends StackPane {
 
     //endBox
     cellBox = new VBox();
+    last_date = tempDateTime;
     cellBox.setPrefSize((double) (entireWidth * (getInstantSeconds(endDateTime) - getInstantSeconds(tempDateTime))) / entireTime, entireBoxHeight);
 //    cellBox.setPrefSize((double) (entireWidth * getSecondsOfDay(endDateTime) - 14) / entireTime, entireBoxHeight);
     entireBox.getChildren().add(cellBox);
@@ -220,18 +225,6 @@ public class ScrollChart extends StackPane {
     return entireContainer;
   }
 
-
-  private void drawStartEndDateBar() {
-    Line startLine = drawBarToChart(getEpochDay(startDateTime),0);
-    attachLabel((getXCoodinateFromBox(getEpochDay(startDateTime)) + 10), 15, "ST" );
-    startLine.getStyleClass().add("bar-start-date");
-    startLine.setLayoutX(4);
-    Line endLine = drawBarToChart(getEpochDay(endDateTime), getInstantSeconds(endDateTime) % (day_term * ONE_DAYS_SECONDS));
-    attachLabel((getXCoodinateFromBox(getEpochDay(endDateTime)) - 14), 15, "ET" );
-    endLine.getStyleClass().add("bar-end-date");
-    endLine.setLayoutX(4);
-  }
-
   private void drawChartBoards(VBox cellBox) {
     AnchorPane board = new AnchorPane();
     board.setPrefSize(cellBox.getPrefWidth(), cellBox.getPrefHeight() - 20);
@@ -239,10 +232,21 @@ public class ScrollChart extends StackPane {
     board.setTranslateY(cellBox.getPrefHeight() - 20);
   }
 
+  private void drawStartEndDateBar() {
+    Line startLine = drawBarToChart(startDateTime);
+    startLine.setLayoutX(startLine.getLayoutX() + 5);
+    attachLabel((getXCoodinateFromBox(getEpochDay(startDateTime)) + 10), 15, "ST" );
+    startLine.getStyleClass().add("bar-start-date");
+    Line endLine = drawBarToChart(endDateTime);
+    endLine.setLayoutX(endLine.getLayoutX() - 1);
+    attachLabel((getXCoodinateFromBox(getEpochDay(endDateTime)) + endLine.getLayoutX() - 20), 15, "ET" );
+    endLine.getStyleClass().add("bar-end-date");
+  }
+
   private void addDateLabel(VBox vBox, ZonedDateTime dateTime) {
     vBox.setAlignment(Pos.CENTER_LEFT);
     DateTimeFormatter format = DateTimeFormatter
-      .ofPattern("MM-dd");
+            .ofPattern("MM-dd");
     Label date = new Label(dateTime.format(format));
     date.setPrefSize(34, 20);
     vBox.getChildren().add(date);
@@ -250,9 +254,9 @@ public class ScrollChart extends StackPane {
   }
 
   private void drawDatas() {
-    if(datas1 != null) {
-      for (ZonedDateTime time : datas1) {
-        drawLineToChart(getEpochDay(time), getSecondsOfDay(time));
+    if(datas != null) {
+      for (ZonedDateTime time : datas) {
+        drawLineToChart(time);
       }
     }
   }
@@ -263,12 +267,12 @@ public class ScrollChart extends StackPane {
   private void drawRefDateData() {
     if(EWStartDate != null && NSStartDate != null) {
       for (ZonedDateTime i = EWStartDate; endDateTime.compareTo(i) == 1; i = i.plusDays(6)) {
-        Line line = drawBarToChart(getEpochDay(i), getSecondsOfDay(i));
+        Line line = drawBarToChart(i);
         line.getStyleClass().add("bar-ew");
         attachLabel((getXCoodinateFromBox(getEpochDay(i)) + line.getLayoutX()), 15, "EW");
       }
       for (ZonedDateTime i = NSStartDate; endDateTime.compareTo(i) == 1; i = i.plusDays(6)) {
-        Line line = drawBarToChart(getEpochDay(i), getSecondsOfDay(i));
+        Line line = drawBarToChart(i);
         attachLabel((getXCoodinateFromBox(getEpochDay(i)) + line.getLayoutX()), 15, "NS");
         line.getStyleClass().add("bar-ns");
       }
@@ -277,15 +281,15 @@ public class ScrollChart extends StackPane {
 
   /**
    * Chart에 일반 데이터를 그려주는 메소드
-   * @param epochDay
-   * @param secondOfDay
+   * @param time
    */
-  private void drawLineToChart(int epochDay, int secondOfDay) {
-    VBox currentBox = getMatchBoxByCoordinate(epochDay);
+  private void drawLineToChart(ZonedDateTime time) {
+    VBox currentBox = getEpochDay(time) - getEpochDay(startDateTime) == 0  ?
+            (VBox)entireBox.getChildren().get(0) : getMatchBoxByCoordinate(getEpochDay(time));
     AnchorPane boxCell = (AnchorPane) currentBox.getChildren().get(0);
     Line line = new Line(0, -14, 0, 0);
-    line.setLayoutX(epochDay - getEpochDay(startDateTime) == 0 ?
-      getFirstBoxDataLayoutX(currentBox.getPrefWidth(), secondOfDay) : getDataLayoutX(currentBox.getPrefWidth(), secondOfDay));
+    line.setLayoutX(getEpochDay(time) - getEpochDay(startDateTime) == 0 ? getFirstBoxDataLayoutX(currentBox.getPrefWidth(), (getSecondsOfDay(time))) :
+            getDataLayoutX(currentBox.getPrefWidth(), getSecondsOfTerm(time)));
     line.setStrokeWidth(2);
     line.setLayoutX(line.getLayoutX() - 1);
     line.setStroke(Color.RED);
@@ -294,23 +298,23 @@ public class ScrollChart extends StackPane {
 
   /**
    * Chart에 Bar 데이터를 그려주는 메소드
-   * @param epochDay
-   * @param secondOfDay
+   * @param time
    * @return
    */
-  private Line drawBarToChart(int epochDay, int secondOfDay) {
-    VBox currentBox = getMatchBoxByCoordinate(epochDay);
+  private Line drawBarToChart(ZonedDateTime time) {
+    VBox currentBox = getEpochDay(time) - getEpochDay(startDateTime) == 0  ?
+            (VBox)entireBox.getChildren().get(0) : getMatchBoxByCoordinate(getEpochDay(time));
     AnchorPane boxCell = (AnchorPane) currentBox.getChildren().get(0);
     Line line = new Line(0, -24, 0, 0);
-    line.setLayoutX(epochDay - getEpochDay(startDateTime) == 0 ?
-      getFirstBoxDataLayoutX(currentBox.getPrefWidth(), secondOfDay) - 3 : getDataLayoutX(currentBox.getPrefWidth(), secondOfDay) - 3);
+    line.setLayoutX(getEpochDay(time) - getEpochDay(startDateTime) == 0 ? getFirstBoxDataLayoutX(currentBox.getPrefWidth(), (getSecondsOfDay(time))) :
+            getDataLayoutX(currentBox.getPrefWidth(), getSecondsOfTerm(time)));
     line.setStrokeWidth(6);
     boxCell.getChildren().add(line);
     return line;
   }
 
   private VBox getMatchBoxByCoordinate(int epoch_day) {
-    return (VBox) entireBox.getChildren().get((epoch_day - getEpochDay(startDateTime))/day_term + 1);
+    return (VBox) entireBox.getChildren().get((epoch_day - getEpochDay(temp_date))/day_term + 1);
   }
 
   private double getDataLayoutX(double width, int dataSecond) {
@@ -325,7 +329,10 @@ public class ScrollChart extends StackPane {
 
   private int getXCoodinateFromBox(int epoch_day){
     int x = 0;
-    for(int i = 0; i < (epoch_day - getEpochDay(startDateTime))/day_term + 1; i++){
+    if(epoch_day - getEpochDay(startDateTime) == 0 ){
+      return 0;
+    }
+    for(int i = 0; i < (epoch_day - getEpochDay(temp_date))/day_term + 1; i++){
       VBox vBox = (VBox)entireBox.getChildren().get(i);
       x += vBox.getPrefWidth();
     }
@@ -349,5 +356,8 @@ public class ScrollChart extends StackPane {
 
   private int getSecondsOfDay(ZonedDateTime time){
     return (int) time.getLong(ChronoField.SECOND_OF_DAY);
+  }
+  private int getSecondsOfTerm(ZonedDateTime time){
+    return (getInstantSeconds(time) - getInstantSeconds(temp_date)) % (day_term * ONE_DAYS_SECONDS);
   }
 }
