@@ -6,7 +6,7 @@ import javafx.scene.control.TableCell;
 import ui.screen.viewmodel.StationDataRowViewModel;
 
 /**
- * Created by GSD on 2017-01-18.
+ * Created by JinSeong on 2017-01-18.
  */
 public class StationDataIdCellController extends TableCell<StationDataRowViewModel, String>{
   final private CheckBox checkBox = new CheckBox();

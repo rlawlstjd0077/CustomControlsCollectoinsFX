@@ -5,7 +5,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.scene.control.CheckBox;
 
 /**
- * Created by GSD on 2017-01-18.
+ * Created by JinSeong on 2017-01-18.
  */
 public class StationDataRowViewModel {
   private String id;

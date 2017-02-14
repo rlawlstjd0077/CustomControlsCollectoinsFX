@@ -15,7 +15,7 @@ import ui.screen.viewmodel.ExampleModel;
 import java.io.IOException;
 
 /**
- * Created by GSD on 2017-01-12.
+ * Created by JinSeong on 2017-01-12.
  */
 public class TimelineDefinitionController extends BorderPane {
   @FXML

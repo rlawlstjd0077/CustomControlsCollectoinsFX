@@ -17,7 +17,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 /**
- * Created by GSD on 2017-01-13.
+ * Created by JinSeong on 2017-01-13.
  */
 public class PreciseOrbitPredictionViewModel {
   public ObservableList<OutputListTableRowViewModel> outputListTableRowViewModelList;

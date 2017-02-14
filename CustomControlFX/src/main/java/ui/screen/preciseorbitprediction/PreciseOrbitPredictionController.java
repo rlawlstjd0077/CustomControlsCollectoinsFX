@@ -44,7 +44,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Created by GSD on 2017-01-13.
+ * Created by JinSeong on 2017-01-13.
  */
 public class PreciseOrbitPredictionController extends BorderPane implements Initializable {
   @FXML
@@ -598,7 +598,7 @@ public class PreciseOrbitPredictionController extends BorderPane implements Init
         new OutputListTableRowViewModel(new SimpleStringProperty("Antenna Pointing Data(" + stationName + ")"),
             true,
             new SimpleStringProperty("ANT_" + stationName + "_" + start + "_" + durationHr + ".dat"),
-            new SimpleStringProperty("D:/Users/GSD/Desktop/c.txt")));
+            new SimpleStringProperty("D:/Users/JinSeong/Desktop/c.txt")));
 
   }
 }

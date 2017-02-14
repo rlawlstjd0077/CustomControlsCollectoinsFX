@@ -10,7 +10,7 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 
 /**
- * Created by GSD on 2017-02-13.
+ * Created by JinSeong on 2017-02-13.
  */
 public class EpochSelectorPopup extends BorderPane{
   @FXML

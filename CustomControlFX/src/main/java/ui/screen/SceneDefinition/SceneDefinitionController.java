@@ -15,7 +15,7 @@ import ui.screen.viewmodel.ExampleModel;
 import java.io.IOException;
 
 /**
- * Created by GSD on 2017-01-10.
+ * Created by JinSeong on 2017-01-10.
  */
 public class SceneDefinitionController extends BorderPane{
   @FXML

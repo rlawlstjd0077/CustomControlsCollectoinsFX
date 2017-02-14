@@ -10,7 +10,7 @@ import ui.screen.viewmodel.ExampleModel;
 import java.util.List;
 
 /**
- * Created by GSD on 2017-01-12.
+ * Created by JinSeong on 2017-01-12.
  */
 public class TimelineDefinitionViewModel {
   private final ObjectProperty<ObservableList<ExampleModel>> itemList = new SimpleObjectProperty<>();
