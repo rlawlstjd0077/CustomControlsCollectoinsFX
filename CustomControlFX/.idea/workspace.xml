@@ -99,18 +99,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SceneDefinitionController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ui/screen/SceneDefinition/SceneDefinitionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="17" column="14" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SceneDefinitionViewModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ui/screen/SceneDefinition/SceneDefinitionViewModel.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -146,7 +134,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
               <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#482#483#0" expanded="false" />
+                <element signature="e#515#516#0" expanded="false" />
+                <element signature="e#714#919#0" expanded="false" />
+                <element signature="e#918#919#0" expanded="false" />
+                <element signature="e#951#952#0" expanded="false" />
+                <element signature="e#970#971#0" expanded="false" />
+                <element signature="e#999#1000#0" expanded="false" />
+                <element signature="e#1020#1021#0" expanded="false" />
+                <element signature="e#1054#1055#0" expanded="false" />
+                <element signature="e#1078#1079#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -184,7 +184,7 @@
           </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="559">
-              <caret line="817" column="29" lean-forward="true" selection-start-line="817" selection-start-column="29" selection-end-line="817" selection-end-column="29" />
+              <caret line="817" column="29" lean-forward="false" selection-start-line="817" selection-start-column="29" selection-end-line="817" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -194,21 +194,32 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/ui/control/chart/eventpredictionchart.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="808">
-              <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventPredictionChart.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventPredictionChart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ui/control/chart/EventPredictionChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+            <state relative-caret-position="418">
+              <caret line="105" column="39" lean-forward="false" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextViewerEventHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ui/control/TextViewerEventHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="32" column="35" lean-forward="false" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#8006#8007#0" expanded="true" />
-                <element signature="e#8032#8033#0" expanded="true" />
+                <element signature="e#2335#2336#0" expanded="false" />
+                <element signature="e#2405#2406#0" expanded="false" />
+                <element signature="e#3886#3887#0" expanded="false" />
+                <element signature="e#3949#3950#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -551,6 +562,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/ui/screen/scentimedefinition/TimelineDefinition.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/control/chart/eventpredictionchart.css" />
         <option value="$PROJECT_DIR$/src/main/java/ui/control/chart/EventPredictionChart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/control/TextViewerEventHandler.java" />
       </list>
     </option>
   </component>
@@ -697,6 +709,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CustomControlFX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CustomControlFX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="control" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -713,11 +751,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ui.control" />
       <recent name="ui.control.chart" />
       <recent name="ui.control.epochselector" />
       <recent name="ui.screen.viewmodel" />
       <recent name="ui.screen.controller" />
-      <recent name="ui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\GSD\Desktop\CustomControlsCollectoinsFX\CustomControlFX\src\main\resources\ui\control\chart" />
@@ -993,7 +1031,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1924" height="1084" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1038,7 +1076,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/control/chart/datepicker/DateCalendarControl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/control/chart/datepicker/DateInfo.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/control/datepicker/DatePickerControl.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1364,7 +1401,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#482#483#0" expanded="false" />
+            <element signature="e#515#516#0" expanded="false" />
+            <element signature="e#714#919#0" expanded="false" />
+            <element signature="e#918#919#0" expanded="false" />
+            <element signature="e#951#952#0" expanded="false" />
+            <element signature="e#970#971#0" expanded="false" />
+            <element signature="e#999#1000#0" expanded="false" />
+            <element signature="e#1020#1021#0" expanded="false" />
+            <element signature="e#1054#1055#0" expanded="false" />
+            <element signature="e#1078#1079#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1396,7 +1445,7 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="559">
-          <caret line="817" column="29" lean-forward="true" selection-start-line="817" selection-start-column="29" selection-end-line="817" selection-end-column="29" />
+          <caret line="817" column="29" lean-forward="false" selection-start-line="817" selection-start-column="29" selection-end-line="817" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1404,19 +1453,28 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/ui/control/chart/eventpredictionchart.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="808">
-          <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/control/chart/EventPredictionChart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+        <state relative-caret-position="418">
+          <caret line="105" column="39" lean-forward="false" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/control/TextViewerEventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="32" column="35" lean-forward="false" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8006#8007#0" expanded="true" />
-            <element signature="e#8032#8033#0" expanded="true" />
+            <element signature="e#2335#2336#0" expanded="false" />
+            <element signature="e#2405#2406#0" expanded="false" />
+            <element signature="e#3886#3887#0" expanded="false" />
+            <element signature="e#3949#3950#0" expanded="false" />
           </folding>
         </state>
       </provider>
