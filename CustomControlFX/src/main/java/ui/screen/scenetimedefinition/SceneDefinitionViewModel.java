@@ -1,4 +1,4 @@
-package ui.screen.scenedefinition;
+package ui.screen.scenetimedefinition;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
