@@ -9,7 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import ui.common.ChartViewer;
+import ui.screen.eventpredictionsetting.EventPredictionChartViewer;
 import ui.control.chart.EventPredictionChart;
 
 import javax.imageio.ImageIO;
@@ -58,8 +58,8 @@ public class ChartViewerEventHandler implements EventHandler<MouseEvent> {
         chart.getSunMoonData();
         copyChart.setSunMoonData(chart.getSunMoonData());
         copyChart.setOtherData(chart.getOtherData());
-        ChartViewer chartViewer = new ChartViewer(copyChart);
-        Scene scene = new Scene(chartViewer, 900, 500);
+        EventPredictionChartViewer eventPredictionChartViewer = new EventPredictionChartViewer(copyChart);
+        Scene scene = new Scene(eventPredictionChartViewer, 900, 500);
         stage.setScene(scene);
         stage.show();
         break;

@@ -1,4 +1,4 @@
-package ui.common;
+package ui.screen.eventpredictionsetting;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Created by GSD on 2017-02-17.
  */
-public class ChartViewer extends BorderPane{
+public class EventPredictionChartViewer extends BorderPane{
   @FXML
   private VBox EventPredictionChartPane;
   @FXML
@@ -20,8 +20,8 @@ public class ChartViewer extends BorderPane{
   @FXML
   private CheckBox chartMoonCheckBox;
 
-  public ChartViewer(EventPredictionChart chart){
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ChartViewer.fxml"));
+  public EventPredictionChartViewer(EventPredictionChart chart){
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EventPredictionChartViewer.fxml"));
     fxmlLoader.setRoot(this);
     fxmlLoader.setController(this);
 
