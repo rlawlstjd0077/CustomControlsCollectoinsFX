@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import java.lang.Double?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<fx:root type="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+         minWidth="500" nodeOrientation="LEFT_TO_RIGHT" xmlns="http://javafx.com/javafx/8"
+         xmlns:fx="http://javafx.com/fxml/1" stylesheets="@eventprediction.css">
+    <padding>
+        <Insets top="10" left="10" right="10" bottom="10"/>
+    </padding>
+    <HBox AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <!--좌측 Box-->
+        <GridPane prefWidth="830" minWidth="830">
+            <!-- 좌측 상단 Box -->
+            <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <top>
+                    <VBox alignment="CENTER_LEFT" minHeight="30" styleClass="title-box">
+                        <Label text="Separation Analysis" styleClass="title_label"/>
+                    </VBox>
+                </top>
+                <center>
+                    <GridPane style="-fx-background-color:white; -fx-border-width:0 1 1 1; -fx-border-color:#8A9299;"
+                              hgap="10">
+                        <padding>
+                            <Insets top="8" right="8" bottom="8" left="8"/>
+                        </padding>
+                        <!--좌측 상단 좌측 Box-->
+                        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="0" vgap="10">
+                            <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <top>
+                                    <HBox>
+                                        <VBox style="-fx-background-color:#275085" minHeight="14"
+                                              minWidth="5"></VBox>
+                                        <Label text="Operation Period" styleClass="section_label">
+                                            <HBox.margin>
+                                                <Insets>
+                                                    <left>
+                                                        5
+                                                    </left>
+                                                </Insets>
+                                            </HBox.margin>
+                                        </Label>
+                                    </HBox>
+                                </top>
+                                <center>
+                                    <!--Operation Period Contents-->
+                                    <HBox styleClass="section-contents-box">
+                                        <HBox alignment="CENTER_LEFT">
+                                            <Label text="Start">
+                                                <HBox.margin>
+                                                    <Insets left="5"/>
+                                                </HBox.margin>
+                                            </Label>
+                                            <HBox alignment="CENTER">
+                                                <Pane prefWidth="205" prefHeight="28"
+                                                      fx:id="eventStartDateTimePickerPane"/>
+                                                <HBox.margin>
+                                                    <Insets top="6" left="5"/>
+                                                </HBox.margin>
+                                                <HBox.hgrow>
+                                                    <Priority fx:constant="ALWAYS"/>
+                                                </HBox.hgrow>
+                                            </HBox>
+                                            <HBox.hgrow>
+                                                <Priority fx:constant="ALWAYS"/>
+                                            </HBox.hgrow>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT">
+                                            <Label text="End">
+                                                <HBox.margin>
+                                                    <Insets left="5"/>
+                                                </HBox.margin>
+                                            </Label>
+                                            <HBox alignment="CENTER">
+                                                <Pane prefWidth="205" prefHeight="28"
+                                                      fx:id="eventEndDateTimePickerPane"/>
+                                                <HBox.margin>
+                                                    <Insets top="6" left="5"/>
+                                                </HBox.margin>
+                                                <HBox.hgrow>
+                                                    <Priority fx:constant="ALWAYS"/>
+                                                </HBox.hgrow>
+                                            </HBox>
+                                            <HBox.hgrow>
+                                                <Priority fx:constant="ALWAYS"/>
+                                            </HBox.hgrow>
+                                            <HBox.hgrow>
+                                                <Priority fx:constant="ALWAYS"/>
+                                            </HBox.hgrow>
+                                        </HBox>
+                                        <BorderPane.margin>
+                                            <Insets top="6"/>
+                                        </BorderPane.margin>
+                                    </HBox>
+                                </center>
+                            </BorderPane>
+                            <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                <top>
+                                    <HBox>
+                                        <VBox style="-fx-background-color:#275085" minHeight="14"
+                                              minWidth="5"></VBox>
+                                        <Label text="Epoch Element" styleClass="section_label">
+                                            <HBox.margin>
+                                                <Insets>
+                                                    <left>
+                                                        5
+                                                    </left>
+                                                </Insets>
+                                            </HBox.margin>
+                                        </Label>
+                                    </HBox>
+                                </top>
+                                <center>
+                                    <VBox styleClass="section-contents-box">
+                                        <GridPane vgap="4">
+                                            <padding>
+                                                <Insets top="5" left="10" right="10" bottom="5"/>
+                                            </padding>
+                                            <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Epoch"/>
+                                            <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                <Pane prefWidth="205" prefHeight="28"
+                                                      fx:id="eventEpochDateTimePickerPane"/>
+                                                <GridPane.margin>
+                                                    <Insets right="10"/>
+                                                </GridPane.margin>
+                                                <HBox.hgrow>
+                                                    <Priority fx:constant="ALWAYS"/>
+                                                </HBox.hgrow>
+                                            </HBox>
+                                            <HBox GridPane.columnIndex="2" GridPane.rowIndex="0"
+                                                  alignment="TOP_CENTER">
+                                                <Button prefHeight="28" prefWidth="110" styleClass="fds-form-button"
+                                                        text="Select Epoch" fx:id="eventEpochSelectButton">
+                                                    <HBox.margin>
+                                                        <Insets top="1"/>
+                                                    </HBox.margin>
+                                                </Button>
+                                            </HBox>
+                                            <Label GridPane.columnIndex="0" GridPane.rowIndex="1"
+                                                   text="Stack Source Type"/>
+                                            <ComboBox styleClass="fds-combo-box" prefHeight="28"
+                                                      fx:id="eventStackSourceTypeComboBox"
+                                                      GridPane.columnIndex="1"
+                                                      GridPane.rowIndex="1" prefWidth="120"/>
+                                            <Label GridPane.columnIndex="0" GridPane.rowIndex="2"
+                                                   text="Display Type"/>
+                                            <ComboBox styleClass="fds-combo-box" fx:id="eventDisplayTypeComboBox"
+                                                      GridPane.columnIndex="1" prefHeight="28"
+                                                      GridPane.rowIndex="2" prefWidth="120"/>
+                                            <Label GridPane.columnIndex="0" GridPane.rowIndex="3"
+                                                   text="Coordinate Type"/>
+                                            <ComboBox styleClass="fds-combo-box" fx:id="eventCoordinateFrameComboBox"
+                                                      GridPane.columnIndex="1" prefHeight="28"
+                                                      GridPane.rowIndex="3" prefWidth="120"/>
+                                            <ScrollPane styleClass="gk2-scroll-pane" GridPane.columnIndex="0"
+                                                        GridPane.columnSpan="3"
+                                                        GridPane.rowIndex="4" prefHeight="120">
+                                                <GridPane.margin>
+                                                    <Insets top="6"/>
+                                                </GridPane.margin>
+                                                <GridPane fx:id="eventEpochGridPane" vgap="5" prefWidth="405">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="35"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="58"
+                                                                           halignment="LEFT"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="7"/>
+                                                    </columnConstraints>
+                                                    <VBox.vgrow>
+                                                        <Priority fx:constant="ALWAYS"/>
+                                                    </VBox.vgrow>
+                                                    <VBox.margin>
+                                                        <Insets>
+                                                            <bottom>10</bottom>
+                                                        </Insets>
+                                                    </VBox.margin>
+                                                </GridPane>
+                                            </ScrollPane>
+                                            <VBox.margin>
+                                                <Insets top="5" bottom="10"/>
+                                            </VBox.margin>
+                                            <VBox.vgrow>
+                                                <Priority fx:constant="ALWAYS"/>
+                                            </VBox.vgrow>
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="27"/>
+                                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="41"/>
+                                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="32"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints vgrow="SOMETIMES" percentHeight="12.5"/>
+                                                <RowConstraints vgrow="SOMETIMES" percentHeight="12.5"/>
+                                                <RowConstraints vgrow="SOMETIMES" percentHeight="12.5"/>
+                                                <RowConstraints vgrow="SOMETIMES" percentHeight="12.5"/>
+                                                <RowConstraints vgrow="SOMETIMES" percentHeight="50"/>
+                                            </rowConstraints>
+                                        </GridPane>
+                                        <BorderPane.margin>
+                                            <Insets top="6"/>
+                                        </BorderPane.margin>
+                                    </VBox>
+                                </center>
+                            </BorderPane>
+                            <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                <top>
+                                    <HBox>
+                                        <VBox style="-fx-background-color:#275085" minHeight="14"
+                                              minWidth="5"></VBox>
+                                        <Label text="Prediction Mode" styleClass="section_label">
+                                            <HBox.margin>
+                                                <Insets>
+                                                    <left>
+                                                        5
+                                                    </left>
+                                                </Insets>
+                                            </HBox.margin>
+                                        </Label>
+                                    </HBox>
+                                </top>
+                                <center>
+                                    <VBox styleClass="section-contents-box" alignment="CENTER_LEFT">
+                                        <ComboBox prefWidth="300" prefHeight="24" styleClass="fds-combo-box"
+                                                  fx:id="eventPredictionModeComboBox">
+                                            <VBox.margin>
+                                                <Insets left="10"/>
+                                            </VBox.margin>
+                                        </ComboBox>
+                                        <BorderPane.margin>
+                                            <Insets top="6"/>
+                                        </BorderPane.margin>
+                                    </VBox>
+                                </center>
+                            </BorderPane>
+                            <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                <top>
+                                    <HBox>
+                                        <VBox style="-fx-background-color:#275085" minHeight="14"
+                                              minWidth="5"></VBox>
+                                        <Label text="Perturbation Setting" styleClass="section_label">
+                                            <HBox.margin>
+                                                <Insets>
+                                                    <left>
+                                                        5
+                                                    </left>
+                                                </Insets>
+                                            </HBox.margin>
+                                        </Label>
+                                    </HBox>
+                                </top>
+                                <center>
+                                    <StackPane>
+                                        <VBox styleClass="section-contents-box" visible="false" fx:id="usingOrbitPredictionDataBox">
+                                            <padding>
+                                                <Insets left="10" top="10" right="5" bottom="5"/>
+                                            </padding>
+                                            <HBox alignment="CENTER_LEFT">
+                                                <TextField prefWidth="280" styleClass="fds-text-field" editable="false"
+                                                           fx:id="eventOrbitPredictionDataTextField"/>
+                                                <Button styleClass="new_file_button"
+                                                        fx:id="eventOrbitPredictionDataFileChooserButton">
+                                                    <HBox.margin>
+                                                        <Insets left="8"/>
+                                                    </HBox.margin>
+                                                    <graphic>
+                                                        <ImageView>
+                                                            <Image url="@../images/folder.png"></Image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <VBox.margin>
+                                                    <Insets bottom="6"/>
+                                                </VBox.margin>
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT">
+                                                <Label text="Start"/>
+                                                <TextField prefWidth="210" styleClass="fds-text-field" editable="false"
+                                                           fx:id="eventOrbitPredictionDataStartTextField">
+                                                    <HBox.margin>
+                                                        <Insets left="6"/>
+                                                    </HBox.margin>
+                                                </TextField>
+                                                <VBox.margin>
+                                                    <Insets bottom="6"/>
+                                                </VBox.margin>
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT">
+                                                <Label text="End"/>
+                                                <TextField prefWidth="210" styleClass="fds-text-field" editable="false"
+                                                           fx:id="eventOrbitPredictionDataEndTextField">
+                                                    <HBox.margin>
+                                                        <Insets left="12"/>
+                                                    </HBox.margin>
+                                                </TextField>
+                                            </HBox>
+                                            <StackPane.margin>
+                                                <Insets top="3" bottom="3"/>
+                                            </StackPane.margin>
+                                        </VBox>
+                                        <VBox styleClass="section-contents-box" visible="false" fx:id="MeanOrbitPredictionBox">
+                                            <padding>
+                                                <Insets left="10" top="10" right="5" bottom="5"/>
+                                            </padding>
+                                            <HBox alignment="CENTER_LEFT">
+                                                <Label text="Reference Longitude value (deg) : "/>
+                                                <Spinner styleClass="fds-spinner"
+                                                         fx:id="eventReferenceLongitudeSpinner">
+                                                    <HBox.margin>
+                                                        <Insets left="6"/>
+                                                    </HBox.margin>
+                                                </Spinner>
+                                            </HBox>
+                                            <StackPane.margin>
+                                                <Insets top="3" bottom="3"/>
+                                            </StackPane.margin>
+                                        </VBox>
+                                        <VBox styleClass="section-contents-box" visible="true" fx:id="PreciseOrbitPredictionBox">
+                                            <GridPane>
+                                                <padding>
+                                                    <Insets left="5" top="5" right="5" bottom="5"/>
+                                                </padding>
+                                                <HBox GridPane.columnIndex="0" GridPane.rowIndex="0"
+                                                      GridPane.columnSpan="2"
+                                                      alignment="CENTER_LEFT">
+                                                    <Label text="Orbit Interval (sec)"/>
+                                                    <Spinner styleClass="fds-spinner" prefWidth="120"
+                                                             fx:id="eventOrbitIntervalSpinner">
+                                                        <HBox.margin>
+                                                            <Insets left="5"/>
+                                                        </HBox.margin>
+                                                    </Spinner>
+                                                </HBox>
+                                                <HBox GridPane.columnIndex="0" GridPane.rowIndex="1"
+                                                      GridPane.columnSpan="2"
+                                                      alignment="CENTER_LEFT">
+                                                    <GridPane.margin>
+                                                        <Insets top="6"/>
+                                                    </GridPane.margin>
+                                                    <CheckBox styleClass="fds-check-box"
+                                                              fx:id="eventApplyWheelCheckBox"/>
+                                                    <Label text="Apply Wheel Off-loading Maneuver"/>
+                                                </HBox>
+                                                <HBox GridPane.columnIndex="0" GridPane.rowIndex="2"
+                                                      GridPane.columnSpan="2"
+                                                      alignment="CENTER_LEFT">
+                                                    <GridPane.margin>
+                                                        <Insets top="5"/>
+                                                    </GridPane.margin>
+                                                    <CheckBox styleClass="fds-check-box"
+                                                              fx:id="eventApplyStationCheckBox"/>
+                                                    <Label text="Apply Station Keeping / Relocation Maneuver"/>
+                                                </HBox>
+                                                <HBox GridPane.columnIndex="0" GridPane.rowIndex="3"
+                                                      alignment="CENTER_LEFT">
+                                                    <GridPane.margin>
+                                                        <Insets top="5"/>
+                                                    </GridPane.margin>
+                                                    <CheckBox styleClass="fds-check-box"
+                                                              fx:id="eventEarthGravityCheckBox"/>
+                                                    <Label text="Earth Gravity"/>
+                                                </HBox>
+                                                <HBox GridPane.columnIndex="1" GridPane.rowIndex="3"
+                                                      alignment="CENTER_LEFT">
+                                                    <GridPane.margin>
+                                                        <Insets top="5"/>
+                                                    </GridPane.margin>
+                                                    <CheckBox styleClass="fds-check-box"
+                                                              fx:id="eventSunMoonGravityCheckBox"/>
+                                                    <Label text="Sun/Moon Gravity"/>
+                                                </HBox>
+                                                <HBox GridPane.columnIndex="0" GridPane.rowIndex="4" alignment="CENTER">
+                                                    <GridPane.margin>
+                                                        <Insets top="5"/>
+                                                    </GridPane.margin>
+                                                    <HBox alignment="CENTER_LEFT">
+                                                        <Label text="Degree" prefWidth="60"/>
+                                                    </HBox>
+                                                    <HBox alignment="CENTER">
+                                                        <Spinner styleClass="fds-spinner" prefWidth="120"
+                                                                 fx:id="eventDegreeSpinner"/>
+                                                    </HBox>
+                                                </HBox>
+                                                <HBox GridPane.columnIndex="1" GridPane.rowIndex="4"
+                                                      alignment="CENTER_LEFT">
+                                                    <GridPane.margin>
+                                                        <Insets top="6"/>
+                                                    </GridPane.margin>
+                                                    <CheckBox styleClass="fds-check-box"
+                                                              fx:id="eventSolarRadiationCheckBox"/>
+                                                    <Label text="Solar Radiation Pressure"/>
+                                                </HBox>
+                                                <HBox GridPane.columnIndex="0" GridPane.rowIndex="5" alignment="CENTER">
+                                                    <GridPane.margin>
+                                                        <Insets top="5"/>
+                                                    </GridPane.margin>
+                                                    <HBox alignment="CENTER_LEFT">
+                                                        <Label text="Order" prefWidth="60"/>
+                                                    </HBox>
+                                                    <HBox alignment="CENTER">
+                                                        <Spinner styleClass="fds-spinner" prefHeight="26"
+                                                                 prefWidth="120" fx:id="eventOrderSpinner"/>
+                                                    </HBox>
+                                                </HBox>
+                                                <HBox GridPane.columnIndex="1" GridPane.rowIndex="5"
+                                                      alignment="CENTER_LEFT">
+                                                    <GridPane.margin>
+                                                        <Insets top="5"/>
+                                                    </GridPane.margin>
+                                                    <CheckBox styleClass="fds-check-box" disable="true"
+                                                              fx:id="eventAtmosphericCheckBox"/>
+                                                    <Label text="Atmospheric Drag"/>
+                                                </HBox>
+                                                <rowConstraints>
+                                                    <RowConstraints vgrow="SOMETIMES" percentHeight="17.5"/>
+                                                    <RowConstraints vgrow="SOMETIMES" percentHeight="16.5"/>
+                                                    <RowConstraints vgrow="SOMETIMES" percentHeight="16.5"/>
+                                                    <RowConstraints vgrow="SOMETIMES" percentHeight="16.5"/>
+                                                    <RowConstraints vgrow="SOMETIMES" percentHeight="16.5"/>
+                                                    <RowConstraints vgrow="SOMETIMES" percentHeight="16.5"/>
+                                                </rowConstraints>
+                                                <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="50"/>
+                                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="50"/>
+                                                </columnConstraints>
+                                            </GridPane>
+                                            <StackPane.margin>
+                                                <Insets top="6"/>
+                                            </StackPane.margin>
+                                        </VBox>
+                                    </StackPane>
+                                </center>
+                                <GridPane.margin>
+                                    <Insets top="3" bottom="3"/>
+                                </GridPane.margin>
+                            </BorderPane>
+                            <rowConstraints>
+                                <RowConstraints vgrow="SOMETIMES" percentHeight="9.75"/>
+                                <RowConstraints vgrow="SOMETIMES" percentHeight="44.75"/>
+                                <RowConstraints vgrow="SOMETIMES" percentHeight="10.5"/>
+                                <RowConstraints vgrow="SOMETIMES" percentHeight="35"/>
+                            </rowConstraints>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="100"/>
+                            </columnConstraints>
+                        </GridPane>
+                        <!--좌측 상단 우측 Box-->
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="0" vgap="10">
+                            <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <top>
+                                    <HBox>
+                                        <VBox style="-fx-background-color:#275085" minHeight="14"
+                                              minWidth="5"></VBox>
+                                        <Label text="Prediction Period" styleClass="section_label">
+                                            <HBox.margin>
+                                                <Insets>
+                                                    <left>
+                                                        5
+                                                    </left>
+                                                </Insets>
+                                            </HBox.margin>
+                                        </Label>
+                                    </HBox>
+                                </top>
+                                <center>
+                                    <!--Operation Period Contents-->
+                                    <HBox styleClass="section-contents-box" alignment="CENTER">
+                                        <padding>
+                                            <Insets top="6" left="6" right="6" bottom="6"/>
+                                        </padding>
+                                        <ComboBox styleClass="fds-combo-box" prefWidth="132" prefHeight="28"
+                                                  fx:id="eventPredictionPeriodComboBox">
+                                            <HBox.margin>
+                                                <Insets right="5"/>
+                                            </HBox.margin>
+                                        </ComboBox>
+                                        <Spinner styleClass="fds-spinner" prefWidth="108" prefHeight="28"
+                                                 fx:id="eventPredictionPeriodSpinner"
+                                                 disable="true">
+                                            <HBox.margin>
+                                                <Insets right="5"/>
+                                            </HBox.margin>
+                                        </Spinner>
+                                        <Button styleClass="fds-form-button" text="Apply" prefWidth="132" minHeight="28"
+                                                fx:id="eventPredictionPeriodApplyButton"
+                                                prefHeight="28"></Button>
+                                        <BorderPane.margin>
+                                            <Insets top="6"/>
+                                        </BorderPane.margin>
+                                    </HBox>
+                                </center>
+                            </BorderPane>
+                            <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                <top>
+                                    <HBox>
+                                        <VBox style="-fx-background-color:#275085" minHeight="14"
+                                              minWidth="5"></VBox>
+                                        <Label text="Event" styleClass="section_label">
+                                            <HBox.margin>
+                                                <Insets>
+                                                    <left>
+                                                        5
+                                                    </left>
+                                                </Insets>
+                                            </HBox.margin>
+                                        </Label>
+                                    </HBox>
+                                </top>
+                                <center>
+                                    <VBox styleClass="section-contents-box">
+                                        <GridPane vgap="15">
+                                            <padding>
+                                                <Insets top="10" left="10" bottom="10" right="10"/>
+                                            </padding>
+                                            <HBox GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                                <CheckBox styleClass="fds-check-box" fx:id="eventEclipseCheckBox"/>
+                                                <Label text="Eclipse"/>
+                                            </HBox>
+                                            <HBox GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                <CheckBox styleClass="fds-check-box" fx:id="eventBoxLimitCheckBox"/>
+                                                <Label text="Box Limit"/>
+                                            </HBox>
+                                            <HBox GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                                <CheckBox styleClass="fds-check-box"
+                                                          fx:id="eventSensorIntrusionCheckBox"/>
+                                                <Label text="Sensor Intrusion"/>
+                                            </HBox>
+                                            <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <CheckBox styleClass="fds-check-box" fx:id="eventAMIIntrusionCheckBox"/>
+                                                <Label text="AMI Intrusion"/>
+                                            </HBox>
+                                            <HBox GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                                <CheckBox styleClass="fds-check-box" fx:id="eventInterfaceCheckBox"/>
+                                                <Label text="Interface"/>
+                                            </HBox>
+                                            <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                <CheckBox styleClass="fds-check-box"
+                                                          fx:id="eventOrbitCrossingCheckBox"/>
+                                                <Label text="Orbit Crossing"/>
+                                            </HBox>
+                                            <HBox GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                                <CheckBox styleClass="fds-check-box" fx:id="eventEmptyCheckBox1"/>
+                                                <Label text="Empty"/>
+                                            </HBox>
+                                            <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                <CheckBox styleClass="fds-check-box" fx:id="eventEmptyCheckBox2"/>
+                                                <Label text="Empty"/>
+                                            </HBox>
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50"/>
+                                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints vgrow="SOMETIMES" percentHeight="25"/>
+                                                <RowConstraints vgrow="SOMETIMES" percentHeight="25"/>
+                                                <RowConstraints vgrow="SOMETIMES" percentHeight="25"/>
+                                                <RowConstraints vgrow="SOMETIMES" percentHeight="25"/>
+                                            </rowConstraints>
+                                        </GridPane>
+                                        <BorderPane.margin>
+                                            <Insets top="6"/>
+                                        </BorderPane.margin>
+                                    </VBox>
+                                </center>
+                            </BorderPane>
+                            <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                <top>
+                                    <HBox>
+                                        <VBox style="-fx-background-color:#275085" minHeight="14"
+                                              minWidth="5"></VBox>
+                                        <Label text="Epoch Element" styleClass="section_label">
+                                            <HBox.margin>
+                                                <Insets>
+                                                    <left>
+                                                        5
+                                                    </left>
+                                                </Insets>
+                                            </HBox.margin>
+                                        </Label>
+                                    </HBox>
+                                </top>
+                                <center>
+                                    <TableView prefHeight="180" styleClass="gk2-table-view" fx:id="groundStationTableView">
+                                        <columns>
+                                            <TableColumn fx:id="groundStationFirstColumn" prefWidth="50"/>
+                                            <TableColumn fx:id="groundStationSecondColumn" text="Station ID" prefWidth="90"/>
+                                            <TableColumn fx:id="groundStationThirdColumn" text="Name" prefWidth="90"/>
+                                            <TableColumn fx:id="groundStationFourthColumn" text="Longitude" prefWidth="90"/>
+                                            <TableColumn fx:id="groundStationFifthColumn" text="Latitude" prefWidth="90"/>
+                                            <TableColumn fx:id="groundStationSixthColumn" text="Height" prefWidth="90"/>
+                                            <TableColumn fx:id="groundStationSeventhColumn" text="Elevation" prefWidth="90"/>
+                                            <TableColumn fx:id="groundStationEighthColumn" text="Beam width" prefWidth="100"/>
+                                        </columns>
+                                        <BorderPane.margin>
+                                            <Insets top="6" bottom="6"/>
+                                        </BorderPane.margin>
+                                    </TableView>
+                                    <!--<ScrollPane prefHeight="200" styleClass="fds-scroll-pane">-->
+                                        <!--<BorderPane>-->
+                                            <!--<top>-->
+                                                <!--<GridPane prefHeight="25" styleClass="output-data-grid-header"-->
+                                                          <!--alignment="CENTER_LEFT" prefWidth="990">-->
+                                                    <!--<Label text="Item Name" GridPane.columnIndex="1"-->
+                                                           <!--GridPane.rowIndex="0"-->
+                                                           <!--styleClass="table-data-grid-header-label"/>-->
+                                                    <!--<Label text="Generation" GridPane.columnIndex="2"-->
+                                                           <!--GridPane.rowIndex="0"-->
+                                                           <!--styleClass="table-data-grid-header-label"/>-->
+                                                    <!--<Label text="File Name" GridPane.columnIndex="3"-->
+                                                           <!--GridPane.rowIndex="0"-->
+                                                           <!--styleClass="table-data-grid-header-label"/>-->
+                                                    <!--<Label text="View" GridPane.columnIndex="4" GridPane.rowIndex="0"-->
+                                                           <!--styleClass="table-data-grid-header-label"/>-->
+                                                    <!--<columnConstraints>-->
+                                                        <!--<ColumnConstraints hgrow="SOMETIMES" percentWidth="1"/>-->
+                                                        <!--<ColumnConstraints hgrow="SOMETIMES" percentWidth="25.8"/>-->
+                                                        <!--<ColumnConstraints hgrow="SOMETIMES" percentWidth="11.4"/>-->
+                                                        <!--<ColumnConstraints hgrow="SOMETIMES" percentWidth="50.6"/>-->
+                                                        <!--<ColumnConstraints hgrow="SOMETIMES" percentWidth="11.2"/>-->
+                                                    <!--</columnConstraints>-->
+                                                <!--</GridPane>-->
+                                            <!--</top>-->
+                                        <!--</BorderPane>-->
+                                        <!--<BorderPane.margin>-->
+                                            <!--<Insets top="6" bottom="6"/>-->
+                                        <!--</BorderPane.margin>-->
+                                    <!--</ScrollPane>-->
+                                </center>
+                                <bottom>
+                                    <HBox>
+                                        <Button text="Save Parameter" styleClass="secondary-button" prefWidth="176"
+                                                prefHeight="36" minHeight="36" fx:id="eventSaveParameterButton">
+                                            <HBox.hgrow>
+                                                <Priority fx:constant="ALWAYS"/>
+                                            </HBox.hgrow>
+                                        </Button>
+                                        <Button text="Excute" prefWidth="176" prefHeight="36" minHeight="36"
+                                                fx:id="eventExcuteButton">
+                                            <HBox.margin>
+                                                <Insets left="8"/>
+                                            </HBox.margin>
+                                            <HBox.hgrow>
+                                                <Priority fx:constant="ALWAYS"/>
+                                            </HBox.hgrow>
+                                        </Button>
+                                    </HBox>
+                                </bottom>
+                            </BorderPane>
+                            <rowConstraints>
+                                <RowConstraints percentHeight="9.75"/>
+                                <RowConstraints percentHeight="30.25"/>
+                                <RowConstraints percentHeight="7"/>
+                                <RowConstraints percentHeight="53"/>
+                            </rowConstraints>
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="100"/>
+                            </columnConstraints>
+                        </GridPane>
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="60"/>
+                            <ColumnConstraints percentWidth="40"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints percentHeight="100"/>
+                        </rowConstraints>
+                    </GridPane>
+                </center>
+                <GridPane.margin>
+                    <Insets bottom="3"/>
+                </GridPane.margin>
+            </BorderPane>
+            <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <top>
+                    <VBox alignment="CENTER_LEFT" minHeight="30" styleClass="title-box">
+                        <Label text="Output List" styleClass="title_label"/>
+                    </VBox>
+                </top>
+                <center>
+                    <BorderPane>
+                        <top>
+                            <GridPane prefHeight="25" styleClass="output-data-grid-header"
+                                      alignment="CENTER_LEFT" prefWidth="990">
+                                <Label text="Item Name" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                                       styleClass="table-data-grid-header-label"/>
+                                <Label text="Generation" GridPane.columnIndex="2" GridPane.rowIndex="0"
+                                       styleClass="table-data-grid-header-label"/>
+                                <Label text="File Name" GridPane.columnIndex="3" GridPane.rowIndex="0"
+                                       styleClass="table-data-grid-header-label"/>
+                                <Label text="View" GridPane.columnIndex="4" GridPane.rowIndex="0"
+                                       styleClass="table-data-grid-header-label"/>
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="1"/>
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.8"/>
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="11.4"/>
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.6"/>
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="11.2"/>
+                                </columnConstraints>
+                            </GridPane>
+                        </top>
+                        <center>
+                            <ScrollPane prefHeight="80" styleClass="fds-scroll-pane" fitToWidth="true">
+                                <GridPane fx:id="outputListGridPane" vgap="1" prefWidth="980">
+                                    <BorderPane.margin>
+                                        <Insets left="10"/>
+                                    </BorderPane.margin>
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="27.8"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="11.4"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.6"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.2"/>
+                                    </columnConstraints>
+                                    <VBox.vgrow>
+                                        <Priority fx:constant="ALWAYS"></Priority>
+                                    </VBox.vgrow>
+                                </GridPane>
+                            </ScrollPane>
+                        </center>
+                    </BorderPane>
+                </center>
+                <GridPane.margin>
+                    <Insets top="3"/>
+                </GridPane.margin>
+            </BorderPane>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" percentHeight="78"/>
+                <RowConstraints vgrow="SOMETIMES" percentHeight="22"/>
+            </rowConstraints>
+            <columnConstraints>
+                <ColumnConstraints percentWidth="100"/>
+            </columnConstraints>
+            <HBox.hgrow>
+                <Priority fx:constant="ALWAYS"/>
+            </HBox.hgrow>
+            <HBox.margin>
+                <Insets right="3"/>
+            </HBox.margin>
+        </GridPane>
+        <!--우측 Box-->
+        <VBox prefWidth="830" minWidth="830">
+            <GridPane style="-fx-background-color:white">
+                <StackPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <TabPane styleClass="maintab2" fx:id="eventMainTab">
+
+                    </TabPane>
+                    <HBox style="-fx-background-color:linear-gradient(#F1F5F9, #DFE5EC);
+                -fx-border-width:1; -fx-border-color:#868E95;"
+                          maxHeight="35" StackPane.alignment="TOP_LEFT" alignment="CENTER_LEFT">
+                        <Button fx:id="textViewerSaveButton" styleClass="viewer_button">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@.././image/save.png"/>
+                                </ImageView>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets>
+                                    <left>10</left>
+                                </Insets>
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="textViewerPrintButton" styleClass="viewer_button">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@../images/print.png"/>
+                                </ImageView>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets>
+                                    <left>10</left>
+                                </Insets>
+                            </HBox.margin>
+                        </Button>
+                        <HBox alignment="CENTER_RIGHT">
+                            <Button fx:id="textViewerNewWindowButton" styleClass="viewer_button">
+                                <graphic>
+                                    <ImageView>
+                                        <Image url="@../images/newWindow.png"/>
+                                    </ImageView>
+                                </graphic>
+                                <HBox.margin>
+                                    <Insets>
+                                        <right>10</right>
+                                    </Insets>
+                                </HBox.margin>
+                            </Button>
+                            <HBox.hgrow>
+                                <Priority fx:constant="ALWAYS"/>
+                            </HBox.hgrow>
+                        </HBox>
+                        <StackPane.margin>
+                            <Insets>
+                                <top>30</top>
+                            </Insets>
+                        </StackPane.margin>
+                    </HBox>
+                    <VBox.vgrow>
+                        <Priority fx:constant="SOMETIMES"/>
+                    </VBox.vgrow>
+                    <maxWidth>
+                        <Double fx:constant="MAX_VALUE"/>
+                    </maxWidth>
+                    <maxHeight>
+                        <Double fx:constant="MAX_VALUE"/>
+                    </maxHeight>
+                </StackPane>
+                <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <top>
+                        <HBox style="-fx-background-color:linear-gradient(#F1F5F9, #DFE5EC);
+                -fx-border-width:0 1 1 1; -fx-border-color:#868E95;" prefHeight="35" StackPane.alignment="TOP_LEFT"
+                              alignment="CENTER_LEFT">
+                            <Button fx:id="chartViewerSaveButton" styleClass="viewer_button">
+                                <graphic>
+                                    <ImageView>
+                                        <Image url="@../images/save.png"/>
+                                    </ImageView>
+                                </graphic>
+                                <HBox.margin>
+                                    <Insets>
+                                        <left>10</left>
+                                    </Insets>
+                                </HBox.margin>
+                            </Button>
+                            <Button fx:id="chartViewerPrintButton" styleClass="viewer_button">
+                                <graphic>
+                                    <ImageView>
+                                        <Image url="@../images/print.png"/>
+                                    </ImageView>
+                                </graphic>
+                                <HBox.margin>
+                                    <Insets>
+                                        <left>10</left>
+                                    </Insets>
+                                </HBox.margin>
+                            </Button>
+                            <HBox alignment="CENTER_RIGHT">
+                                <Button fx:id="chartViewerNewWindowButton" styleClass="viewer_button">
+                                    <graphic>
+                                        <ImageView>
+                                            <Image url="@../images/newWindow.png"/>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets>
+                                            <right>10</right>
+                                        </Insets>
+                                    </HBox.margin>
+                                </Button>
+                                <HBox.hgrow>
+                                    <Priority fx:constant="ALWAYS"/>
+                                </HBox.hgrow>
+                            </HBox>
+                            <StackPane.margin>
+                                <Insets>
+                                    <top>30</top>
+                                </Insets>
+                            </StackPane.margin>
+                        </HBox>
+                    </top>
+                    <center>
+                        <BorderPane style="-fx-border-color:#868E95;-fx-border-width: 0 1 0 1;" fx:id="EventPredictionChartPaneContainer">
+                            <center>
+                                <VBox style="-fx-border-color:#C8C8C8" fx:id="EventPredictionChartPane"
+                                      alignment="CENTER">
+                                    <BorderPane.margin>
+                                        <Insets top="2" left="2" right="5" bottom="2"/>
+                                    </BorderPane.margin>
+                                </VBox>
+                            </center>
+                            <right>
+                                <VBox>
+                                    <padding>
+                                        <Insets top="6" right="10"/>
+                                    </padding>
+                                    <HBox alignment="CENTER_LEFT">
+                                        <CheckBox styleClass="fds-check-box" fx:id="eventChartSunCheckBox"/>
+                                        <Label text="Sun"/>
+                                        <VBox.margin>
+                                            <Insets bottom="10"/>
+                                        </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                        <CheckBox styleClass="fds-check-box" fx:id="eventChartMoonCheckBox"/>
+                                        <Label text="Moon"/>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                        <Line startX="-7" endX="7" stroke="#5425CB" strokeWidth="2">
+                                            <HBox.margin>
+                                                <Insets left="2"/>
+                                            </HBox.margin>
+                                        </Line>
+                                        <Label text="Earth">
+                                            <HBox.margin>
+                                                <Insets left="5"/>
+                                            </HBox.margin>
+                                        </Label>
+                                        <VBox.margin>
+                                            <Insets top="30"/>
+                                        </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                        <Circle radius="6" stroke="#EC6A5C" strokeWidth="2" fill="#EC6A5C">
+                                            <HBox.margin>
+                                                <Insets left="4"/>
+                                            </HBox.margin>
+                                        </Circle>
+                                        <Label text="Sun">
+                                            <HBox.margin>
+                                                <Insets left="6"/>
+                                            </HBox.margin>
+                                        </Label>
+                                        <VBox.margin>
+                                            <Insets top="10"/>
+                                        </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                        <Circle radius="6" stroke="#2571CB" strokeWidth="2" fill="#2571CB">
+                                            <HBox.margin>
+                                                <Insets left="4"/>
+                                            </HBox.margin>
+                                        </Circle>
+                                        <Label text="Moon">
+                                            <HBox.margin>
+                                                <Insets left="6"/>
+                                            </HBox.margin>
+                                        </Label>
+                                        <VBox.margin>
+                                            <Insets top="10"/>
+                                        </VBox.margin>
+                                    </HBox>
+                                </VBox>
+                            </right>
+                        </BorderPane>
+                    </center>
+                </BorderPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="100"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="SOMETIMES" percentHeight="50"/>
+                    <RowConstraints vgrow="SOMETIMES" percentHeight="50"/>
+                </rowConstraints>
+                <VBox.vgrow>
+                    <Priority fx:constant="ALWAYS"/>
+                </VBox.vgrow>
+            </GridPane>
+            <HBox.hgrow>
+                <Priority fx:constant="ALWAYS"/>
+            </HBox.hgrow>
+            <HBox.margin>
+                <Insets left="3"/>
+            </HBox.margin>
+        </VBox>
+    </HBox>
+</fx:root>
