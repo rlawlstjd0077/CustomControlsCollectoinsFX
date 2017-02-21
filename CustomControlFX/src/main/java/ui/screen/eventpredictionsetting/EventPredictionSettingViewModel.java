@@ -21,5 +21,4 @@ public class EventPredictionSettingViewModel {
     new GroundStationSelectionTableRowViewModel(new SimpleIntegerProperty(3), new SimpleIntegerProperty(4441), new SimpleStringProperty("TAEJON-S")
       , new SimpleDoubleProperty(128.4), new SimpleDoubleProperty(36.4), new SimpleDoubleProperty(36.4), new SimpleDoubleProperty(36.4), new SimpleDoubleProperty(36.4))
   );
-
 }
