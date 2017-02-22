@@ -1,4 +1,4 @@
-package ui.control;
+package ui.common;
 
 import javafx.event.EventHandler;
 import javafx.scene.Cursor;

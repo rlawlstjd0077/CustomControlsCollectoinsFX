@@ -16,7 +16,6 @@ import ui.UiUtil;
 import ui.common.DateAxis;
 import ui.common.ManeuverListTableRowViewModel;
 import ui.common.OutputListTableRowViewModel;
-import ui.control.TextViewerEventHandler;
 import ui.control.chart.CircleChart;
 import ui.control.chart.ScrollChart;
 import ui.control.datepicker.DatePickerControl;
