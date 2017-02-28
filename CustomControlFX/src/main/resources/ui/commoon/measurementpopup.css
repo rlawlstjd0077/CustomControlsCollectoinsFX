@@ -1,0 +1,6 @@
+.root {
+    -fx-font-family: "Roboto";
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-font-smoothing-type: gray;
+}

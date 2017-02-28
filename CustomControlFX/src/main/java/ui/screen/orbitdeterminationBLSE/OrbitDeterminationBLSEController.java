@@ -6,22 +6,25 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import ui.UiUtil;
-import ui.common.ChartViewerEventHandler;
-import ui.common.DateAxis;
-import ui.common.TextViewerEventHandler;
+import ui.common.*;
 import ui.control.datetimepicker.DateTimePicker;
+import ui.control.epochselector.EpochSelectorPopup;
 
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
@@ -29,15 +32,15 @@ import java.util.ResourceBundle;
 /**
  * Created by GSD on 2017-02-17.
  */
-public class OrbitDeterminationBLSEController extends AnchorPane implements Initializable{
+public class OrbitDeterminationBLSEController extends AnchorPane implements Initializable {
   @FXML
-  private HBox orbitBLSEStartDateTimePickerPane;
+  private HBox satelliteStartDateTimePickerPane;
   @FXML
-  private HBox orbitBLSEEndDateTimePickerPane;
+  private HBox satelliteEndDateTimePickerPane;
   @FXML
-  private HBox orbitBLSEEpochDateTimePickerPane;
+  private HBox satelliteEpochDateTimePickerPane;
   @FXML
-  private Button orbitBLSEEpochSelectButton;
+  private Button satelliteEpochSelectButton;
   @FXML
   private ComboBox<String> stackSourceTypeComboBox;
   @FXML
@@ -45,21 +48,19 @@ public class OrbitDeterminationBLSEController extends AnchorPane implements Init
   @FXML
   private ComboBox<String> coordinateFrameComboBox;
   @FXML
-  private GridPane orbitBLSEEpochGridPane;
+  private GridPane satelliteEpochGridPane;
   @FXML
-  private ComboBox<String> orbitBLSEFileTypeComboBox;
+  private ComboBox<String> satelliteFileTypeComboBox;
   @FXML
-  private TableView<SelectableFilesTableRowViewModel> SelectableFilesPreviousTableView;
+  private TableView<SelectableFilesTableRowModel> SelectableFilesPreviousTableView;
   @FXML
-  private TableColumn<SelectableFilesTableRowViewModel, String> SelectableFilesPreviousColumn;
+  private TableColumn<SelectableFilesTableRowModel, String> SelectableFilesPreviousColumn;
   @FXML
   private ImageView SelectableFilesRemoveButton;
   @FXML
   private ImageView SelectableFilesAddButton;
   @FXML
-  private TableView<SelectableFilesTableRowViewModel> SelectableFilesSelectedTableView;
-  @FXML
-  private TableColumn<SelectableFilesTableRowViewModel, String> SelectableFilesSelectedColumn;
+  private TableColumn<SelectableFilesTableRowModel, String> SelectableFilesSelectedColumn;
   @FXML
   private GridPane selectedDataInformationGridPane;
   @FXML
@@ -89,13 +90,13 @@ public class OrbitDeterminationBLSEController extends AnchorPane implements Init
   @FXML
   private CheckBox UpdateOptionSolarPressureCheckBox;
   @FXML
-  private Button orbitBLSESaveParameterButton;
+  private Button satelliteSaveParameterButton;
   @FXML
-  private Button orbitBLSEExcuteButton;
+  private Button satelliteExcuteButton;
   @FXML
   private GridPane outputListGridPane;
   @FXML
-  private TabPane orbitBLSEMainTab;
+  private TabPane satelliteMainTab;
   @FXML
   private Button textViewerSaveButton;
   @FXML
@@ -115,27 +116,29 @@ public class OrbitDeterminationBLSEController extends AnchorPane implements Init
   @FXML
   private Label ResidualValue1202Label;
   @FXML
-  private ComboBox<String> orbitBLSEGraphInformationGSComboBox;
+  private ComboBox<String> SatelliteGraphInformationGSComboBox;
   @FXML
-  private ComboBox<String> orbitBLSEGraphInformationValueComboBox;
+  private ComboBox<String> SatelliteGraphInformationValueComboBox;
   @FXML
-  private Label orbitBLSEGraphInformationStartLabel;
+  private Label SatelliteGraphInformationStartLabel;
   @FXML
-  private Label orbitBLSEGraphInformationEndLabel;
+  private Label SatelliteGraphInformationEndLabel;
   @FXML
-  private Label orbitBLSEGraphInformationMinLabel;
+  private Label SatelliteGraphInformationMinLabel;
   @FXML
-  private Label orbitBLSEGraphInformationMaxLabel;
+  private Label SatelliteGraphInformationMaxLabel;
   @FXML
-  private Label orbitBLSEGraphStatisticsCountLabel;
+  private Label SatelliteGraphStatisticsCountLabel;
   @FXML
-  private Label orbitBLSEGraphStatisticsMeanLabel;
+  private Label SatelliteGraphStatisticsMeanLabel;
   @FXML
-  private Label orbitBLSEGraphStatisticsVarianceLabel;
+  private Label SatelliteGraphStatisticsVarianceLabel;
   @FXML
-  private Label orbitBLSEGraphStatisticsStdDevLabel;
+  private Label SatelliteGraphStatisticsStdDevLabel;
   @FXML
   private VBox chartEntireBox;
+  @FXML
+  private Button orbitBLSEOpenPopupButton;
 
   private DateTimePicker startDateTimePicker;
   private DateTimePicker endDateTimePicker;
@@ -145,6 +148,7 @@ public class OrbitDeterminationBLSEController extends AnchorPane implements Init
   private NumberAxis yAxis;
   private TextViewerEventHandler textViewerEventHandler;
   private ChartViewerEventHandler eventPredictionChartViewerEventHandler;
+  private ArrayList<SelectedItemData> selectedItemDatas;
 
   public OrbitDeterminationBLSEController() throws IOException {
     final FXMLLoader loader = UiUtil.getFxmlLoader(this.getClass());
@@ -154,10 +158,42 @@ public class OrbitDeterminationBLSEController extends AnchorPane implements Init
   }
 
   /**
-   * orbitBLSE Orbit Monitoring 화면과 ViewModel을 바인딩.
+   * Satellite Orbit Monitoring 화면과 ViewModel을 바인딩.
+   *
    * @param viewModel
    */
   public void bind(OrbitDeterminationBLSEViewModel viewModel) {
+    satelliteEpochSelectButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+      EpochSelectorPopup popup = new EpochSelectorPopup();
+      Scene scene = new Scene(popup);
+      Stage newStage = new Stage();
+      newStage.setScene(scene);
+      newStage.initModality(Modality.APPLICATION_MODAL);
+      newStage.setTitle("Epoch Selector");
+      newStage.showAndWait();
+    });
+
+    for (int i = 0; i < viewModel.determinationStationDataTableRowViewModelList.size(); i++) {
+      int count = 0;
+      DeterminationStationDataTableRowViewModel model = viewModel.determinationStationDataTableRowViewModelList.get(i);
+      DeterminationOptionStationGridPane.add(new Label(model.itemProperty().getValue()), count++, i);
+      DeterminationOptionStationGridPane.add(model.getAppR(), count++, i);
+      DeterminationOptionStationGridPane.add(model.getAppA(), count++, i);
+      DeterminationOptionStationGridPane.add(model.getAppE(), count++, i);
+      DeterminationOptionStationGridPane.add(model.getEstR(), count++, i);
+      DeterminationOptionStationGridPane.add(model.getEstA(), count++, i);
+      DeterminationOptionStationGridPane.add(model.getEstE(), count++, i);
+    }
+    orbitBLSEOpenPopupButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+      MeasurementDataBiasPopup popup = new MeasurementDataBiasPopup();
+      Scene scene = new Scene(popup);
+      Stage popupStage = new Stage();
+      popupStage.setScene(scene);
+      popupStage.initModality(Modality.APPLICATION_MODAL);
+      popupStage.setTitle("MeasurementDataBiasPopup");
+      popupStage.showAndWait();
+    });
+
     SelectableFilesPreviousTableView.widthProperty().addListener(new ChangeListener<Number>() {
       @Override
       public void changed(ObservableValue<? extends Number> source, Number oldWidth, Number newWidth) {
@@ -168,28 +204,15 @@ public class OrbitDeterminationBLSEController extends AnchorPane implements Init
         }
       }
     });
-    SelectableFilesSelectedTableView.widthProperty().addListener(new ChangeListener<Number>() {
-      @Override
-      public void changed(ObservableValue<? extends Number> source, Number oldWidth, Number newWidth) {
-        Pane header = (Pane) SelectableFilesSelectedTableView.lookup("TableHeaderRow");
-        if (header.isVisible()) {
-          header.setPrefHeight(0);
-          header.setVisible(false);
-        }
-      }
-    });
 
-    /**
-     * Chart를 세팅
-     */
     xAxis = new DateAxis();
     yAxis = new NumberAxis();
     xAxis.setAutoRanging(false);
     yAxis.setAutoRanging(false);
     yAxis.setLabel("Time");
     xAxis.setLabel("Residual Value");
-    xAxis.setLowerBound(new GregorianCalendar(2016, 01,01).getTime());
-    xAxis.setUpperBound(new GregorianCalendar(2017, 01,01).getTime());
+    xAxis.setLowerBound(new GregorianCalendar(2016, 01, 01).getTime());
+    xAxis.setUpperBound(new GregorianCalendar(2017, 01, 01).getTime());
     xAxis.setTickLabelGap(2);
 
     xAxis.setTickLabelFormatter(new StringConverter<Date>() {
@@ -210,23 +233,16 @@ public class OrbitDeterminationBLSEController extends AnchorPane implements Init
     chartViewerChartBox.getChildren().add(chart);
     chart.getStylesheets().add(getClass().getResource("orbitdeterminationBLSEchart.css").toExternalForm());
 
-
-    /**
-     * DatePicker 들을 세팅
-     */
     startDateTimePicker = new DateTimePicker(180, 28, 12);
     endDateTimePicker = new DateTimePicker(180, 28, 12);
     epochDateTimePicker = new DateTimePicker(180, 28, 12);
-    orbitBLSEStartDateTimePickerPane.getChildren().add(startDateTimePicker);
-    orbitBLSEEndDateTimePickerPane.getChildren().add(endDateTimePicker);
-    orbitBLSEEpochDateTimePickerPane.getChildren().add(epochDateTimePicker);
-    orbitBLSEStartDateTimePickerPane.setMargin(startDateTimePicker, new Insets(2,0,0,0));
-    orbitBLSEEndDateTimePickerPane.setMargin(endDateTimePicker, new Insets(2,0,0,0));
+    satelliteStartDateTimePickerPane.getChildren().add(startDateTimePicker);
+    satelliteEndDateTimePickerPane.getChildren().add(endDateTimePicker);
+    satelliteEpochDateTimePickerPane.getChildren().add(epochDateTimePicker);
+    satelliteStartDateTimePickerPane.setMargin(startDateTimePicker, new Insets(2, 0, 0, 0));
+    satelliteEndDateTimePickerPane.setMargin(endDateTimePicker, new Insets(2, 0, 0, 0));
 
-    /**
-     * TextViewer, ChartNewWindowViewer 들을 세팅
-     */
-    textViewerEventHandler = new TextViewerEventHandler(this, orbitBLSEMainTab);
+    textViewerEventHandler = new TextViewerEventHandler(this, satelliteMainTab);
     eventPredictionChartViewerEventHandler = new ChartViewerEventHandler(this, chartEntireBox, chart);
 
     textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
@@ -236,27 +252,75 @@ public class OrbitDeterminationBLSEController extends AnchorPane implements Init
     chartViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, eventPredictionChartViewerEventHandler);
     chartViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, eventPredictionChartViewerEventHandler);
 
-    /**
-     * SelectableFilePreviousColumn, SelectableFileSelectedColumn, 들을 세팅
-     */
-    SelectableFilesSelectedColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+    selectedItemDatas = new ArrayList<>();
     SelectableFilesPreviousColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-    SelectableFilesPreviousTableView.setItems(viewModel.selectableFilesTableRowViewModelList);
-    SelectableFilesAddButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-      if(SelectableFilesPreviousTableView.getSelectionModel().getSelectedItem() != null){
-        SelectableFilesSelectedTableView.getItems().add(viewModel.selectableFilesTableRowViewModelList.get(SelectableFilesPreviousTableView.getSelectionModel().getSelectedIndex()));
-        //getSelectedIndex()으로 얻은 index를 통해 ViewModel의 데이터 리스트를 가져와 SelectableFilesSelectedTableView에 추가
-      }
+    SelectableFilesPreviousTableView.setItems(viewModel.selectableFilesTableRowModelList);
+    SelectableFilesPreviousTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+    SelectableFilesPreviousTableView.setRowFactory(tv -> {
+      TableRow<SelectableFilesTableRowModel> row = new TableRow<>();
+      row.setOnMousePressed(event -> {
+        SelectableFilesTableRowModel item = row.getItem();
+        int index = row.getIndex();
+        if (SelectableFilesPreviousTableView.getSelectionModel().getSelectedItem() != null) {
+          for (SelectedItemData data : selectedItemDatas) {
+            if (data.getIndex() == index) {
+              selectedItemDatas.remove(data);
+              setSelecions();
+              insertSeletedDataGrid();
+              return;
+            }
+          }
+          selectedItemDatas.add(new SelectedItemData(index, item));
+          setSelecions();
+          insertSeletedDataGrid();
+        }
+      });
+      row.setOnMouseClicked(event1 -> {
+        setSelecions();
+      });
+      return row;
     });
-    SelectableFilesRemoveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-      if(SelectableFilesSelectedTableView.getSelectionModel().getSelectedItem() != null){
-        SelectableFilesSelectedTableView.getItems().remove(SelectableFilesSelectedTableView.getSelectionModel().getSelectedIndex());
-      }
-    });
+  }
+
+  public void insertSeletedDataGrid() {
+    //GridPane에 데이터 바인딩 메소드
+  }
+
+  public void setSelecions() {
+    SelectableFilesPreviousTableView.getSelectionModel().clearSelection();
+    for (SelectedItemData data : selectedItemDatas) {
+      SelectableFilesPreviousTableView.getSelectionModel().select(data.getIndex());
+    }
   }
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
 
+  }
+
+  class SelectedItemData {
+    private int index;
+    private SelectableFilesTableRowModel data;
+
+    public SelectedItemData(int index, SelectableFilesTableRowModel data) {
+      this.index = index;
+      this.data = data;
+    }
+
+    public int getIndex() {
+      return index;
+    }
+
+    public void setIndex(int index) {
+      this.index = index;
+    }
+
+    public SelectableFilesTableRowModel getData() {
+      return data;
+    }
+
+    public void setData(SelectableFilesTableRowModel data) {
+      this.data = data;
+    }
   }
 }
