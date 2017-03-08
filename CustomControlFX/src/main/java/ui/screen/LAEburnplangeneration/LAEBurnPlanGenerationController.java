@@ -12,7 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import ui.UiUtil;
 import ui.common.DataSearchTableRowViewModel;
-import ui.common.TextViewerEventHandler;
+import ui.common.TabTextViewerEventHandler;
 import ui.control.datetimepicker.DateTimePicker;
 
 import java.io.IOException;
@@ -63,7 +63,7 @@ public class LAEBurnPlanGenerationController extends AnchorPane implements Initi
   private Object oldValue;
   private DateTimePicker startDateTimePicker;
   private DateTimePicker endDateTimePicker;
-  private TextViewerEventHandler textViewerEventHandler;
+  private TabTextViewerEventHandler tabTextViewerEventHandler;
 
   public LAEBurnPlanGenerationController() throws IOException {
     final FXMLLoader loader = UiUtil.getFxmlLoader(this.getClass());
@@ -111,11 +111,11 @@ public class LAEBurnPlanGenerationController extends AnchorPane implements Initi
     /**
      * TextViewer, ChartNewWindowViewer 세팅
      */
-    textViewerEventHandler = new TextViewerEventHandler(this, LAEBurnPlanMainTab);
+    tabTextViewerEventHandler = new TabTextViewerEventHandler(this, LAEBurnPlanMainTab);
 
-    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
+    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
   }
 
   @Override

@@ -7,7 +7,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import ui.UiUtil;
 import ui.common.GroundStationSelectionTableRowViewModel;
-import ui.common.TextViewerEventHandler;
+import ui.common.TabTextViewerEventHandler;
 import ui.control.datetimepicker.DateTimePicker;
 
 import java.io.IOException;
@@ -107,7 +107,7 @@ public class LEOPEventPredictionController extends AnchorPane {
   private DateTimePicker startDateTimePicker;
   private DateTimePicker endDateTimePicker;
   private DateTimePicker epochDateTimePicker;
-  private TextViewerEventHandler textViewerEventHandler;
+  private TabTextViewerEventHandler tabTextViewerEventHandler;
 
   public LEOPEventPredictionController() throws IOException {
     final FXMLLoader loader = UiUtil.getFxmlLoader(this.getClass());
@@ -133,11 +133,11 @@ public class LEOPEventPredictionController extends AnchorPane {
     /**
      * TextViewer 핸들러 세팅
      */
-    textViewerEventHandler = new TextViewerEventHandler(this, leopEventMainTab);
+    tabTextViewerEventHandler = new TabTextViewerEventHandler(this, leopEventMainTab);
 
-    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
+    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
 
     /**
      * TableView 세팅

@@ -14,7 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import ui.UiUtil;
 import ui.common.ChartViewerEventHandler;
-import ui.common.TextViewerEventHandler;
+import ui.common.TabTextViewerEventHandler;
 import ui.control.datetimepicker.DateTimePicker;
 
 import java.io.IOException;
@@ -69,7 +69,7 @@ public class MoonAcquisitionController extends AnchorPane{
   private DateTimePicker startDateTimePicker;
   private DateTimePicker endDateTimePicker;
   private DateTimePicker epochDateTimePicker;
-  private TextViewerEventHandler textViewerEventHandler;
+  private TabTextViewerEventHandler tabTextViewerEventHandler;
   private ChartViewerEventHandler eventPredictionChartViewerEventHandler;
 
   public MoonAcquisitionController() throws IOException {
@@ -93,9 +93,9 @@ public class MoonAcquisitionController extends AnchorPane{
     moonAcquisitionStartDateTimePickerPane.setMargin(startDateTimePicker, new Insets(5, 0, 0, 0));
     moonAcquisitionEndDateTimePickerPane.setMargin(endDateTimePicker, new Insets(5, 0, 0, 0));
 
-    textViewerEventHandler = new TextViewerEventHandler(this, moonAcquisitionMainTab);
-    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
+    tabTextViewerEventHandler = new TabTextViewerEventHandler(this, moonAcquisitionMainTab);
+    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
   }
 }

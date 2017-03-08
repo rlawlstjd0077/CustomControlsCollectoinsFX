@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<fx:root type="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+         minWidth="500" nodeOrientation="LEFT_TO_RIGHT" xmlns="http://javafx.com/javafx/8"
+         xmlns:fx="http://javafx.com/fxml/1" stylesheets="@timetableupdater.css">
+    <padding>
+        <Insets top="10" left="10" right="10" bottom="10"/>
+    </padding>
+    <HBox AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <!--좌측 Box-->
+        <VBox prefWidth="830" minWidth="830">
+            <!-- 좌측 상단 Box -->
+            <BorderPane>
+                <top>
+                    <VBox alignment="CENTER_LEFT" minHeight="30" styleClass="title-box">
+                        <Label text="Time Table Updater" styleClass="title_label"/>
+                    </VBox>
+                </top>
+                <center>
+                    <VBox style="-fx-background-color:white; -fx-border-color:#9FA5AB;">
+                        <padding>
+                            <Insets top="20" left="20" bottom="20" right="15"/>
+                        </padding>
+                        <HBox alignment="CENTER_LEFT">
+                            <Label text="Updated Leap Second Data Location" prefWidth="300"/>
+                            <TextField editable="false" prefHeight="28" prefWidth="560" styleClass="fds-text-field"
+                                       fx:id="timeTableUpdatedLeapTextField">
+                                <HBox.margin>
+                                    <Insets right="6"/>
+                                </HBox.margin>
+                            </TextField>
+                            <Button styleClass="fds-form-button" prefHeight="28" prefWidth="20" text="..."
+                                    fx:id="timeTableUpdatedLeapFileChooseButton"/>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                            <Label text="Updated Earth Orientation Data Location" prefWidth="300"/>
+                            <TextField editable="false" prefHeight="28" prefWidth="560" styleClass="fds-text-field"
+                                       fx:id="timeTableUpdatedEarthTextField">
+                                <HBox.margin>
+                                    <Insets right="6"/>
+                                </HBox.margin>
+                            </TextField>
+                            <Button styleClass="fds-form-button" prefHeight="28" prefWidth="20" text="..."
+                                    fx:id="timeTableUpdatedEarthFileChooseButton"/>
+                            <VBox.margin>
+                                <Insets top="10" bottom="10"/>
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                            <Label text="Time Table Location" prefWidth="300"/>
+                            <TextField editable="false" prefHeight="28" prefWidth="560" styleClass="fds-text-field"
+                                       fx:id="timeTableLocationTextField">
+                                <HBox.margin>
+                                    <Insets right="6"/>
+                                </HBox.margin>
+                            </TextField>
+                            <Button styleClass="fds-form-button" prefHeight="28" prefWidth="20" text="..."
+                                    fx:id="timeTableLocationFileChooseButton"/>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT">
+                            <padding>
+                                <Insets top="15"/>
+                            </padding>
+                            <Button fx:id="timeTableCheckCurrentButton" styleClass="secondary-button" prefHeight="36" prefWidth="200" text="Check Current Time Table">
+                                <HBox.margin>
+                                    <Insets right="10"/>
+                                </HBox.margin>
+                            </Button>
+                            <Button fx:id="timeTableUpdateButton" styleClass="secondary-button" prefHeight="36" prefWidth="160" text="Update Time Table"/>
+                        </HBox>
+                    </VBox>
+                </center>
+                <GridPane.margin>
+                    <Insets bottom="3"/>
+                </GridPane.margin>
+                <VBox.vgrow>
+                    <Priority fx:constant="ALWAYS"/>
+                </VBox.vgrow>
+            </BorderPane>
+            <HBox.hgrow>
+                <Priority fx:constant="ALWAYS"/>
+            </HBox.hgrow>
+            <HBox.margin>
+                <Insets right="3"/>
+            </HBox.margin>
+        </VBox>
+        <!--우측 Box-->
+        <VBox prefWidth="830" style="-fx-background-color:white">
+            <StackPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <TabPane styleClass="maintab2" fx:id="timeTableMainTab">
+
+                </TabPane>
+                <HBox style="-fx-background-color:linear-gradient(#F1F5F9, #DFE5EC);
+                -fx-border-width:1; -fx-border-color:#868E95;"
+                      maxHeight="35" StackPane.alignment="TOP_LEFT" alignment="CENTER_LEFT">
+                    <Button fx:id="textViewerSaveButton" styleClass="viewer_button">
+                        <graphic>
+                            <ImageView>
+                                <Image url="@../images/save.png"/>
+                            </ImageView>
+                        </graphic>
+                        <HBox.margin>
+                            <Insets>
+                                <left>10</left>
+                            </Insets>
+                        </HBox.margin>
+                    </Button>
+                    <Button fx:id="textViewerPrintButton" styleClass="viewer_button">
+                        <graphic>
+                            <ImageView>
+                                <Image url="@../images/print.png"/>
+                            </ImageView>
+                        </graphic>
+                        <HBox.margin>
+                            <Insets>
+                                <left>10</left>
+                            </Insets>
+                        </HBox.margin>
+                    </Button>
+                    <HBox alignment="CENTER_RIGHT">
+                        <Button fx:id="textViewerNewWindowButton" styleClass="viewer_button">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@../images/newWindow.png"/>
+                                </ImageView>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets>
+                                    <right>10</right>
+                                </Insets>
+                            </HBox.margin>
+                        </Button>
+                        <HBox.hgrow>
+                            <Priority fx:constant="ALWAYS"/>
+                        </HBox.hgrow>
+                    </HBox>
+                    <StackPane.margin>
+                        <Insets>
+                            <top>30</top>
+                        </Insets>
+                    </StackPane.margin>
+                </HBox>
+                <VBox.vgrow>
+                    <Priority fx:constant="SOMETIMES"/>
+                </VBox.vgrow>
+            </StackPane>
+            <HBox.hgrow>
+                <Priority fx:constant="ALWAYS"/>
+            </HBox.hgrow>
+            <HBox.margin>
+                <Insets left="3"/>
+            </HBox.margin>
+        </VBox>
+    </HBox>
+</fx:root>

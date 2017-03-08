@@ -10,7 +10,7 @@ import javafx.scene.layout.HBox;
 import ui.UiUtil;
 import ui.common.DataSearchTableRowViewModel;
 import ui.common.SelectedItemData;
-import ui.common.TextViewerEventHandler;
+import ui.common.TabTextViewerEventHandler;
 import ui.control.datetimepicker.DateTimePicker;
 
 import java.io.IOException;
@@ -53,7 +53,7 @@ public class MeasurementDataMergeController extends AnchorPane {
 
   private DateTimePicker startDateTimePicker;
   private DateTimePicker endDateTimePicker;
-  private TextViewerEventHandler textViewerEventHandler;
+  private TabTextViewerEventHandler tabTextViewerEventHandler;
   private ArrayList<SelectedItemData> selectedItems;
 
 
@@ -78,10 +78,10 @@ public class MeasurementDataMergeController extends AnchorPane {
     measurementMergeDataStartDateTimePickerPane.setMargin(startDateTimePicker, new Insets(1, 0, 0, 0));
     measurementMergeDataEndDateTimePickerPane.setMargin(endDateTimePicker, new Insets(1, 0, 0, 0));
 
-    textViewerEventHandler = new TextViewerEventHandler(this, measurementMergeDataMainTab);
-    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
+    tabTextViewerEventHandler = new TabTextViewerEventHandler(this, measurementMergeDataMainTab);
+    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
 
     measurementMergeDataDataSearchTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     measurementMergeDataSearchFirstTableColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());

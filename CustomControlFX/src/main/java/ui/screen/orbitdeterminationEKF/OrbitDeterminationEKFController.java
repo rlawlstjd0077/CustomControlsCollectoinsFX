@@ -16,7 +16,7 @@ import javafx.util.StringConverter;
 import ui.UiUtil;
 import ui.common.ChartViewerEventHandler;
 import ui.common.DateAxis;
-import ui.common.TextViewerEventHandler;
+import ui.common.TabTextViewerEventHandler;
 import ui.control.datetimepicker.DateTimePicker;
 
 import java.io.IOException;
@@ -113,7 +113,7 @@ public class OrbitDeterminationEKFController extends AnchorPane implements Initi
   private ScatterChart<Date, Number> chart;
   private DateAxis xAxis;
   private NumberAxis yAxis;
-  private TextViewerEventHandler textViewerEventHandler;
+  private TabTextViewerEventHandler tabTextViewerEventHandler;
   private ChartViewerEventHandler eventPredictionChartViewerEventHandler;
 
 
@@ -176,12 +176,12 @@ public class OrbitDeterminationEKFController extends AnchorPane implements Initi
     /**
      * TextViewer, ChartNewWindowViewer 세팅
      */
-    textViewerEventHandler = new TextViewerEventHandler(this, orbitEKFMainTab);
+    tabTextViewerEventHandler = new TabTextViewerEventHandler(this, orbitEKFMainTab);
     eventPredictionChartViewerEventHandler = new ChartViewerEventHandler(this, chartEntireBox, chart);
 
-    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
+    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
     chartViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, eventPredictionChartViewerEventHandler);
     chartViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, eventPredictionChartViewerEventHandler);
     chartViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, eventPredictionChartViewerEventHandler);

@@ -19,11 +19,11 @@ import java.io.*;
 /**
  * Created by GSD on 2017-01-25.
  */
-public class TextViewerEventHandler implements EventHandler<MouseEvent> {
+public class TabTextViewerEventHandler implements EventHandler<MouseEvent> {
   private TabPane tabPane;
   private Pane context;
 
-  public TextViewerEventHandler(Pane context, TabPane tabPane) {
+  public TabTextViewerEventHandler(Pane context, TabPane tabPane) {
     this.tabPane = tabPane;
     this.context = context;
   }

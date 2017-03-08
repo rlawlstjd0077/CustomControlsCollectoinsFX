@@ -4,6 +4,9 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import ui.common.DeterminationStationDataTableRowViewModel;
+import ui.common.SelectableFilesTableRowViewModel;
+import ui.screen.orbitdeterminationBLSE.MeasurementDataTableRowViewModel;
 
 /**
  * Created by GSD on 2017-03-02.

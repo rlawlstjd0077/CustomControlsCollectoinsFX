@@ -16,7 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.util.StringConverter;
 import ui.UiUtil;
 import ui.common.DateAxis;
-import ui.common.TextViewerEventHandler;
+import ui.common.TabTextViewerEventHandler;
 import ui.control.datetimepicker.DateTimePicker;
 
 import java.io.IOException;
@@ -94,7 +94,7 @@ public class FinalOrbitRaisingController extends AnchorPane implements Initializ
   private NumberAxis firstYAxis;
   private DateAxis secondXAxis;
   private NumberAxis secondYAxis;
-  private TextViewerEventHandler textViewerEventHandler;
+  private TabTextViewerEventHandler tabTextViewerEventHandler;
 
   public FinalOrbitRaisingController() throws IOException {
     final FXMLLoader loader = UiUtil.getFxmlLoader(this.getClass());
@@ -160,11 +160,11 @@ public class FinalOrbitRaisingController extends AnchorPane implements Initializ
     /**
      * TextViewer, ChartNewWindowViewer 들을 세팅
      */
-    textViewerEventHandler = new TextViewerEventHandler(this, finalOrbitMainTab);
+    tabTextViewerEventHandler = new TabTextViewerEventHandler(this, finalOrbitMainTab);
 
-    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
+    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
   }
 
   @Override

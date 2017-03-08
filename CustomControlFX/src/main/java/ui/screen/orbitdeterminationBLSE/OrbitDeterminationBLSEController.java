@@ -146,7 +146,7 @@ public class OrbitDeterminationBLSEController extends AnchorPane implements Init
   private ScatterChart<Date, Number> chart;
   private DateAxis xAxis;
   private NumberAxis yAxis;
-  private TextViewerEventHandler textViewerEventHandler;
+  private TabTextViewerEventHandler tabTextViewerEventHandler;
   private ChartViewerEventHandler eventPredictionChartViewerEventHandler;
   private ArrayList<SelectedItemData> selectedItemDatas;
 
@@ -242,12 +242,12 @@ public class OrbitDeterminationBLSEController extends AnchorPane implements Init
     satelliteStartDateTimePickerPane.setMargin(startDateTimePicker, new Insets(2, 0, 0, 0));
     satelliteEndDateTimePickerPane.setMargin(endDateTimePicker, new Insets(2, 0, 0, 0));
 
-    textViewerEventHandler = new TextViewerEventHandler(this, satelliteMainTab);
+    tabTextViewerEventHandler = new TabTextViewerEventHandler(this, satelliteMainTab);
     eventPredictionChartViewerEventHandler = new ChartViewerEventHandler(this, chartEntireBox, chart);
 
-    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
+    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
     chartViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, eventPredictionChartViewerEventHandler);
     chartViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, eventPredictionChartViewerEventHandler);
     chartViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, eventPredictionChartViewerEventHandler);

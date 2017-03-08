@@ -12,7 +12,7 @@ import javafx.scene.layout.HBox;
 import ui.UiUtil;
 import ui.common.DataSearchTableRowViewModel;
 import ui.common.SelectedItemData;
-import ui.common.TextViewerEventHandler;
+import ui.common.TabTextViewerEventHandler;
 import ui.control.datetimepicker.DateTimePicker;
 
 import java.io.IOException;
@@ -64,7 +64,7 @@ public class MeasurementDataConversionController extends AnchorPane {
   private Object oldValue;
   private DateTimePicker startDateTimePicker;
   private DateTimePicker endDateTimePicker;
-  private TextViewerEventHandler textViewerEventHandler;
+  private TabTextViewerEventHandler tabTextViewerEventHandler;
   private ArrayList<SelectedItemData> selectedItems;
 
 
@@ -126,11 +126,11 @@ public class MeasurementDataConversionController extends AnchorPane {
     /**
      * TextViewer 세팅
      */
-    textViewerEventHandler = new TextViewerEventHandler(this, mesurementDataMainTab);
+    tabTextViewerEventHandler = new TabTextViewerEventHandler(this, mesurementDataMainTab);
 
-    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
-    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, textViewerEventHandler);
+    textViewerSaveButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerPrintButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
+    textViewerNewWindowButton.addEventHandler(MouseEvent.MOUSE_CLICKED, tabTextViewerEventHandler);
   }
 
   public void insertSeletedDataGrid() {
