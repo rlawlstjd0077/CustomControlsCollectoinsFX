@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<fx:root maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" stylesheets="@styles.css" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <AnchorPane prefHeight="68.0" style="-fx-background-color: #426FA9;">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="68.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefWidth="200.0" HBox.hgrow="NEVER">
+                     <children>
+                        <ImageView fitHeight="51.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/menu/icon_logo_kari.png" />
+                           </image>
+                        </ImageView>
+                        <StackPane prefWidth="200.0">
+                           <children>
+                              <Text fx:id="version" fill="#77b6ff" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12px; -fx-font-weight: bold;" text="v0.1.20180523" StackPane.alignment="TOP_LEFT">
+                                 <StackPane.margin>
+                                    <Insets left="15.0" top="5.0" />
+                                 </StackPane.margin>
+                              </Text>
+                              <ImageView fx:id="logo" fitHeight="21.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+                                 <StackPane.margin>
+                                    <Insets bottom="-3.0" />
+                                 </StackPane.margin>
+                              </ImageView>
+                              <Text fx:id="modeLabel" fill="#77b6ff" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12px; -fx-font-weight: bold;" text="Mode" StackPane.alignment="BOTTOM_LEFT">
+                                 <StackPane.margin>
+                                    <Insets bottom="4.0" left="15.0" />
+                                 </StackPane.margin>
+                              </Text>
+                           </children>
+                        </StackPane>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </HBox>
+                  <HBox fx:id="mainMenuHbox" alignment="CENTER" spacing="5.0" styleClass="main-menu">
+                     <HBox.margin>
+                        <Insets left="27.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="12.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="68.0" prefWidth="721.0" style="-fx-background-color: #426FA9; -fx-spacing: 20px;" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <ImageView fitHeight="23.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/menu/icon_utc.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="-9.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle height="50.0" style="-fx-fill: #142e51; -fx-stroke: transparent; -fx-arc-height: 7; -fx-arc-width: 7; -fx-stroke-type: inside; -fx-stroke-width: 0;" width="325.0" />
+                        <Text fx:id="utc" style="-fx-fill: #FFF5E2; -fx-font-weight: bold; -fx-font-size: 30px; -fx-stroke-type: outside; -fx-stroke-width: 0;" text="0000-00-00 00:00:00" StackPane.alignment="CENTER_LEFT">
+                           <StackPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </StackPane.margin>
+                        </Text>
+                     </children>
+                  </StackPane>
+                  <Rectangle height="68.0" layoutX="682.0" layoutY="10.0" width="1.0" />
+                  <ImageView fx:id="reduntancy" fitHeight="50.0" fitWidth="50.0" layoutX="703.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/menu/icon_header_pr_sec.png" />
+                     </image>
+                  </ImageView>
+                  <Rectangle height="68.0" width="1.0" />
+                  <ImageView fx:id="help" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/menu/icon_header_help.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="configuration" fitHeight="24.0" fitWidth="24.0" layoutX="747.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/menu/icon_header_setting.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="notification" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/menu/icon_header_noti.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane fx:id="content" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </AnchorPane>
+   </center>
+</fx:root>

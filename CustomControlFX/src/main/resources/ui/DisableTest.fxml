@@ -1,0 +1,266 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import commons.ui.control.primarybutton.PrimaryButton?>
+<?import javafx.geometry.Insets?>
+<?import commons.ui.control.secondarybutton.SecondaryButton?>
+<?import commons.ui.control.tertiarybutton.TertiaryButton?>
+<?import commons.ui.control.linkbutton.LinkButton?>
+<?import commons.ui.control.checkbox.Gk2CheckBox?>
+<?import commons.ui.control.radiobutton.Gk2RadioButton?>
+<?import commons.ui.control.combobox.Gk2ComboBox?>
+<?import commons.ui.control.textfield.Gk2TextField?>
+<?import commons.ui.control.textarea.Gk2TextArea?>
+<?import commons.ui.control.datetimepicker.DateTimePickerControl?>
+<?import commons.ui.control.spinner.Gk2Spinner?>
+<?import commons.ui.control.scrollbar.Gk2ScrollBar?>
+<?import commons.ui.control.progressbar.Gk2ProgressBar?>
+<?import commons.ui.control.pagination.Gk2Pagination?>
+<?import commons.ui.control.listview.Gk2ListView?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import commons.ui.control.listviewdark.Gk2LisViewDark?>
+
+<?import commons.ui.control.accordion.Gk2Accordion?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.text.Text?>
+<?import commons.ui.control.formbutton.FormButton?>
+<?import commons.ui.control.togglebutton.Gk2ToggleButton?>
+<?import commons.ui.control.headerbutton.HeaderButton?>
+<?import javafx.scene.control.TextField?>
+<GridPane stylesheets="@disable.css" xmlns="http://javafx.com/javafx/8" vgap="60" hgap="30" xmlns:fx="http://javafx.com/fxml/1" fx:controller="commons.ui.control.UITestController">
+    <children>
+        <Label text="Primary Button"  GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <PrimaryButton GridPane.columnIndex="1" GridPane.rowIndex="0" text="Primary Button" disable="true"></PrimaryButton>
+        <Label text="Secondary Button" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <SecondaryButton GridPane.columnIndex="3" GridPane.rowIndex="0" text="Secondary Button" disable="true"></SecondaryButton>
+        <Label text="Tertiary Button" GridPane.columnIndex="4" GridPane.rowIndex="0">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <TertiaryButton GridPane.columnIndex="5" GridPane.rowIndex="0" text="Tertiary Button" disable="true"></TertiaryButton>
+        <Label text="Link Button" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <LinkButton GridPane.columnIndex="1" GridPane.rowIndex="1" text="Link Button" disable="true"></LinkButton>
+        <Label text="Form Button" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <FormButton GridPane.columnIndex="3" GridPane.rowIndex="1" text="Form Button" disable="true"></FormButton>
+        <Label text="Header Button" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <HeaderButton GridPane.columnIndex="5" GridPane.rowIndex="1" text="Header Button" disable="true"></HeaderButton>
+        <Label text="Pill Toggle Button" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <Gk2ToggleButton GridPane.columnIndex="1" GridPane.rowIndex="2" text="Toggle Button" disable="true"></Gk2ToggleButton>
+        <Label text="CheckBox" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <Gk2CheckBox GridPane.columnIndex="3" GridPane.rowIndex="2" disable="true">
+            <GridPane.margin>
+                <Insets>
+                    <left>50</left>
+                </Insets>
+            </GridPane.margin>
+        </Gk2CheckBox>
+        <Label text="RadioButton" GridPane.columnIndex="4" GridPane.rowIndex="2" >
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <Gk2RadioButton GridPane.columnIndex="5" GridPane.rowIndex="2" disable="true">
+            <GridPane.margin>
+                <Insets>
+                    <left>50</left>
+                </Insets>
+            </GridPane.margin>
+        </Gk2RadioButton>
+        <Label text="ComboBox" GridPane.columnIndex="0" GridPane.rowIndex="3" >
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <Gk2ComboBox GridPane.columnIndex="1" GridPane.rowIndex="3" disable="true">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="4800" />
+                    <String fx:value="9600" />
+                    <String fx:value="19200" />
+                    <String fx:value="57600" />
+                    <String fx:value="115200" />
+                </FXCollections>
+            </items>
+        </Gk2ComboBox>
+        <Label text="Spinner" GridPane.columnIndex="2" GridPane.rowIndex="3" >
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <Gk2Spinner GridPane.columnIndex="3" GridPane.rowIndex="3" fx:id="gk2Spinner" editable="true" disable="true"/>
+        <Label text="TextField" GridPane.columnIndex="4" GridPane.rowIndex="3" >
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <Gk2TextField GridPane.columnIndex="5" GridPane.rowIndex="3" disable="true"/>
+        <Label text="TextField-Error" GridPane.columnIndex="0" GridPane.rowIndex="4" >
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <TextField styleClass="error-field" GridPane.columnIndex="1" GridPane.rowIndex="4"  ></TextField>
+        <Label text="DatePicker" GridPane.columnIndex="2" GridPane.rowIndex="4" >
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <DateTimePickerControl GridPane.columnIndex="3" GridPane.rowIndex="4" disable="true">
+            <GridPane.margin>
+                <Insets>
+                    <top>
+                        30
+                    </top>
+                </Insets>
+            </GridPane.margin>
+        </DateTimePickerControl>
+        <Label text="ScrollBar-V" GridPane.columnIndex="4" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <Gk2ScrollBar GridPane.columnIndex="5" GridPane.rowIndex="4" orientation="VERTICAL" disable="true"></Gk2ScrollBar>
+        <Label text="ScrollBar-H" GridPane.columnIndex="0" GridPane.rowIndex="5">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <Gk2ScrollBar GridPane.columnIndex="1" GridPane.rowIndex="5" orientation="HORIZONTAL" disable="true"></Gk2ScrollBar>
+        <Label text="ProgressBar" GridPane.columnIndex="2" GridPane.rowIndex="5" >
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <Gk2ProgressBar  GridPane.columnIndex="3" GridPane.rowIndex="5" fx:id="gk2ProgressBar" disable="true"></Gk2ProgressBar>
+        <Label text="Pagination" GridPane.columnIndex="4" GridPane.rowIndex="5">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <Gk2Pagination GridPane.columnIndex="5" GridPane.rowIndex="5" disable="true"></Gk2Pagination>
+        <Label text="Accordion" GridPane.columnIndex="0" GridPane.rowIndex="6">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <Gk2Accordion GridPane.columnIndex="1" GridPane.rowIndex="6" disable="true">
+            <panes>
+                <TitledPane>
+                    <text>First</text>
+                    <content>
+                        <Text text="123"/>
+                    </content>
+                </TitledPane>
+                <TitledPane>
+                    <text>Second</text>
+                    <content>
+                        <Text text="123"/>
+                    </content>
+                </TitledPane>
+            </panes>
+        </Gk2Accordion>
+        <Label text="ListView" GridPane.columnIndex="2" GridPane.rowIndex="6">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <Gk2ListView GridPane.columnIndex="3" GridPane.rowIndex="6" prefWidth="200" prefHeight="80" disable="true">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="4800" />
+                    <String fx:value="9600" />
+                    <String fx:value="19200" />
+                    <String fx:value="57600" />
+                    <String fx:value="115200" />
+                </FXCollections>
+            </items>
+        </Gk2ListView>
+        <Label text="DarkListView" GridPane.columnIndex="4" GridPane.rowIndex="6">
+            <GridPane.margin>
+                <Insets>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Label>
+        <Gk2LisViewDark GridPane.columnIndex="5" GridPane.rowIndex="6" prefWidth="50" prefHeight="80" disable="true">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="4800" />
+                    <String fx:value="9600" />
+                    <String fx:value="19200" />
+                    <String fx:value="57600" />
+                    <String fx:value="115200" />
+                </FXCollections>
+            </items>
+        </Gk2LisViewDark>
+    </children>
+</GridPane>

@@ -1,0 +1,19 @@
+.error-field{
+    -fx-background-color: #ffffff;
+    -fx-background-insets: 0;
+    -fx-border-radius: 2px;
+    -fx-border-color:#E16B67;
+    -fx-font-family: "Roboto";
+    -fx-font-size : 14;
+    -fx-min-height:36;
+    -fx-min-width:150;
+}
+.error-field:hover{
+
+}
+.error-field:focused{
+-fx-border-color:#E16B67;
+}
+.error-field:disabled{
+    -fx-opacity : 0.6;
+}

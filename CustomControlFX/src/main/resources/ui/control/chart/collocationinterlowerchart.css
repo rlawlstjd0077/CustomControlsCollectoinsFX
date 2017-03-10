@@ -1,0 +1,7 @@
+#inter-sat-distance-line{
+    -fx-stroke:#727272;
+}
+#lower-bound-line{
+    -fx-stroke:#FF9090;
+    -fx-stroke-dash-array: 5;
+}

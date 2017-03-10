@@ -1,0 +1,126 @@
+.sidemenu {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 14pt;
+    -fx-text-fill: #58687E;
+}
+.sidemenu:focused {
+    -fx-background-color: #142F51;
+    -fx-border-color: #142F51;
+}
+
+.sidemenu .scroll-pane {
+    -fx-background-color:#142F51;
+    -fx-border-color:#142F51;
+}
+
+.sidemenu .scroll-pane .viewport {
+    -fx-background-color:#142F51;
+    -fx-border-color:#142F51;
+}
+
+.sidemenu .tree-view:focused  {
+    -fx-border-color:transparent;
+    -fx-background-color:transparent;
+}
+
+.sidemenu .tree-view{
+    -fx-border-color:transparent;
+    -fx-background-color:transparent;
+}
+
+.sidemenu .virtual-flow .scroll-bar:horizontal{
+    -fx-block-increment:0;
+    -fx-max-height:0;
+    -fx-min-height:0;
+
+    -fx-position-shape:false;
+    -fx-scale-shape:false;
+    -fx-background-color:#142F51;
+}
+
+.sidemenu .tree-cell{
+    -fx-background-color:#142F51;
+    -fx-font-size:14px;
+    -fx-text-fill: #58687E;
+    -fx-padding: 4px 4px 4px 6px;
+}
+
+.sidemenu .tree-cell:hover {
+    -fx-background-color: #0F2742;
+    -fx-text-fill: white;
+}
+
+.sidemenu .tree-cell:selected {
+    -fx-background-color: #345C8F;
+    -fx-text-fill: white;
+}
+
+.sidemenu .tree-cell:expanded {
+    -fx-background-color: #0E233C;
+    -fx-text-fill:white;
+}
+
+.sidemenu .tree-cell:filled:focused {
+    -fx-text-fill: white;
+}
+
+.sidemenu .tree-cell:focused{
+     -fx-background-color: #345C8F;
+     -fx-text-fill: white;
+}
+
+.sidemenu .tree-view .tree-cell:empty:hover {
+    -fx-background-color: #142F51;
+}
+
+.sidemenu .tree-view .tree-cell:empty{
+    -fx-background-color: #142F51;
+}
+
+.sidemenu .tree-cell .tree-disclosure-node .arrow {
+    -fx-shape: null;
+    -fx-background-color: null;
+    -fx-background-image: null;
+}
+
+.sidemenu .tree-cell:expanded .tree-disclosure-node .arrow {
+    -fx-shape: null;
+    -fx-background-color: null;
+    -fx-background-image: null;
+}
+
+.sub-tree-item {
+    -fx-background-color: #0E233C;
+    -fx-text-fill:white;
+}
+
+#treeViewContainer  .scroll-bar:vertical{
+    -fx-padding:-12px;
+}
+
+#treeViewContainer .scroll-bar:vertical,
+#treeViewContainer .scroll-bar:vertical .track,
+#treeViewContainer .scroll-bar:vertical .track-background,
+#treeViewContainer .scroll-bar:horizontal,
+#treeViewContainer .scroll-bar:horizontal .track,
+#treeViewContainer .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+    visibility: hidden;
+}
+
+#treeViewContainer .scroll-bar:vertical .thumb,
+#treeViewContainer .scroll-bar:horizontal .thumb
+{
+    visibility: true;
+    -fx-background-color:#B3B9BF;
+    -fx-background-radius: 15;
+}
+
+#treeViewContainer .scroll-bar .increment-button,
+#treeViewContainer .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+}
+
+.sidemenu-icon {
+    -fx-text-fill: #58687E;
+}

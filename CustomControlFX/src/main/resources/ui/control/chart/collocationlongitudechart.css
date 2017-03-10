@@ -1,0 +1,12 @@
+#gk2a-line{
+  -fx-stroke: #0D68FF;
+}
+#gk2b-line{
+   -fx-stroke: #FF0000;
+}
+#gk2a-line-unselect{
+    -fx-stroke:white;
+}
+#gk2b-line-unselect{
+    -fx-stroke:white;
+}
