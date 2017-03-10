@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.control.Label?>
+<fx:root type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@chartviewer.css" >
+    <VBox alignment="CENTER"  fx:id="chartViewerChartBox">
+        <VBox.vgrow>
+            <Priority fx:constant="ALWAYS"/>
+        </VBox.vgrow>
+    </VBox>
+    <VBox>
+        <padding>
+            <Insets top="10" left="70" bottom="20" right="10"/>
+        </padding>
+        <HBox alignment="CENTER_LEFT">
+            <Circle radius="5" fill="#0000FF">
+                <HBox.margin>
+                    <Insets right="2"/>
+                </HBox.margin>
+            </Circle>
+            <Label text="Residual Value (4441) : "/>
+            <Label fx:id="ResidualValue4441Label"/>
+        </HBox>
+        <HBox alignment="CENTER_LEFT">
+            <Circle radius="5" fill="#005900">
+                <HBox.margin>
+                    <Insets right="2"/>
+                </HBox.margin>
+            </Circle>
+            <Label text="Residual Value (1202) : "/>
+            <Label fx:id="ResidualValue1202Label"/>
+        </HBox>
+    </VBox>
+    <HBox.hgrow>
+        <Priority fx:constant="ALWAYS"/>
+    </HBox.hgrow>
+</fx:root>

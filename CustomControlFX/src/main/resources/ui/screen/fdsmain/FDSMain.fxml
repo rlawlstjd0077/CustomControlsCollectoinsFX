@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.*?>
+<fx:root minHeight="800.0" minWidth="1200.0" style="-fx-background-color: #0B1B2D;" type="GridPane"
+         xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" vgap="30"
+         stylesheets="@fdsmain.css">
+    <padding>
+        <Insets top="15" left="15" bottom="30" right="15"/>
+    </padding>
+    <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <top>
+            <HBox prefHeight="40">
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="Daily Operation Progressing" textFill="#DFE5EC">
+                        <font>
+                            <Font name="Roboto Bold" size="16"/>
+                        </font>
+                    </Label>
+                </HBox>
+                <HBox alignment="CENTER_LEFT">
+                    <Button fx:id="fdsMainDatePickerMinusMonthButton" styleClass="view-button"/>
+                    <VBox fx:id="fdsMainDatePickerPane">
+                        <HBox.margin>
+                            <Insets left="4" right="4"/>
+                        </HBox.margin>
+                    </VBox>
+                    <Button fx:id="fdsMainDatePickerAddMonthButton" styleClass="view-button"/>
+                    <HBox.margin>
+                        <Insets left="30"/>
+                    </HBox.margin>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT">
+                    <Button prefHeight="36" prefWidth="200" text="Automatic Operation Mode">
+                        <HBox.margin>
+                            <Insets right="6"/>
+                        </HBox.margin>
+                    </Button>
+                    <Button prefHeight="36" prefWidth="160" text="Data Transfer"/>
+                    <HBox.hgrow>
+                        <Priority fx:constant="ALWAYS"/>
+                    </HBox.hgrow>
+                </HBox>
+            </HBox>
+        </top>
+        <center>
+            <GridPane hgap="8">
+                <BorderPane.margin>
+                    <Insets top="10"/>
+                </BorderPane.margin>
+                <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <top>
+                        <AnchorPane prefHeight="45">
+                            <children>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      AnchorPane.rightAnchor="0   " style="-fx-background-color:#2B4B75"/>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      prefWidth="40" style="-fx-background-color:#3F75B8" fx:id="firstGaugeBar"/>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      prefWidth="40" style="-fx-background-color:transparent">
+                                    <ImageView>
+                                        <Image url="@pentagon.png"/>
+                                    </ImageView>
+                                </Pane>
+                                <Label prefHeight="45" AnchorPane.leftAnchor="65" text="Fuel Accounting"
+                                       fx:id="firstListTitleLabel" textFill="#DFE5EC">
+                                    <font>
+                                        <Font name="Roboto Bold" size="16"/>
+                                    </font>
+                                </Label>
+                                <Label prefHeight="45" AnchorPane.leftAnchor="16" text="1" textFill="white">
+                                    <font>
+                                        <Font name="Roboto Bold" size="16"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </top>
+                    <center>
+                        <TableView styleClass="fds-main-table-view-dark" fx:id="firstListTableView">
+                            <columns>
+                                <TableColumn prefWidth="290" fx:id="firstListFirstColumn"/>
+                                <TableColumn prefWidth="36" fx:id="firstListSecondColumn"/>
+                                <TableColumn prefWidth="36" fx:id="firstListThirdColumn"/>
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+                <BorderPane GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <top>
+                        <AnchorPane prefHeight="45">
+                            <children>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      AnchorPane.rightAnchor="0" style="-fx-background-color:#2B4B75"/>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      prefWidth="40" style="-fx-background-color:#3F75B8" fx:id="secondGaugeBar"/>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      prefWidth="40" style="-fx-background-color:transparent">
+                                    <ImageView>
+                                            <Image url="@pentagon.png"/>
+                                    </ImageView>
+                                </Pane>
+                                <Label prefHeight="45" AnchorPane.leftAnchor="65" text="Determination"
+                                       fx:id="secondListTitleLabel" textFill="#DFE5EC">
+                                    <font>
+                                        <Font name="Roboto Bold" size="16"/>
+                                    </font>
+                                </Label>
+                                <Label prefHeight="45" AnchorPane.leftAnchor="16" text="2" textFill="white">
+                                    <font>
+                                        <Font name="Roboto Bold" size="16"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </top>
+                    <center>
+                        <TableView styleClass="fds-main-table-view-dark" fx:id="secondListTableView">
+                            <columns>
+                                <TableColumn prefWidth="290" fx:id="secondListFirstColumn"/>
+                                <TableColumn prefWidth="36" fx:id="secondListSecondColumn"/>
+                                <TableColumn prefWidth="36" fx:id="secondListThirdColumn"/>
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+                <BorderPane GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <top>
+                        <AnchorPane prefHeight="45">
+                            <children>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      AnchorPane.rightAnchor="0   " style="-fx-background-color:#2B4B75"/>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      prefWidth="40" style="-fx-background-color:#3F75B8" fx:id="thirdGaugeBar"/>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      prefWidth="40" style="-fx-background-color:transparent">
+                                    <ImageView>
+                                        <Image url="@pentagon.png"/>
+                                    </ImageView>
+                                </Pane>
+                                <Label prefHeight="45" AnchorPane.leftAnchor="65" text="Orbit Prediction"
+                                       fx:id="thirdListTitleLabel" textFill="#DFE5EC">
+                                    <font>
+                                        <Font name="Roboto Bold" size="16"/>
+                                    </font>
+                                </Label>
+                                <Label prefHeight="45" AnchorPane.leftAnchor="16" text="3" textFill="white">
+                                    <font>
+                                        <Font name="Roboto Bold" size="16"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </top>
+                    <center>
+                        <TableView styleClass="fds-main-table-view-dark" fx:id="thirdListTableView">
+                            <columns>
+                                <TableColumn prefWidth="290" fx:id="thirdListFirstColumn"/>
+                                <TableColumn prefWidth="36" fx:id="thirdListSecondColumn"/>
+                                <TableColumn prefWidth="36" fx:id="thirdListThirdColumn"/>
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+                <BorderPane GridPane.columnIndex="3" GridPane.rowIndex="0">
+                    <top>
+                        <AnchorPane prefHeight="45">
+                            <children>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      AnchorPane.rightAnchor="0   " style="-fx-background-color:#2B4B75"/>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      prefWidth="40" style="-fx-background-color:#3F75B8" fx:id="fourthGaugeBar"/>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      prefWidth="40" style="-fx-background-color:transparent">
+                                    <ImageView>
+                                        <Image url="@pentagon.png"/>
+                                    </ImageView>
+                                </Pane>
+                                <Label prefHeight="45" AnchorPane.leftAnchor="65" text="Event Prediction"
+                                       fx:id="fourthListTitleLabel" textFill="#DFE5EC">
+                                    <font>
+                                        <Font name="Roboto Bold" size="16"/>
+                                    </font>
+                                </Label>
+                                <Label prefHeight="45" AnchorPane.leftAnchor="16" text="4" textFill="white">
+                                    <font>
+                                        <Font name="Roboto Bold" size="16"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </top>
+                    <center>
+                        <TableView styleClass="fds-main-table-view-dark" fx:id="fourthListTableView">
+                            <columns>
+                                <TableColumn prefWidth="290" fx:id="fourthListFirstColumn"/>
+                                <TableColumn prefWidth="36" fx:id="fourthListSecondColumn"/>
+                                <TableColumn prefWidth="36" fx:id="fourthListThirdColumn"/>
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+                <BorderPane GridPane.columnIndex="4" GridPane.rowIndex="0">
+                    <top>
+                        <AnchorPane prefHeight="45">
+                            <children>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      AnchorPane.rightAnchor="0   " style="-fx-background-color:#2B4B75"/>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      prefWidth="40" style="-fx-background-color:#3F75B8" fx:id="fifthGaugeBar"/>
+                                <Pane AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0"
+                                      prefWidth="40" style="-fx-background-color:transparent">
+                                    <ImageView>
+                                        <Image url="@pentagon.png"/>
+                                    </ImageView>
+                                </Pane>
+                                <Label prefHeight="45" AnchorPane.leftAnchor="65" text="Station Keeping"
+                                       fx:id="fifthListTitleLabel" textFill="#DFE5EC">
+                                    <font>
+                                        <Font name="Roboto Bold" size="16"/>
+                                    </font>
+                                </Label>
+                                <Label prefHeight="45" AnchorPane.leftAnchor="16" text="5" textFill="white">
+                                    <font>
+                                        <Font name="Roboto Bold" size="16"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </top>
+                    <center>
+                        <VBox>
+                            <BorderPane prefHeight="230">
+                                <top>
+                                    <VBox prefHeight="30"
+                                          style="-fx-background-color:#2B4B75;-fx-border-color:#122845; -fx-border-width:1 0 0 0">
+                                        <padding>
+                                            <Insets left="6"/>
+                                        </padding>
+                                        <Label text="Planning" prefHeight="30" textFill="white">
+                                            <font>
+                                                <Font size="12" name="Roboto bold"/>
+                                            </font>
+                                        </Label>
+                                    </VBox>
+                                </top>
+                                <center>
+                                    <TableView styleClass="fds-main-table-view-dark" fx:id="fifthTopListTableView">
+                                        <columns>
+                                            <TableColumn prefWidth="290" fx:id="fifthTopListFirstColumn"/>
+                                            <TableColumn prefWidth="36" fx:id="fifthTopListSecondColumn"/>
+                                            <TableColumn prefWidth="36" fx:id="fifthTopListThirdColumn"/>
+                                        </columns>
+                                    </TableView>
+                                </center>
+                            </BorderPane>
+                            <BorderPane>
+                                <top>
+                                    <VBox prefHeight="30"
+                                          style="-fx-background-color:#2B4B75;-fx-border-color:#122845; -fx-border-width:1 0 0 0">
+                                        <padding>
+                                            <Insets left="6"/>
+                                        </padding>
+                                        <Label text="Reconstruction" prefHeight="30" textFill="white">
+                                            <font>
+                                                <Font size="12" name="Roboto bold"/>
+                                            </font>
+                                        </Label>
+                                    </VBox>
+                                </top>
+                                <center>
+                                    <TableView prefHeight="150" styleClass="fds-main-table-view-dark" fx:id="fifthBottomListTableView">
+                                        <columns>
+                                            <TableColumn prefWidth="290" fx:id="fifthBottomListFirstColumn"/>
+                                            <TableColumn prefWidth="36" fx:id="fifthBottomListSecondColumn"/>
+                                            <TableColumn prefWidth="36" fx:id="fifthBotttomListThirdColumn"/>
+                                        </columns>
+                                    </TableView>
+                                </center>
+                            </BorderPane>
+                        </VBox>
+                    </center>
+                </BorderPane>
+                <rowConstraints>
+                    <RowConstraints percentHeight="100"/>
+                </rowConstraints>
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="20"/>
+                    <ColumnConstraints percentWidth="20"/>
+                    <ColumnConstraints percentWidth="20"/>
+                    <ColumnConstraints percentWidth="20"/>
+                    <ColumnConstraints percentWidth="20"/>
+                </columnConstraints>
+            </GridPane>
+        </center>
+    </BorderPane>
+    <GridPane GridPane.columnIndex="0" GridPane.rowIndex="1" hgap="10">
+        <AnchorPane GridPane.columnIndex="0" GridPane.rowIndex="0"
+                    style="-fx-background-color:white; -fx-background-radius:3; -fx-border-radius:3" minHeight="0"
+                    minWidth="0">
+            <children>
+                <AnchorPane fx:id="firstTimeTablePane" AnchorPane.leftAnchor="181" AnchorPane.bottomAnchor="150.0"
+                            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.0">
+                    <children>
+                        <HBox fx:id="firstTimeTableHBox" prefWidth="1000" AnchorPane.bottomAnchor="0.0"
+                              AnchorPane.topAnchor="20.0">
+                            <children>
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="378">-->
+                                <!--<children>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity"  prefWidth="94.5" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8.0" >-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="94.5"  AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8.0">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="189" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8.0">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="283.5" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8.0">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<HBox prefHeight="50" prefWidth="100" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-22" alignment="TOP_LEFT">-->
+                                <!--<Line startY="0" endY="48" strokeWidth="1" stroke="#8491A6"/>-->
+                                <!--<Line startY="0" endY="12" strokeWidth="6" stroke="#435575"/>-->
+                                <!--<Label text="2018-00-00">-->
+                                <!--<HBox.margin>-->
+                                <!--<Insets left="6"/>-->
+                                <!--</HBox.margin>-->
+                                <!--</Label>-->
+                                <!--</HBox>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="378">-->
+                                <!--<children>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity"  prefWidth="94.5" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8.0" >-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="94.5"  AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8.0">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="189" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8.0">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="283.5" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8.0">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<HBox prefHeight="50" prefWidth="100" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-22" alignment="TOP_LEFT">-->
+                                <!--<Line startY="0" endY="48" strokeWidth="1" stroke="#8491A6"/>-->
+                                <!--<Line startY="0" endY="12" strokeWidth="6" stroke="#435575"/>-->
+                                <!--<Label text="2018-00-00">-->
+                                <!--<HBox.margin>-->
+                                <!--<Insets left="6"/>-->
+                                <!--</HBox.margin>-->
+                                <!--</Label>-->
+                                <!--</HBox>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="378">-->
+                                <!--<children>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity"  prefWidth="94.5" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8.0" >-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="94.5"  AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8.0">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="189" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8.0">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="283.5" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8.0">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<HBox prefHeight="50" prefWidth="100" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-22" alignment="TOP_LEFT">-->
+                                <!--<Line startY="0" endY="48" strokeWidth="1" stroke="#8491A6"/>-->
+                                <!--<Line startY="0" endY="12" strokeWidth="6" stroke="#435575"/>-->
+                                <!--<Label text="2018-00-00">-->
+                                <!--<HBox.margin>-->
+                                <!--<Insets left="6"/>-->
+                                <!--</HBox.margin>-->
+                                <!--</Label>-->
+                                <!--</HBox>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane blendMode="MULTIPLY" prefHeight="55"
+                            style="-fx-background-color: linear-gradient(#f1f5f9 0%, #dfe5ec); -fx-border-color: #767F86; -fx-border-width: 1px 1px 0 1px; -fx-background-radius:3; -fx-border-radius:3"
+                            AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Label alignment="CENTER_LEFT" prefHeight="55.0" text="Satellite Event"
+                               AnchorPane.leftAnchor="22">
+                            <font>
+                                <Font name="Roboto Bold" size="14.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane style=" -fx-border-color: #767F86; -fx-border-width: 1px 1px 0 1px;"
+                            AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                            AnchorPane.topAnchor="56.0">
+                    <children>
+                        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                              AnchorPane.topAnchor="0.0" style="-fx-border-color:#435575; -fx-border-width:3px 0 0 0">
+                            <children>
+                                <AnchorPane prefHeight="38">
+                                    <children>
+                                        <AnchorPane prefWidth="181.0"
+                                                    style="-fx-background-color:#D8E1EF; -fx-border-color: #7D8EA0; -fx-border-width: 0 1px 0 0;"
+                                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                    AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label layoutX="18.0" prefHeight="36.5" text="Sun Eclipse"
+                                                       textFill="#4F6AA3">
+                                                    <font>
+                                                        <Font name="Roboto Bold" size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane fx:id="sunEclipsePane"
+                                                    style="-fx-border-color: #ADC3D5; -fx-border-width: 0 0 1px 0;"
+                                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0"
+                                                    AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane prefHeight="38" layoutY="38">
+                                    <children>
+                                        <AnchorPane prefWidth="181.0"
+                                                    style="-fx-background-color:#D8E1EF; -fx-border-color: #7D8EA0; -fx-border-width: 0 1px 0 0;"
+                                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                    AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label layoutX="18.0" prefHeight="36.5" text="Moon Eclipse"
+                                                       textFill="#4F6AA3">
+                                                    <font>
+                                                        <Font name="Roboto Bold" size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane fx:id="moonEclipsePane"
+                                                    style="-fx-border-color: #ADC3D5; -fx-border-width: 0 0 1px 0;"
+                                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0"
+                                                    AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane prefHeight="38" layoutY="76.0">
+                                    <children>
+                                        <AnchorPane prefWidth="181.0"
+                                                    style="-fx-background-color:#D8E1EF; -fx-border-color: #7D8EA0; -fx-border-width: 0 1px 0 0;"
+                                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                    AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label layoutX="18.0" prefHeight="36.0" text="Sensor Intuslon"
+                                                       textFill="#4F6AA3">
+                                                    <font>
+                                                        <Font name="Roboto Bold" size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane fx:id="sensorIntuslonPane"
+                                                    style="-fx-border-color: #ADC3D5; -fx-border-width: 0 0 1px 0;"
+                                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0"
+                                                    AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane prefHeight="38" layoutY="114.0">
+                                    <children>
+                                        <AnchorPane prefWidth="181.0"
+                                                    style="-fx-background-color:#D8E1EF; -fx-border-color: #7D8EA0; -fx-border-width: 0 1px 0 0;"
+                                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                    AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label layoutX="18.0" prefHeight="36.0" text="Orbit Crossing"
+                                                       textFill="#4F6AA3">
+                                                    <font>
+                                                        <Font name="Roboto Bold" size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane fx:id="orbitCrossingPane"
+                                                    style="-fx-border-color: #ADC3D5; -fx-border-width: 0 0 1px 0;"
+                                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0"
+                                                    AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane prefHeight="38" layoutY="152.0">
+                                    <children>
+                                        <AnchorPane prefWidth="181.0"
+                                                    style="-fx-background-color:#D8E1EF; -fx-border-color: #7D8EA0; -fx-border-width: 0 1px 0 0;"
+                                                    AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0"
+                                                    AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label layoutX="18.0" prefHeight="36.0" text="Sun Interface"
+                                                       textFill="#4F6AA3">
+                                                    <font>
+                                                        <Font name="Roboto Bold" size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane fx:id="sunInterfacePane" AnchorPane.topAnchor="0.0"
+                                                    AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                                    AnchorPane.leftAnchor="180"/>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="secondTimeTablePane" AnchorPane.leftAnchor="181" AnchorPane.bottomAnchor="0"
+                            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="253.0">
+                    <children>
+                        <HBox fx:id="secondTimeTableHBox" prefWidth="1000" AnchorPane.bottomAnchor="8.0"
+                              AnchorPane.topAnchor="20">
+                            <children>
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="378">-->
+                                <!--<children>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity"  prefWidth="94.5" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="94.5"  AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="189" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="283.5" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<HBox prefHeight="50" prefWidth="100" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-24" alignment="TOP_LEFT">-->
+                                <!--<Line startY="0" endY="50" strokeWidth="1" stroke="#8491A6"/>-->
+                                <!--<Line startY="0" endY="12" strokeWidth="6" stroke="#435575"/>-->
+                                <!--<Label text="2018-00-00">-->
+                                <!--<HBox.margin>-->
+                                <!--<Insets left="6"/>-->
+                                <!--</HBox.margin>-->
+                                <!--</Label>-->
+                                <!--</HBox>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="378">-->
+                                <!--<children>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity"  prefWidth="94.5" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8" >-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="94.5"  AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="189" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="283.5" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<HBox prefHeight="50" prefWidth="100" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-24" alignment="TOP_LEFT">-->
+                                <!--<Line startY="0" endY="50" strokeWidth="1" stroke="#8491A6"/>-->
+                                <!--<Line startY="0" endY="12" strokeWidth="6" stroke="#435575"/>-->
+                                <!--<Label text="2018-00-00">-->
+                                <!--<HBox.margin>-->
+                                <!--<Insets left="6"/>-->
+                                <!--</HBox.margin>-->
+                                <!--</Label>-->
+                                <!--</HBox>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="378">-->
+                                <!--<children>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity"  prefWidth="94.5" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8" >-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="94.5"  AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="189" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="94.5" layoutX="283.5" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="8">-->
+                                <!--<children>-->
+                                <!--<Pane prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="6.0" styleClass="primary-branch-line"/>-->
+                                <!--<Pane layoutX="32.5" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Pane layoutX="65" prefWidth="32.5" maxWidth="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="20.0" styleClass="normal-branch-line"/>-->
+                                <!--<Label styleClass="timeLabel" text="00:00:00" translateX="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-10.0"/>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                                <!--<HBox prefHeight="50" prefWidth="100" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-24" alignment="TOP_LEFT">-->
+                                <!--<Line startY="0" endY="50" strokeWidth="1" stroke="#8491A6"/>-->
+                                <!--<Line startY="0" endY="12" strokeWidth="6" stroke="#435575"/>-->
+                                <!--<Label text="2018-00-00">-->
+                                <!--<HBox.margin>-->
+                                <!--<Insets left="6"/>-->
+                                <!--</HBox.margin>-->
+                                <!--</Label>-->
+                                <!--</HBox>-->
+                                <!--</children>-->
+                                <!--</AnchorPane>-->
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane blendMode="MULTIPLY" prefHeight="58"
+                            style="-fx-background-color: linear-gradient(#f1f5f9 0%, #dfe5ec); -fx-border-color: #767F86; -fx-border-width: 1px 1px 0 1px;"
+                            AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="245">
+                    <children>
+                        <Label alignment="CENTER_LEFT" prefHeight="58.0" text="Maneuver Schedule"
+                               AnchorPane.leftAnchor="22">
+                            <font>
+                                <Font name="Roboto Bold" size="14.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane style="-fx-border-color: #767F86;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0.0"
+                            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="303.0">
+                    <children>
+                        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                              AnchorPane.topAnchor="0.0" style="-fx-border-color:#435575; -fx-border-width:3px 0 0 0">
+                            <children>
+                                <AnchorPane prefHeight="43">
+                                    <children>
+                                        <AnchorPane prefWidth="181.0"
+                                                    style="-fx-background-color:#F5EBFA;-fx-border-color: #767f86; -fx-border-width: 0 1px 0 0;"
+                                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                    AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label layoutX="18.0" prefHeight="37.0" text="SK" textFill="#6E3B87">
+                                                    <font>
+                                                        <Font name="Roboto Bold" size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane fx:id="SKPane"
+                                                    style="-fx-border-color: #ADC3D5; -fx-border-width: 0 0 1px 0;"
+                                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="180.0"
+                                                    AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane prefHeight="43.0" layoutY="43.0">
+                                    <children>
+                                        <AnchorPane prefWidth="181.0"
+                                                    style="-fx-background-color:#F5EBFA; -fx-border-color: #767f86; -fx-border-width: 0 1px 0 0;"
+                                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                    AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label layoutX="18.0" prefHeight="37.0" text="WOL" textFill="#6E3B87">
+                                                    <font>
+                                                        <Font name="Roboto Bold" size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane fx:id="WOLPane" AnchorPane.bottomAnchor="0.0"
+                                                    AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="0.0"
+                                                    AnchorPane.rightAnchor="0.0"/>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="390"
+                            AnchorPane.bottomAnchor="0" style="-fx-background-color:#48484E"/>
+                <AnchorPane AnchorPane.leftAnchor="181" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="300"
+                            AnchorPane.bottomAnchor="89" style="-fx-background-color:#435575"/>
+                <AnchorPane AnchorPane.leftAnchor="181" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="53"
+                            AnchorPane.bottomAnchor="336" style="-fx-background-color:#435575"/>
+                <AnchorPane fx:id="firstTimeIndicator" layoutX="580.0" prefWidth="40.0" translateX="180.0"
+                            AnchorPane.bottomAnchor="148.0" AnchorPane.topAnchor="18.0">
+                    <children>
+                        <Circle fill="#f5291b" layoutY="38.0" radius="7.0" stroke="BLACK" strokeType="INSIDE"
+                                strokeWidth="0.0"/>
+                        <Pane layoutX="-1.0" maxWidth="2.0" minWidth="2.0" prefHeight="200.0" prefWidth="2.0"
+                              style="-fx-background-color: #f5291b;" AnchorPane.bottomAnchor="2.0"
+                              AnchorPane.topAnchor="40.0"/>
+                        <ImageView fitHeight="52.0" fitWidth="97.0" layoutX="-49.0" layoutY="-4.0" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@timebox.png"/>
+                            </image>
+                        </ImageView>
+                        <Label fx:id="firstTimeLabel" alignment="CENTER" layoutX="-35.0" layoutY="5.0" prefWidth="70.0"
+                               text="10:15:00" textAlignment="CENTER" textFill="#2f496e">
+                            <font>
+                                <Font name="Roboto Bold" size="14.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="secondTimeIndicator" layoutX="580.0" prefWidth="40.0" translateX="180.0"
+                            AnchorPane.bottomAnchor="6.0" AnchorPane.topAnchor="265.0">
+                    <children>
+                        <Circle fill="#f5291b" layoutY="38.0" radius="7.0" stroke="BLACK" strokeType="INSIDE"
+                                strokeWidth="0.0"/>
+                        <Pane layoutX="-1.0" maxWidth="2.0" minWidth="2.0" prefHeight="200.0" prefWidth="2.0"
+                              style="-fx-background-color: #f5291b;" AnchorPane.bottomAnchor="0.0"
+                              AnchorPane.topAnchor="40.0"/>
+                        <ImageView fitHeight="52.0" fitWidth="97.0" layoutX="-49.0" layoutY="-4.0" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@timebox.png"/>
+                            </image>
+                        </ImageView>
+                        <Label fx:id="secondTimeLabel" alignment="CENTER" layoutX="-35.0" layoutY="5.0" prefWidth="70.0"
+                               text="10:15:00" textAlignment="CENTER" textFill="#2f496e">
+                            <font>
+                                <Font name="Roboto Bold" size="14.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+        <BorderPane GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <top>
+                <VBox alignment="CENTER_LEFT" minHeight="30" styleClass="title-box">
+                    <Label text="Satellite Orbit Monitoring" styleClass="title_label"/>
+                </VBox>
+            </top>
+            <center>
+                <VBox style="-fx-background-color:white; -fx-border-color:#868E95; -fx-border-width: 0 1 1 1">
+                    <padding>
+                        <Insets top="10"/>
+                    </padding>
+                    <HBox alignment="CENTER">
+                        <Label text="Period : "/>
+                        <Label prefWidth="150" alignment="CENTER"/>
+                        <Label text="~"/>
+                        <Label prefWidth="150" alignment="CENTER"/>
+                    </HBox>
+                    <LineChart>
+                        <padding>
+                            <Insets right="20"/>
+                        </padding>
+                        <xAxis>
+                            <NumberAxis label="Longitude (deg)"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis label="Latitude (deg)"/>
+                        </yAxis>
+                        <VBox.vgrow>
+                            <Priority fx:constant="ALWAYS"/>
+                        </VBox.vgrow>
+                    </LineChart>
+                </VBox>
+            </center>
+        </BorderPane>
+        <columnConstraints>
+            <ColumnConstraints percentWidth="70"/>
+            <ColumnConstraints percentWidth="30"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints percentHeight="100"/>
+        </rowConstraints>
+    </GridPane>
+    <rowConstraints>
+        <RowConstraints percentHeight="55"/>
+        <RowConstraints percentHeight="45"/>
+    </rowConstraints>
+    <columnConstraints>
+        <ColumnConstraints percentWidth="100"/>
+    </columnConstraints>
+</fx:root>

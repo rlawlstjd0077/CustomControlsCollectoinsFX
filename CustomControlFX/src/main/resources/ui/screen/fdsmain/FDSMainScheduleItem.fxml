@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="300.0" styleClass="scheduleItemDissemination" stylesheets="@../../styles.css" type="VBox" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER_RIGHT">
+    <children>
+        <Label fx:id="titleLabel">
+            <font>
+                <Font name="Roboto Regular" size="12.0"/>
+            </font>
+            <VBox.margin>
+                <Insets right="-30"/>
+            </VBox.margin>
+        </Label>
+    </children>
+</fx:root>

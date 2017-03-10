@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<fx:root type="AnchorPane" centerShape="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+         minWidth="200" stylesheets="@separationanalysis.css" nodeOrientation="LEFT_TO_RIGHT"
+         xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets top="10" left="10" right="10" bottom="10"/>
+    </padding>
+    <HBox AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <!-- 좌측 Box -->
+        <GridPane prefWidth="900" minWidth="900">
+            <!-- 좌측 상단 Box -->
+            <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <top>
+                    <VBox alignment="CENTER_LEFT" minHeight="30" styleClass="title-box">
+                        <Label text="Separation Analysis" styleClass="title_label"/>
+                    </VBox>
+                </top>
+                <center>
+                    <GridPane vgap="20" hgap="10" style="-fx-background-color:white; -fx-border-color:#8A9299">
+                        <padding>
+                            <Insets top="8" right="8" bottom="8" left="8"/>
+                        </padding>
+                        <!-- 좌측 상단 ( 0 , 0 ) Box -->
+                        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="0" vgap="10">
+                            <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <top>
+                                    <HBox>
+                                        <VBox style="-fx-background-color:#275085" minHeight="14"
+                                              minWidth="5"></VBox>
+                                        <Label text="Operation Period" styleClass="section_label">
+                                            <HBox.margin>
+                                                <Insets>
+                                                    <left>
+                                                        5
+                                                    </left>
+                                                </Insets>
+                                            </HBox.margin>
+                                        </Label>
+                                    </HBox>
+                                </top>
+                                <center>
+                                    <!--Operation Period Contents-->
+                                    <HBox styleClass="section-contents-box">
+                                        <HBox alignment="CENTER_LEFT">
+                                            <Label text="Start">
+                                                <HBox.margin>
+                                                    <Insets left="5"/>
+                                                </HBox.margin>
+                                            </Label>
+                                            <HBox fx:id="separationStartDateTimePickerPane"/>
+                                            <HBox.hgrow>
+                                                <Priority fx:constant="ALWAYS"/>
+                                            </HBox.hgrow>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT">
+                                            <Label text="End">
+                                                <HBox.margin>
+                                                    <Insets left="5"/>
+                                                </HBox.margin>
+                                            </Label>
+                                            <HBox fx:id="separationEndDateTimePickerPane">
+                                                <HBox.hgrow>
+                                                    <Priority fx:constant="ALWAYS"/>
+                                                </HBox.hgrow>
+                                            </HBox>
+                                            <HBox.hgrow>
+                                                <Priority fx:constant="ALWAYS"/>
+                                            </HBox.hgrow>
+                                        </HBox>
+                                        <BorderPane.margin>
+                                            <Insets top="10"/>
+                                        </BorderPane.margin>
+                                    </HBox>
+                                </center>
+                            </BorderPane>
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="100"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints percentHeight="50"/>
+                                <RowConstraints percentHeight="50"/>
+                            </rowConstraints>
+                        </GridPane>
+                        <!-- 좌측 상단 ( 1 , 0 ) Box -->
+                        <BorderPane GridPane.columnIndex="1" GridPane.rowIndex="0">
+                            <top>
+                                <HBox>
+                                    <VBox style="-fx-background-color:#275085" minHeight="14"
+                                          minWidth="5"></VBox>
+                                    <Label text="Collocation Parameter" styleClass="section_label">
+                                        <HBox.margin>
+                                            <Insets>
+                                                <left>
+                                                    5
+                                                </left>
+                                            </Insets>
+                                        </HBox.margin>
+                                    </Label>
+                                </HBox>
+                            </top>
+                            <center>
+                                <!--Operation Period Contents-->
+                                <VBox styleClass="section-contents-box">
+                                    <padding>
+                                        <Insets top="10" left="10" bottom="10" right="10"/>
+                                    </padding>
+                                    <HBox>
+                                        <HBox alignment="CENTER_LEFT">
+                                            <Label text="Eccentricity Control Circle(e)">
+
+                                            </Label>
+                                            <HBox.hgrow>
+                                                <Priority fx:constant="ALWAYS"/>
+                                            </HBox.hgrow>
+                                        </HBox>
+                                        <HBox alignment="CENTER_RIGHT">
+                                            <TextField styleClass="fds-text-field"
+                                                       fx:id="collocationControlCircleTextField">
+
+                                            </TextField>
+                                            <HBox.hgrow>
+                                                <Priority fx:constant="ALWAYS"/>
+                                            </HBox.hgrow>
+                                        </HBox>
+                                        <VBox.margin>
+                                            <Insets bottom="4"/>
+                                        </VBox.margin>
+                                    </HBox>
+
+                                    <BorderPane.margin>
+                                        <Insets top="10"/>
+                                    </BorderPane.margin>
+                                </VBox>
+                            </center>
+                        </BorderPane>
+                        <!-- 좌측 상단 ( 0 ~ 1 , 1 ) Box -->
+                        <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                            <top>
+                                <HBox>
+                                    <VBox style="-fx-background-color:#275085" minHeight="14"
+                                          minWidth="5"></VBox>
+                                    <Label text="Object Orbit Element" styleClass="section_label">
+                                        <HBox.margin>
+                                            <Insets>
+                                                <left>
+                                                    5
+                                                </left>
+                                            </Insets>
+                                        </HBox.margin>
+                                    </Label>
+                                </HBox>
+                            </top>
+                            <center>
+                                <VBox alignment="BOTTOM_CENTER">
+                                    <HBox alignment="CENTER_LEFT">
+                                        <Button styleClass="fds-form-button" text="Add Object"
+                                                fx:id="addObjectButton">
+                                            <HBox.margin>
+                                                <Insets right="8"/>
+                                            </HBox.margin>
+                                        </Button>
+                                        <Button styleClass="fds-form-button" text="Remove Object"
+                                                fx:id="removeObjectButton"/>
+                                        <VBox.margin>
+                                            <Insets top="8"/>
+                                        </VBox.margin>
+                                        <Button styleClass="fds-form-button" text="TestButton"
+                                                fx:id="">
+                                            <HBox.margin>
+                                                <Insets left="8"/>
+                                            </HBox.margin>
+                                        </Button>
+                                    </HBox>
+                                    <VBox>
+                                        <TableView fx:id="objectOrbitListTopTableView" prefHeight="94"
+                                                   styleClass="gk2-table-view" style="-fx-border-width: 1 1 0 1">
+                                            <VBox.margin>
+                                                <Insets top="6"/>
+                                            </VBox.margin>
+                                            <columns>
+                                                <TableColumn prefWidth="30"
+                                                             fx:id="objectOrbitListTopColumn1"/>
+                                                <TableColumn text="Name"
+                                                             fx:id="objectOrbitListTopColumn2"/>
+                                                <TableColumn text="Data Type"
+                                                             fx:id="objectOrbitListTopColumn3"/>
+                                                <TableColumn text="Epoch"
+                                                             fx:id="objectOrbitListTopColumn4"/>
+                                                <TableColumn text="Semi-Major Axis"
+                                                             fx:id="objectOrbitListTopColumn5"/>
+                                                <TableColumn text="Eccentricity"
+                                                             fx:id="objectOrbitListTopColumn6"/>
+                                            </columns>
+                                        </TableView>
+                                        <TableView prefHeight="150" styleClass="gk2-table-view"
+                                                   fx:id="objectOrbitListBottomTableView"
+                                                   style="-fx-border-width: 0 1 1 1">
+                                            <VBox.margin>
+                                                <Insets top="-4"/>
+                                            </VBox.margin>
+                                            <columns>
+                                                <TableColumn text="Name"
+                                                             fx:id="objectOrbitListBottomColumn1"/>
+                                                <TableColumn text="Name"
+                                                             fx:id="objectOrbitListBottomColumn2"/>
+                                                <TableColumn text="Data Type"
+                                                             fx:id="objectOrbitListBottomColumn3"/>
+                                                <TableColumn text="Epoch"
+                                                             fx:id="objectOrbitListBottomColumn4"/>
+                                                <TableColumn text="Semi-Major Axis"
+                                                             fx:id="objectOrbitListBottomColumn5"/>
+                                                <TableColumn text="Eccentricity"
+                                                             fx:id="objectOrbitListBottomColumn6"/>
+                                            </columns>
+                                        </TableView>
+                                    </VBox>
+                                    <HBox alignment="CENTER_RIGHT">
+                                        <Button text="Excute" styleClass="fds-primary-button" prefWidth="170"
+                                                prefHeight="36" fx:id="excuteButton">
+                                            <HBox.margin>
+                                                <Insets top="8"/>
+                                            </HBox.margin>
+                                        </Button>
+                                    </HBox>
+                                </VBox>
+                            </center>
+                        </BorderPane>
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="50"/>
+                            <ColumnConstraints percentWidth="50"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints percentHeight="30"/>
+                            <RowConstraints percentHeight="70"/>
+                        </rowConstraints>
+                    </GridPane>
+                </center>
+                <GridPane.margin>
+                    <Insets bottom="3"/>
+                </GridPane.margin>
+            </BorderPane>
+            <!-- 좌측 하단 Box -->
+            <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <top>
+                    <VBox alignment="CENTER_LEFT" minHeight="30" styleClass="title-box">
+                        <Label text="Output List" styleClass="title_label"/>
+                    </VBox>
+                </top>
+                <center>
+                    <VBox style="-fx-background-color:white; -fx-border-color:#8A9299">
+                        <GridPane prefHeight="25" styleClass="output-data-grid-header" alignment="CENTER_LEFT">
+                            <Label text="Item Name" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                                   styleClass="output-data-grid-header-label"/>
+                            <Label text="Generation" GridPane.columnIndex="2" GridPane.rowIndex="0"
+                                   styleClass="output-data-grid-header-label"/>
+                            <Label text="File Name" GridPane.columnIndex="3" GridPane.rowIndex="0"
+                                   styleClass="output-data-grid-header-label"/>
+                            <Label text="View" GridPane.columnIndex="4" GridPane.rowIndex="0"
+                                   styleClass="output-data-grid-header-label"/>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="1"/>
+                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="25.8"/>
+                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="11.4"/>
+                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.6"/>
+                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="11.2"/>
+                            </columnConstraints>
+                        </GridPane>
+                        <ScrollPane prefHeight="318" styleClass="gk2-scroll-pane" fitToWidth="true">
+                            <GridPane fx:id="outputListGridPane" vgap="1" prefWidth="884">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="1"/>
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="26.8"/>
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="11.4"/>
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.6"/>
+                                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.2"/>
+                                </columnConstraints>
+                                <VBox.vgrow>
+                                    <Priority fx:constant="ALWAYS"></Priority>
+                                </VBox.vgrow>
+                            </GridPane>
+                        </ScrollPane>
+                    </VBox>
+                </center>
+                <GridPane.margin>
+                    <Insets top="3"/>
+                </GridPane.margin>
+            </BorderPane>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" percentHeight="60"/>
+                <RowConstraints vgrow="SOMETIMES" percentHeight="40"/>
+            </rowConstraints>
+            <columnConstraints>
+                <ColumnConstraints percentWidth="100"/>
+            </columnConstraints>
+            <HBox.hgrow>
+                <Priority fx:constant="ALWAYS"/>
+            </HBox.hgrow>
+            <HBox.margin>
+                <Insets right="3"/>
+            </HBox.margin>
+        </GridPane>
+        <!-- 우측 박스 -->
+        <BorderPane prefWidth="765" minWidth="765">
+            <top>
+                <VBox alignment="CENTER_LEFT" minHeight="30" styleClass="title-box">
+                    <Label text="Orbit Prediction Setting" styleClass="title_label"/>
+                </VBox>
+            </top>
+            <center>
+                <GridPane style="-fx-background-color:white; -fx-border-color:#8A9299; -fx-border-width:1 1 0 1">
+                    <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="oddChartCell">
+                        <VBox fx:id="firstChartPane" alignment="CENTER">
+                            <VBox.margin>
+                                <Insets top="5"/>
+                            </VBox.margin>
+                        </VBox>
+                        <VBox>
+                            <padding>
+                                <Insets left="60"/>
+                            </padding>
+                            <HBox alignment="CENTER_LEFT">
+                                <Circle radius="5" fill="#EC6A5C">
+                                    <HBox.margin>
+                                        <Insets right="2"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Label text="GK2A Inclination Vector Value : " fx:id="firstGK2AValueLabel"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT">
+                                <Circle radius="5" fill="#306FF6">
+                                    <HBox.margin>
+                                        <Insets right="2"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Label text="GK2B Inclination Vector Value : " fx:id="firstGK2BValueLabel"/>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                    <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="evenChartCell">
+                        <VBox fx:id="secondChartPane" alignment="CENTER">
+                            <VBox.margin>
+                                <Insets top="5"/>
+                            </VBox.margin>
+                        </VBox>
+                        <VBox>
+                            <padding>
+                                <Insets left="60"/>
+                            </padding>
+                            <HBox alignment="CENTER_LEFT">
+                                <Circle radius="5" fill="#EC6A5C">
+                                    <HBox.margin>
+                                        <Insets right="2"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Label text="GK2A Eccentricity Vector Value : " fx:id="secondGK2AValueLabel"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT">
+                                <Circle radius="5" fill="#306FF6">
+                                    <HBox.margin>
+                                        <Insets right="2"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Label text="GK2B Eccentricity Vector Value : " fx:id="secondGK2BValueLabel"/>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                    <VBox GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="oddChartCell">
+                        <VBox fx:id="thirdChartPane" alignment="CENTER">
+                            <VBox.margin>
+                                <Insets top="10"/>
+                            </VBox.margin>
+                        </VBox>
+                        <VBox>
+                            <padding>
+                                <Insets left="60"/>
+                            </padding>
+                            <HBox alignment="CENTER_LEFT">
+                                <Circle radius="5" fill="#EC6A5C">
+                                    <HBox.margin>
+                                        <Insets right="2"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Label text="GK2A Longitude Value : " fx:id="thirdGK2AValueLabel"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT">
+                                <Circle radius="5" fill="#306FF6">
+                                    <HBox.margin>
+                                        <Insets right="2"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Label text="GK2B Longitude Value : " fx:id="thirdGK2BValueLabel"/>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                    <VBox GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="evenChartCell">
+                        <VBox fx:id="fourthChartPane" alignment="CENTER">
+                            <VBox.margin>
+                                <Insets top="10"/>
+                            </VBox.margin>
+                        </VBox>
+                        <VBox>
+                            <padding>
+                                <Insets left="110" top="10"/>
+                            </padding>
+                            <Label text="Distance Value : " fx:id="fourthValueLabel"/>
+                        </VBox>
+                    </VBox>
+                    <VBox GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="oddChartCell">
+                        <VBox fx:id="fifthChartPane" alignment="CENTER">
+                            <VBox.margin>
+                                <Insets top="10"/>
+                            </VBox.margin>
+                        </VBox>
+                        <VBox>
+                            <padding>
+                                <Insets left="80" top="10"/>
+                            </padding>
+                            <Label text="Position Distance Vector Value : " fx:id="fifthValueLabel"/>
+                        </VBox>
+                    </VBox>
+                    <VBox GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="evenChartCell">
+                        <VBox alignment="CENTER">
+                            <padding>
+                                <Insets top="10"/>
+                            </padding>
+                            <LineChart fx:id="sixthChart" prefWidth="380" prefHeight="180" styleClass="normal_chart">
+                                <xAxis>
+                                    <NumberAxis side="BOTTOM" fx:id="sixthxAxis" styleClass="normal_axis"
+                                                autoRanging="false"/>
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis side="LEFT" fx:id="sixthyAxis" styleClass="normal_axis"
+                                                autoRanging="false"/>
+                                </yAxis>
+                            </LineChart>
+                        </VBox>
+                        <VBox alignment="BOTTOM_CENTER">
+                            <padding>
+                                <Insets left="60" bottom="10"/>
+                            </padding>
+                            <HBox alignment="CENTER_LEFT">
+                                <Circle radius="5" fill="#EC6A5C">
+                                    <HBox.margin>
+                                        <Insets right="2"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Label text="GK2A RAC Value : " fx:id="sixthValueLabel"/>
+                            </HBox>
+                            <VBox.vgrow>
+                                <Priority fx:constant="ALWAYS"/>
+                            </VBox.vgrow>
+                        </VBox>
+                    </VBox>
+                    <VBox GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="oddChartCell">
+                        <VBox alignment="CENTER">
+                            <padding>
+                                <Insets top="10"/>
+                            </padding>
+                            <LineChart fx:id="seventhChart" prefWidth="380" prefHeight="180" styleClass="normal_chart">
+                                <xAxis>
+                                    <NumberAxis side="BOTTOM" fx:id="seventhxAxis" styleClass="normal_axis"
+                                                autoRanging="false"/>
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis side="LEFT" fx:id="seventhyAxis" styleClass="normal_axis"
+                                                autoRanging="false"/>
+                                </yAxis>
+                            </LineChart>
+                        </VBox>
+                        <VBox alignment="BOTTOM_CENTER">
+                            <padding>
+                                <Insets left="60" bottom="10"/>
+                            </padding>
+                            <HBox alignment="CENTER_LEFT">
+                                <Circle radius="5" fill="#EC6A5C">
+                                    <HBox.margin>
+                                        <Insets right="2"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Label text="GK2A RAC Value : " fx:id="seventhGK2AValueLabel"/>
+                            </HBox>
+                            <VBox.vgrow>
+                                <Priority fx:constant="ALWAYS"/>
+                            </VBox.vgrow>
+                        </VBox>
+                    </VBox>
+                    <VBox GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="evenChartCell">
+                        <VBox alignment="CENTER">
+                            <padding>
+                                <Insets top="10"/>
+                            </padding>
+                            <LineChart fx:id="eighthChart" prefWidth="380" prefHeight="180" styleClass="normal_chart">
+                                <xAxis>
+                                    <NumberAxis side="BOTTOM" fx:id="eighthxAxis" styleClass="normal_axis"
+                                                autoRanging="false"/>
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis side="LEFT" fx:id="eighthyAxis" styleClass="normal_axis"
+                                                autoRanging="false"/>
+                                </yAxis>
+                            </LineChart>
+                        </VBox>
+                        <VBox alignment="BOTTOM_CENTER">
+                            <padding>
+                                <Insets left="60" bottom="10"/>
+                            </padding>
+                            <HBox alignment="CENTER_LEFT">
+                                <Circle radius="5" fill="#EC6A5C">
+                                    <HBox.margin>
+                                        <Insets right="2"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Label text="GK2A RAC Value : " fx:id="eighthGK2AValueLabel"/>
+                            </HBox>
+                            <VBox.vgrow>
+                                <Priority fx:constant="ALWAYS"/>
+                            </VBox.vgrow>
+                        </VBox>
+                    </VBox>
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints percentHeight="25"/>
+                        <RowConstraints percentHeight="25"/>
+                        <RowConstraints percentHeight="25"/>
+                        <RowConstraints percentHeight="25"/>
+                    </rowConstraints>
+                </GridPane>
+            </center>
+            <HBox.margin>
+                <Insets left="3"/>
+            </HBox.margin>
+            <HBox.hgrow>
+                <Priority fx:constant="ALWAYS"/>
+            </HBox.hgrow>
+        </BorderPane>
+    </HBox>
+</fx:root>

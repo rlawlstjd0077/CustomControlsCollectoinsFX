@@ -1,0 +1,44 @@
+.fds-check-box{
+    -fx-background-radius:2;
+    -fx-background-insets: 0;
+    -fx-border-radius: 2px;
+}
+.fds-check-box > .box{
+    -fx-background-insets: 0;
+    -fx-border-color:#B3B98F;
+    -fx-border-radius:2;
+    -fx-background-color: white;
+}
+.fds-check-box:hover > .box{
+    -fx-border-color:#3C92E7;
+    -fx-background-color:white;
+}
+.fds-check-box:focused > .box{
+    -fx-border-color:#2671CE;
+    -fx-background-color:white;
+}
+.fds-check-box > .box > .mark >{
+    -fx-min-width:12;
+    -fx-min-height:12;
+    -fx-background-color:transparent;
+}
+.fds-check-box:selected > .box{
+    -fx-background-color:#2272D1;
+    -fx-background-radius:2;
+    -fx-border-color:transparent;
+    -fx-background-image:url("images/check_white.png");
+    -fx-background-position:center;
+    -fx-background-repeat: no-repeat no-repeat;
+}
+.fds-check-box:selected > .box:hover{
+    -fx-background-color:#3C92E7;
+}
+.fds-check-box:selected > .box:pressed{
+    -fx-background-color:#2970CC;
+}
+.fds-check-box:selected > .box:focused{
+    -fx-background-color:#2272D1;
+}
+.fds-check-box:disabled{
+    -fx-opacity : 0.6;
+}

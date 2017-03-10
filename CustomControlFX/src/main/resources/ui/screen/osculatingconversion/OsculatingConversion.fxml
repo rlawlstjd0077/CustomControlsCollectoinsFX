@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.Double?>
+<?import org.controlsfx.property.editor.AbstractObjectField?>
+<fx:root type="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+         minWidth="500" nodeOrientation="LEFT_TO_RIGHT" xmlns="http://javafx.com/javafx/8"
+         xmlns:fx="http://javafx.com/fxml/1" stylesheets="@osculatingconversion.css">
+    <padding>
+        <Insets top="10" left="10" right="10" bottom="10"/>
+    </padding>
+    <HBox AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <!--좌측 Box-->
+        <VBox prefWidth="830" minWidth="830">
+            <!-- 좌측 상단 Box -->
+            <BorderPane>
+                <top>
+                    <VBox alignment="CENTER_LEFT" minHeight="30" styleClass="title-box">
+                        <Label text="Osculating Conversion" styleClass="title_label"/>
+                    </VBox>
+                </top>
+                <center>
+                    <VBox style="-fx-background-color:white; -fx-border-color:#9FA5AB; -fx-border-width:0 1 1 1">
+                        <padding>
+                            <Insets top="20" left="10" bottom="10" right="10"/>
+                        </padding>
+                        <HBox alignment="CENTER_LEFT">
+                            <Label text="Conversion Method">
+                                <HBox.margin>
+                                    <Insets left="10" right="10"/>
+                                </HBox.margin>
+                            </Label>
+                            <ComboBox styleClass="fds-combo-box" prefWidth="150" prefHeight="28"
+                                      fx:id="osculatingConversionComboBox"/>
+                        </HBox>
+                        <StackPane prefHeight="280">
+                            <BorderPane visible="true" fx:id="singleConversionContainer">
+                                <top>
+                                    <HBox>
+                                        <VBox style="-fx-background-color:#275085" minHeight="14"
+                                              minWidth="5"></VBox>
+                                        <Label text="Osculating Orbit Element" styleClass="section_label">
+                                            <HBox.margin>
+                                                <Insets>
+                                                    <left>
+                                                        5
+                                                    </left>
+                                                </Insets>
+                                            </HBox.margin>
+                                        </Label>
+                                    </HBox>
+                                </top>
+                                <center>
+                                    <GridPane styleClass="section-contents-box">
+                                        <padding>
+                                            <Insets top="4" left="10" right="10"/>
+                                        </padding>
+                                        <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Time(UTC)"/>
+                                        <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER_LEFT"
+                                              fx:id="osculatingElementDatePickerPane"/>
+                                        <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER_RIGHT">
+                                            <Label text="Coordinate Frame">
+                                                <HBox.margin>
+                                                    <Insets right="10"/>
+                                                </HBox.margin>
+                                            </Label>
+                                            <ComboBox styleClass="fds-combo-box" prefHeight="28" prefWidth="160"
+                                                      fx:id="osculatingElementComboBox"/>
+                                        </HBox>
+                                        <Label GridPane.columnIndex="0" GridPane.rowIndex="1"
+                                               text="Semi-Major Axis (km)"/>
+                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"
+                                                   GridPane.columnSpan="2"
+                                                   prefHeight="28" styleClass="fds-text-field"
+                                                   fx:id="osculatingElementSemiMajorTextField"/>
+                                        <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Eccentricity"/>
+                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"
+                                                   GridPane.columnSpan="2"
+                                                   prefHeight="28" styleClass="fds-text-field"
+                                                   fx:id="osculatingElementEccentricityTextField"/>
+                                        <Label GridPane.columnIndex="0" GridPane.rowIndex="3" text="Inclination (deg)"/>
+                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3"
+                                                   GridPane.columnSpan="2"
+                                                   prefHeight="28" styleClass="fds-text-field"
+                                                   fx:id="osculatingElementInclinationTextField"/>
+                                        <Label GridPane.columnIndex="0" GridPane.rowIndex="4"
+                                               text="RA Ascending Node(deg) "/>
+                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="4"
+                                                   GridPane.columnSpan="2"
+                                                   prefHeight="28" styleClass="fds-text-field"
+                                                   fx:id="osculatingElementRAAscendingTextField"/>
+                                        <Label GridPane.columnIndex="0" GridPane.rowIndex="5"
+                                               text="Arg. Perigee (deg)"/>
+                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="5"
+                                                   GridPane.columnSpan="2"
+                                                   prefHeight="28" styleClass="fds-text-field"
+                                                   fx:id="osculatingElementArgPerigeeTextField"/>
+                                        <Label GridPane.columnIndex="0" GridPane.rowIndex="6"
+                                               text="Mean Anomaly (deg)"/>
+                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="6"
+                                                   GridPane.columnSpan="2"
+                                                   prefHeight="28" styleClass="fds-text-field"
+                                                   fx:id="osculatingElementMeanAnomalyTextField"/>
+                                        <columnConstraints>
+                                            <ColumnConstraints percentWidth="30"/>
+                                            <ColumnConstraints percentWidth="35"/>
+                                            <ColumnConstraints percentWidth="35"/>
+                                        </columnConstraints>
+                                        <rowConstraints>
+                                            <RowConstraints percentHeight="14.25"/>
+                                            <RowConstraints percentHeight="14.25"/>
+                                            <RowConstraints percentHeight="14.25"/>
+                                            <RowConstraints percentHeight="14.25"/>
+                                            <RowConstraints percentHeight="14.25"/>
+                                            <RowConstraints percentHeight="14.5"/>
+                                        </rowConstraints>
+                                        <BorderPane.margin>
+                                            <Insets top="6"/>
+                                        </BorderPane.margin>
+                                    </GridPane>
+                                </center>
+                                <StackPane.margin>
+                                    <Insets top="20"/>
+                                </StackPane.margin>
+                            </BorderPane>
+                            <VBox visible="false" fx:id="multiConversionContainer">
+                                <BorderPane prefHeight="160">
+                                    <top>
+                                        <HBox>
+                                            <VBox style="-fx-background-color:#275085" minHeight="14"
+                                                  minWidth="5"/>
+                                            <Label text="Parameter Setting" styleClass="section_label">
+                                                <HBox.margin>
+                                                    <Insets>
+                                                        <left>
+                                                            5
+                                                        </left>
+                                                    </Insets>
+                                                </HBox.margin>
+                                            </Label>
+                                        </HBox>
+                                    </top>
+                                    <center>
+                                        <GridPane styleClass="section-contents-box" hgap="15">
+                                            <padding>
+                                                <Insets left="8" right="8"/>
+                                            </padding>
+                                            <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="File Name"/>
+                                            <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" editable="false"
+                                                       fx:id="multiConversionFileNameTextField"
+                                                       GridPane.columnSpan="3" styleClass="fds-text-field"/>
+                                            <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="Start Time"/>
+                                            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" editable="false"
+                                                       fx:id="multiConversionStartTimeTextField"
+                                                       styleClass="fds-text-field"/>
+                                            <Label GridPane.columnIndex="2" GridPane.rowIndex="1" text="End Time"/>
+                                            <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" editable="false"
+                                                       fx:id="multiConversionEndTimeTextField"
+                                                       styleClass="fds-text-field"/>
+                                            <Label GridPane.columnIndex="0" GridPane.rowIndex="2"
+                                                   text="Orbit Element Count"/>
+                                            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" editable="false"
+                                                       fx:id="multiConversionOrbitCountTextField"
+                                                       styleClass="fds-text-field"/>
+                                            <Button GridPane.columnIndex="4" GridPane.rowIndex="0"
+                                                    styleClass="fds-form-button" prefHeight="28" prefWidth="20"
+                                                    text="..." fx:id="multiConversionFileOpenButton"/>
+                                            <columnConstraints>
+                                                <ColumnConstraints percentWidth="18"/>
+                                                <ColumnConstraints percentWidth="28"/>
+                                                <ColumnConstraints percentWidth="18"/>
+                                                <ColumnConstraints percentWidth="28"/>
+                                                <ColumnConstraints percentWidth="8"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints percentHeight="33"/>
+                                                <RowConstraints percentHeight="33"/>
+                                                <RowConstraints percentHeight="34"/>
+                                            </rowConstraints>
+                                            <BorderPane.margin>
+                                                <Insets top="6"/>
+                                            </BorderPane.margin>
+                                        </GridPane>
+                                    </center>
+                                </BorderPane>
+                                <BorderPane prefHeight="60">
+                                    <top>
+                                        <HBox>
+                                            <VBox style="-fx-background-color:#275085" minHeight="14"
+                                                  minWidth="5"></VBox>
+                                            <Label text="Output Setting" styleClass="section_label">
+                                                <HBox.margin>
+                                                    <Insets>
+                                                        <left>
+                                                            5
+                                                        </left>
+                                                    </Insets>
+                                                </HBox.margin>
+                                            </Label>
+                                        </HBox>
+                                    </top>
+                                    <center>
+                                        <HBox styleClass="section-contents-box" alignment="CENTER_LEFT">
+                                            <padding>
+                                                <Insets left="10"/>
+                                            </padding>
+                                            <Label text="File Name"/>
+                                            <TextField editable="false" prefWidth="234" prefHeight="28"
+                                                       styleClass="fds-text-field"
+                                                       fx:id="multiConversionOutputFileNameTextField">
+                                                <HBox.margin>
+                                                    <Insets left="106" right="10"/>
+                                                </HBox.margin>
+                                            </TextField>
+                                            <Button styleClass="fds-form-button" text="..." prefHeight="28"
+                                                    prefWidth="20" fx:id="multiConversionOutputFileOpenButton"/>
+                                            <BorderPane.margin>
+                                                <Insets top="6"/>
+                                            </BorderPane.margin>
+                                        </HBox>
+                                    </center>
+                                    <VBox.margin>
+                                        <Insets top="10"/>
+                                    </VBox.margin>
+                                </BorderPane>
+                                <StackPane.margin>
+                                    <Insets top="20"/>
+                                </StackPane.margin>
+                            </VBox>
+                            <VBox visible="false" fx:id="orbitStackConversionContainer">
+                                <BorderPane prefHeight="160">
+                                    <top>
+                                        <HBox>
+                                            <VBox style="-fx-background-color:#275085" minHeight="14"
+                                                  minWidth="5"/>
+                                            <Label text="Parameter Setting" styleClass="section_label">
+                                                <HBox.margin>
+                                                    <Insets>
+                                                        <left>
+                                                            5
+                                                        </left>
+                                                    </Insets>
+                                                </HBox.margin>
+                                            </Label>
+                                        </HBox>
+                                    </top>
+                                    <center>
+                                        <GridPane styleClass="section-contents-box" hgap="15">
+                                            <padding>
+                                                <Insets left="8" right="8"/>
+                                            </padding>
+                                            <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Start Time"/>
+                                            <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" editable="false"
+                                                       fx:id="orbitStackConversionStartTimeTextField"
+                                                       styleClass="fds-text-field"/>
+                                            <Label GridPane.columnIndex="2" GridPane.rowIndex="0" text="End Time"/>
+                                            <TextField GridPane.columnIndex="3" GridPane.rowIndex="0" editable="false"
+                                                       fx:id="orbitStackConversionEndTimeTextField"
+                                                       styleClass="fds-text-field"/>
+                                            <Label GridPane.columnIndex="0" GridPane.rowIndex="1"
+                                                   text="Orbit Element Count"/>
+                                            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" editable="false"
+                                                       fx:id="orbitStackConversionOrbitCountTextField"
+                                                       styleClass="fds-text-field"/>
+                                            <Button GridPane.columnIndex="4" GridPane.rowIndex="0"
+                                                    styleClass="fds-form-button" prefHeight="28" prefWidth="20"
+                                                    text="..." fx:id="orbitStackConversionFileOpenButton"/>
+                                            <columnConstraints>
+                                                <ColumnConstraints percentWidth="18"/>
+                                                <ColumnConstraints percentWidth="28"/>
+                                                <ColumnConstraints percentWidth="18"/>
+                                                <ColumnConstraints percentWidth="28"/>
+                                                <ColumnConstraints percentWidth="8"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints percentHeight="33"/>
+                                                <RowConstraints percentHeight="33"/>
+                                                <RowConstraints percentHeight="34"/>
+                                            </rowConstraints>
+                                            <BorderPane.margin>
+                                                <Insets top="6"/>
+                                            </BorderPane.margin>
+                                        </GridPane>
+                                    </center>
+                                </BorderPane>
+                                <BorderPane prefHeight="60">
+                                    <top>
+                                        <HBox>
+                                            <VBox style="-fx-background-color:#275085" minHeight="14"
+                                                  minWidth="5"></VBox>
+                                            <Label text="Output Setting" styleClass="section_label">
+                                                <HBox.margin>
+                                                    <Insets>
+                                                        <left>
+                                                            5
+                                                        </left>
+                                                    </Insets>
+                                                </HBox.margin>
+                                            </Label>
+                                        </HBox>
+                                    </top>
+                                    <center>
+                                        <HBox styleClass="section-contents-box" alignment="CENTER_LEFT">
+                                            <padding>
+                                                <Insets left="10"/>
+                                            </padding>
+                                            <Label text="File Name"/>
+                                            <TextField editable="false" prefWidth="234" prefHeight="28"
+                                                       styleClass="fds-text-field"
+                                                       fx:id="orbitStackConversionOutputFileNameTextField">
+                                                <HBox.margin>
+                                                    <Insets left="106" right="10"/>
+                                                </HBox.margin>
+                                            </TextField>
+                                            <Button styleClass="fds-form-button" text="..." prefHeight="28"
+                                                    prefWidth="20" fx:id="orbitStackConversionOutputFileOpenButton"/>
+                                            <BorderPane.margin>
+                                                <Insets top="6"/>
+                                            </BorderPane.margin>
+                                        </HBox>
+                                    </center>
+                                    <VBox.margin>
+                                        <Insets top="10"/>
+                                    </VBox.margin>
+                                </BorderPane>
+                                <StackPane.margin>
+                                    <Insets top="20"/>
+                                </StackPane.margin>
+                            </VBox>
+                        </StackPane>
+                        <HBox prefHeight="40" alignment="CENTER_RIGHT" >
+                            <Button text="Convert" prefHeight="36" prefWidth="200" fx:id="osculatingConversionConvertButton"/>
+                            <VBox.margin>
+                                <Insets top="6"/>
+                            </VBox.margin>
+                        </HBox>
+                    </VBox>
+                </center>
+                <GridPane.margin>
+                    <Insets bottom="3"/>
+                </GridPane.margin>
+                <VBox.vgrow>
+                    <Priority fx:constant="ALWAYS"/>
+                </VBox.vgrow>
+            </BorderPane>
+
+
+            <HBox.hgrow>
+                <Priority fx:constant="ALWAYS"/>
+            </HBox.hgrow>
+            <HBox.margin>
+                <Insets right="3"/>
+            </HBox.margin>
+        </VBox>
+        <!--우측 Box-->
+        <VBox prefWidth="830" minWidth="830">
+            <GridPane vgap="6">
+                <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <top>
+                        <VBox>
+                            <VBox alignment="CENTER_LEFT" minHeight="30" styleClass="title-box">
+                                <Label text="Osculating Orbit Element" styleClass="title_label"/>
+                            </VBox>
+                            <HBox style="-fx-background-color:linear-gradient(#F1F5F9, #DFE5EC);
+                          -fx-border-color:#868E95;" prefHeight="35" StackPane.alignment="TOP_LEFT"
+                                  alignment="CENTER_LEFT">
+                                <Button fx:id="firstTextViewerSaveButton" styleClass="viewer_button">
+                                    <graphic>
+                                        <ImageView>
+                                            <Image url="@../images/save.png"/>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets>
+                                            <left>10</left>
+                                        </Insets>
+                                    </HBox.margin>
+                                </Button>
+                                <Button fx:id="firstTextViewerPrintButton" styleClass="viewer_button">
+                                    <graphic>
+                                        <ImageView>
+                                            <Image url="@../images/print.png"/>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets>
+                                            <left>10</left>
+                                        </Insets>
+                                    </HBox.margin>
+                                </Button>
+                                <HBox alignment="CENTER_RIGHT">
+                                        <Button fx:id="firstTextViewerNewWindowButton" styleClass="viewer_button">
+                                        <graphic>
+                                            <ImageView>
+                                                <Image url="@../images/newWindow.png"/>
+                                            </ImageView>
+                                        </graphic>
+                                        <HBox.margin>
+                                            <Insets>
+                                                <right>10</right>
+                                            </Insets>
+                                        </HBox.margin>
+                                    </Button>
+                                    <HBox.hgrow>
+                                        <Priority fx:constant="ALWAYS"/>
+                                    </HBox.hgrow>
+                                </HBox>
+                                <StackPane.margin>
+                                    <Insets>
+                                        <top>30</top>
+                                    </Insets>
+                                </StackPane.margin>
+                            </HBox>
+                        </VBox>
+                    </top>
+                    <center>
+                        <VBox style="-fx-background-color:white; -fx-border-color:#868E95; -fx-border-width: 0 1 1 1">
+                            <padding>
+                                <Insets top="2" right="2" bottom="2" left="2"/>
+                            </padding>
+                            <TextArea styleClass="gk2-text-area" editable="false" fx:id="osculatingOrbitElementTextArea">
+                                <VBox.vgrow>
+                                    <Priority fx:constant="ALWAYS"/>
+                                </VBox.vgrow>
+                            </TextArea>
+                        </VBox>
+                    </center>
+                </BorderPane>
+                <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <top>
+                        <VBox>
+                            <VBox alignment="CENTER_LEFT" minHeight="30" styleClass="title-box">
+                                <Label text="Mean Orbit Element" styleClass="title_label"/>
+                            </VBox>
+                            <HBox style="-fx-background-color:linear-gradient(#F1F5F9, #DFE5EC);
+                          -fx-border-color:#868E95;" prefHeight="35" StackPane.alignment="TOP_LEFT"
+                                  alignment="CENTER_LEFT">
+                                <Button fx:id="secondTextViewerSaveButton" styleClass="viewer_button">
+                                    <graphic>
+                                        <ImageView>
+                                            <Image url="@../images/save.png"/>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets>
+                                            <left>10</left>
+                                        </Insets>
+                                    </HBox.margin>
+                                </Button>
+                                <Button fx:id="secondTextViewerPrintButton" styleClass="viewer_button">
+                                    <graphic>
+                                        <ImageView>
+                                            <Image url="@../images/print.png"/>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets>
+                                            <left>10</left>
+                                        </Insets>
+                                    </HBox.margin>
+                                </Button>
+                                <HBox alignment="CENTER_RIGHT">
+                                    <Button fx:id="secondTextViewerNewWindowButton" styleClass="viewer_button">
+                                        <graphic>
+                                            <ImageView>
+                                                <Image url="@../images/newWindow.png"/>
+                                            </ImageView>
+                                        </graphic>
+                                        <HBox.margin>
+                                            <Insets>
+                                                <right>10</right>
+                                            </Insets>
+                                        </HBox.margin>
+                                    </Button>
+                                    <HBox.hgrow>
+                                        <Priority fx:constant="ALWAYS"/>
+                                    </HBox.hgrow>
+                                </HBox>
+                                <StackPane.margin>
+                                    <Insets>
+                                        <top>30</top>
+                                    </Insets>
+                                </StackPane.margin>
+                            </HBox>
+                        </VBox>
+                    </top>
+                    <center>
+                        <VBox style="-fx-background-color:white; -fx-border-color:#868E95; -fx-border-width: 0 1 1 1">
+                            <padding>
+                                <Insets top="2" right="2" bottom="2" left="2"/>
+                            </padding>
+                            <TextArea styleClass="gk2-text-area" editable="false" fx:id="meanOrbitElementTextArea">
+                                <VBox.vgrow>
+                                    <Priority fx:constant="ALWAYS"/>
+                                </VBox.vgrow>
+                            </TextArea>
+                        </VBox>
+                    </center>
+                </BorderPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="100"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="SOMETIMES" percentHeight="50"/>
+                    <RowConstraints vgrow="SOMETIMES" percentHeight="50"/>
+                </rowConstraints>
+                <VBox.vgrow>
+                    <Priority fx:constant="ALWAYS"/>
+                </VBox.vgrow>
+            </GridPane>
+            <HBox.hgrow>
+                <Priority fx:constant="ALWAYS"/>
+            </HBox.hgrow>
+            <HBox.margin>
+                <Insets left="3"/>
+            </HBox.margin>
+        </VBox>
+    </HBox>
+</fx:root>
